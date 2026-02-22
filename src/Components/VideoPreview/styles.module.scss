@@ -1,0 +1,27 @@
+.videoPreviewWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &::after {
+    content: "";
+    background: linear-gradient(black, transparent, transparent, transparent, black);
+
+    position: absolute;
+    inset: 0;
+  }
+}
+
+.videoPreviewImageContainer {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.videoPreviewPlayButton {
+  position: absolute;
+  cursor: pointer;
+}

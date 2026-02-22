@@ -1,0 +1,63 @@
+.infoWrapper {
+  --gradient-height: 405px;
+  --background-image-height: calc(100vw * 1.4);
+
+  width: 100%;
+  height: calc(var(--background-image-height) + var(--gradient-height) / 2);
+  position: relative;
+}
+
+.infoContainer {
+  width: 100%;
+  position: relative;
+  height: var(--background-image-height);
+}
+
+.backgroundImage {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  top: 0;
+  left: 0
+}
+
+.infoTextTop,
+.infoTextBottomFirst,
+.infoTextBottomSecond {
+  position: absolute;
+  font-size: 18px;
+}
+
+.infoTextTop {
+  width: 458px;
+  color: black;
+  font-size: 18px;
+  opacity: 0.8;
+  left: 1032px;
+  top: 200px;
+}
+
+.infoTextBottomFirst {
+  width: 541px;
+  opacity: 0.5;
+  top: 1050px;
+  left: 239px;
+  z-index: 1;
+}
+
+.infoTextBottomSecond {
+  width: 381px;
+  color: black;
+  opacity: 0.6;
+  top: 1000px;
+  left: 1115px;
+}
+
+.bottomGradient {
+  width: 100%;
+  height: var(--gradient-height);
+  background: linear-gradient(transparent, black 60%);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

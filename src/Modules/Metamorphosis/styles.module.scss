@@ -1,0 +1,65 @@
+.contentContainer {
+  --padding-x: 235px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 var(--padding-x) 140px;
+  gap: 140px;
+  position: relative;
+}
+
+.projectInfoContainer {
+  width: 100vw;
+  position: relative;
+  height: 85vw;
+  margin-left: calc(0px - var(--padding-x));
+}
+
+.projectTitleWrapper {
+  position: absolute;
+  top: 130px;
+  left: var(--padding-x);
+  z-index: 1;
+}
+
+.imagePreviewHorizontalWrapper {
+  width: calc(100% + var(--padding-x) * 2);
+  margin-left: calc(0px - var(--padding-x));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imagePreviewHorizontal {
+  width: calc(100% * 0.8);
+}
+
+.projectDescription {
+  position: relative;
+  padding-right: var(--padding-x);
+  z-index: 10;
+}
+
+.galleryWrapper {
+  width: calc(100% + var(--padding-x) * 2);
+  margin-left: calc(0px - var(--padding-x));
+}
+
+.textContainer {
+  --text-container-padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  width: calc(100% + var(--text-container-padding));
+}
+
+.text {
+  padding: var(--text-container-padding) var(--text-container-padding) 0;
+}
+
+.textWithFrame {
+  border: 1px solid white;
+  padding: var(--text-container-padding);
+}

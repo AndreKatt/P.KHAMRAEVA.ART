@@ -1,0 +1,50 @@
+.galleryContainer {
+  width: 100%;
+  height: 352px;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 18px;
+  
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  user-select: none;
+}
+
+.galleryImageWrapper {
+  height: 100%;
+  width: auto;
+  position: relative;
+
+  cursor: pointer;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+
+    transition: opacity 0.3s ease-out;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 0.3;
+    }
+  }
+}
+
+.galleryImage {
+  height: 100%;
+  width: 100%;
+  width: auto;
+}

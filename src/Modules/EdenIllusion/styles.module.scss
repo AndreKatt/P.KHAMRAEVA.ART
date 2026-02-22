@@ -1,0 +1,34 @@
+.contentContainer {
+  --padding-x: 235px;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 140px 235px;
+  gap: 130px;
+  position: relative;
+}
+
+.projectInfoContainer {
+  width: 100vw;
+  position: relative;
+  height: 56vw;
+  margin-left: calc(0px - var(--padding-x));
+}
+
+.projectTitleWrapper {
+  position: absolute;
+  top: 130px;
+  left: var(--padding-x);
+  z-index: 1;
+}
+
+.textContainer {
+  padding-right: var(--padding-x);
+}
+
+.galleryWrapper {
+  width: calc(100% + var(--padding-x) * 2);
+  margin-left: calc(0px - var(--padding-x));
+}

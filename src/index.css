@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  color-scheme: light;
+
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
+	width: 100%;
+	height: 100%;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  display: block;
+  background-color: black;
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  scrollbar-width: thin;
+  scrollbar-color: #9e9e9e transparent;
+}
+
+img {
+  user-select: none;
+}

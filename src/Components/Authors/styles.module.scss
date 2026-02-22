@@ -1,0 +1,25 @@
+.authorsContainer {
+  width: 100%;
+  font-size: 18px;
+  font-weight: 300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.6;
+  gap: 20px;
+}
+
+.authors {
+  width: 100%;
+}
+
+.authorItem {
+  display: flex;
+  white-space: nowrap;
+}
+
+.dividerDotted {
+  width: 100%;
+  border-bottom: dotted white;
+  margin: 0 3px 4px;
+}
