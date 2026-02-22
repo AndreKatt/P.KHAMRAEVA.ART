@@ -2,14 +2,14 @@ import type {IGalleryProps} from "../../Components/Gallery/types"
 
 import SPBConcertLogo from "../../assets/Icons/SPBConcertLogo.svg"
 import AttaqueDePaniqueLogo from "../../assets/Icons/AttaqueDePaniqueLogo.svg"
-import ClassicElectricLogo from "../../assets/Icons/ClassicElectricLogo.svg"
+// import ClassicElectricLogo from "../../assets/Icons/ClassicElectricLogo.svg"
 import PlanetariumLogo from "../../assets/Icons/PlanetariumLogo.svg"
 import type { IAuthorsProps } from "../../Components/Authors/types"
 
 export const footerIcons = [
   SPBConcertLogo,
   AttaqueDePaniqueLogo,
-  ClassicElectricLogo,
+  // ClassicElectricLogo,
   PlanetariumLogo,
 ]
 

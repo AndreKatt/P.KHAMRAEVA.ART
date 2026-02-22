@@ -3,15 +3,15 @@ import type {IGalleryProps} from "../../Components/Gallery/types"
 
 import FundLogo from "../../assets/Icons/FundForCulturalInitiativesLogo.svg"
 import HermitageLogo from "../../assets/Icons/HermitageLogo.svg"
-import StranaSvetaLogo from "../../assets/Icons/StranaSvetaLogo.svg"
-import GaspromLogo from "../../assets/Icons/GaspromLogo.svg"
+// import StranaSvetaLogo from "../../assets/Icons/StranaSvetaLogo.svg"
+// import GaspromLogo from "../../assets/Icons/GaspromLogo.svg"
 import T2Logo from "../../assets/Icons/T2Logo.svg"
 
 export const footerIcons = [
   FundLogo,
   HermitageLogo,
-  StranaSvetaLogo,
-  GaspromLogo,
+  // StranaSvetaLogo,
+  // GaspromLogo,
   T2Logo,
 ]
 
