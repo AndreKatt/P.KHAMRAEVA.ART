@@ -1,7 +1,7 @@
 import PlayIcon from '../../assets/Icons/Play.svg'
 
 import type { FC } from 'react'
-import type { IVideoPreviewProps } from './types'
+import type { IVideoPreviewProps } from './types.ts'
 
 import styles from "./styles.module.scss"
 

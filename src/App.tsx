@@ -1,7 +1,7 @@
-import {Header} from "./Components/Header";
-import {Info} from "./Components/Info/Info";
-import {EdenIllusion} from "./Modules/EdenIllusion/EdenIllusion";
-import {Metamorphosis} from "./Modules/Metamorphosis/Metamorphosis";
+import {Header} from "./Components/Header/Header.tsx";
+import {Info} from "./Components/Info/Info.tsx";
+import {EdenIllusion} from "./Modules/EdenIllusion/EdenIllusion.tsx";
+import {Metamorphosis} from "./Modules/Metamorphosis/Metamorphosis.tsx";
 
 function App() {
   return (

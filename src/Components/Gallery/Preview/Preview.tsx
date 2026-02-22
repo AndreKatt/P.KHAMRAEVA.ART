@@ -5,7 +5,7 @@ import ArrowRightIcon from '../../../assets/Icons/ArrowRight.svg'
 import CrossIcon from '../../../assets/Icons/Cross.svg'
 
 import type { FC } from 'react'
-import type { IPreviewProps } from './types'
+import type { IPreviewProps } from './types.ts'
 
 import styles from "./styles.module.scss"
 

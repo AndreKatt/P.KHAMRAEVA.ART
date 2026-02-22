@@ -1,5 +1,5 @@
 import type {FC} from 'react'
-import type {IProjectTitleProps} from './types'
+import type {IProjectTitleProps} from './types.ts'
 
 import styles from "./styles.module.scss"
 

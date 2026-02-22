@@ -1,7 +1,7 @@
 import {useState, type FC} from "react"
-import { Preview } from "./Preview/Preview";
+import { Preview } from "./Preview/Preview.tsx";
 
-import type {IGalleryProps, IImage} from "./types"
+import type {IGalleryProps, IImage} from "./types.ts"
 
 import styles from "./styles.module.scss"
 

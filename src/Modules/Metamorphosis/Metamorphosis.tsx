@@ -1,11 +1,11 @@
-import {Footer} from "../../Components/Footer/Footer"
-import {Authors} from "../../Components/Authors/Authors"
-import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle"
-import {Gallery} from "../../Components/Gallery/Gallery"
-import {authors, footerIcons, galleryImages} from "./constants"
+import {Footer} from "../../Components/Footer/Footer.tsx"
+import {Authors} from "../../Components/Authors/Authors.tsx"
+import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle.tsx"
+import {Gallery} from "../../Components/Gallery/Gallery.tsx"
+import { VideoPreview } from "../../Components/VideoPreview/VideoPreview.tsx"
+import {authors, footerIcons, galleryImages} from "./constants.ts"
 
 import styles from "./styles.module.scss"
-import { VideoPreview } from "../../Components/VideoPreview/VideoPreview"
 
 export const Metamorphosis = () => {
   return (

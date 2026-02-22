@@ -1,4 +1,4 @@
-import type { IImage } from "../types"
+import type { IImage } from "../types.ts"
 
 export type IPreviewProps = {
   Image: IImage;

@@ -1,5 +1,5 @@
-import type {IAuthorsProps} from "../../Components/Authors/types"
-import type {IGalleryProps} from "../../Components/Gallery/types"
+import type {IAuthorsProps} from "../../Components/Authors/types.ts"
+import type {IGalleryProps} from "../../Components/Gallery/types.ts"
 
 import FundLogo from "../../assets/Icons/FundForCulturalInitiativesLogo.svg"
 import HermitageLogo from "../../assets/Icons/HermitageLogo.svg"

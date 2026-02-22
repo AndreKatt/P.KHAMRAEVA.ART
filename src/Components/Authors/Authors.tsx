@@ -1,5 +1,5 @@
 import type {FC} from 'react'
-import type {IAuthorsProps} from './types'
+import type {IAuthorsProps} from './types.ts'
 
 import styles from "./styles.module.scss"
 

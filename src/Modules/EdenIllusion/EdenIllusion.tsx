@@ -1,9 +1,9 @@
-import { Authors } from "../../Components/Authors/Authors"
-import {Footer} from "../../Components/Footer/Footer"
-import {Gallery} from "../../Components/Gallery/Gallery"
-import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle"
-import { VideoPreview } from "../../Components/VideoPreview/VideoPreview"
-import {authors, footerIcons, galleryImages, imagesBasePath} from "./constants"
+import { Authors } from "../../Components/Authors/Authors.tsx"
+import {Footer} from "../../Components/Footer/Footer.tsx"
+import {Gallery} from "../../Components/Gallery/Gallery.tsx"
+import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle.tsx"
+import { VideoPreview } from "../../Components/VideoPreview/VideoPreview.tsx"
+import {authors, footerIcons, galleryImages, imagesBasePath} from "./constants.ts"
 
 import styles from "./styles.module.scss"
 
