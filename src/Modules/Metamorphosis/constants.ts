@@ -3,15 +3,15 @@ import type {IGalleryProps} from "../../Components/Gallery/types.ts"
 
 import FundLogo from "../../assets/Icons/FundForCulturalInitiativesLogo.svg"
 import HermitageLogo from "../../assets/Icons/HermitageLogo.svg"
-// import StranaSvetaLogo from "../../assets/Icons/StranaSvetaLogo.svg"
-// import GaspromLogo from "../../assets/Icons/GaspromLogo.svg"
+import StranaSvetaLogo from "../../assets/Icons/StranaSvetaLogo.svg"
+import GazpromLogo from "../../assets/Icons/GazpromLogo.svg"
 import T2Logo from "../../assets/Icons/T2Logo.svg"
 
 export const footerIcons = [
   FundLogo,
   HermitageLogo,
-  // StranaSvetaLogo,
-  // GaspromLogo,
+  StranaSvetaLogo,
+  GazpromLogo,
   T2Logo,
 ]
 
@@ -41,8 +41,9 @@ export const authors: IAuthorsProps["Items"] = [
     Name: "РОМАН КОЧЕРЖЕВСКИЙ",
   },
 ]
+export const imagesBasePath = "/Images/Metamorphosis"
 
-const galleryImagesBasePath = "/Images/Metamorphosis/Gallery/"
+const galleryImagesBasePath = `${imagesBasePath}/Gallery`
 const galleryImagesName = [
   "Gallery1",
   "Gallery2",
@@ -50,15 +51,17 @@ const galleryImagesName = [
   "Gallery4",
   "Gallery5",
   "Gallery6",
+  "Gallery7",
+  "Gallery8",
 ]
 export const galleryImages: IGalleryProps["Images"] = galleryImagesName.map(name => (
   {
     Key: name,
-    Src: `${galleryImagesBasePath}${name}-1440.webp`,
+    Src: `${galleryImagesBasePath}/${name}-1440.webp`,
     SrcSet: `
-      ${galleryImagesBasePath}${name}-900.webp 900w,
-      ${galleryImagesBasePath}${name}-1440.webp 1440w,
-      ${galleryImagesBasePath}${name}-1920.webp 1920w
+      ${galleryImagesBasePath}/${name}-900.webp 900w,
+      ${galleryImagesBasePath}/${name}-1440.webp 1440w,
+      ${galleryImagesBasePath}/${name}-1920.webp 1920w
     `,
   }
 ))

@@ -20,13 +20,14 @@ export const Authors: FC<IAuthorsProps> = ({
       <div
         className={styles.authors}
       >
-        {Items.map(({Role, Name}) => (
+        {Items.map(({Role, Name}, idx) => (
           <div
+            key={idx}
             className={styles.authorItem}
           >
-            <div>{Role}</div>
+            {Role}
             <DividerDotted />
-            <div>{Name}</div>
+            {Name}
           </div>
         ))}
       </div>

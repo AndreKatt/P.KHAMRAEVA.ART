@@ -1,0 +1,29 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 38px;
+}
+.descriptionBlock {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.descriptionText {
+  width: 450px;
+}
+
+.descriptionImage {
+  height: 632px;
+}
+
+.descriptionTextWrapper {
+  width: calc(100% - var(--padding-x));
+}
+
+.textWithFrame {
+  width: 100%;
+  padding: 38px 75px;
+  border: 1px solid white;
+}

@@ -1,15 +1,14 @@
-.videoPreviewWrapper {
+.videoPreviewContainer {
+  width: 100vw;
+  margin-left: calc(0px - var(--padding-x));
+  position: relative;
+}
+
+.videoPreviewTitleWrapper {
   position: absolute;
-  top: 0;
-  left: 0;
-
-  &::after {
-    content: "";
-    background: linear-gradient(black, transparent, transparent, transparent, black);
-
-    position: absolute;
-    inset: 0;
-  }
+  top: 130px;
+  left: var(--padding-x);
+  z-index: 1;
 }
 
 .videoPreviewImageContainer {
@@ -19,6 +18,16 @@
   justify-content: center;
   align-items: center;
   position: relative;
+
+  &.gradient {
+    &::after {
+      content: "";
+      background: linear-gradient(black, transparent, transparent, transparent, black);
+  
+      position: absolute;
+      inset: 0;
+    }
+  }
 }
 
 .videoPreviewPlayButton {

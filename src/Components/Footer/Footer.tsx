@@ -9,7 +9,7 @@ export const Footer: FC<{
     <div
       className={styles.footer}
     >
-      {Icons.map(Icon => <Icon />)}
+      {Icons.map((Icon, idx) => <Icon key={idx}/>)}
     </div>
   )
 }

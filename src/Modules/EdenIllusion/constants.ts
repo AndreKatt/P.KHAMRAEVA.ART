@@ -3,19 +3,20 @@ import type { IAuthorsProps } from "../../Components/Authors/types.ts"
 
 import SPBConcertLogo from "../../assets/Icons/SPBConcertLogo.svg"
 import AttaqueDePaniqueLogo from "../../assets/Icons/AttaqueDePaniqueLogo.svg"
-// import ClassicElectricLogo from "../../assets/Icons/ClassicElectricLogo.svg"
+import ClassicElectricLogo from "../../assets/Icons/ClassicElectricLogo.svg"
 import PlanetariumLogo from "../../assets/Icons/PlanetariumLogo.svg"
+import type { ImgHTMLAttributes } from "react"
 
 export const footerIcons = [
   SPBConcertLogo,
   AttaqueDePaniqueLogo,
-  // ClassicElectricLogo,
+  ClassicElectricLogo,
   PlanetariumLogo,
 ]
 
-export const imagesBasePath = "/Images/EdenIllusion/"
+export const imagesBasePath = "/Images/EdenIllusion"
 
-const galleryBasePath = `${imagesBasePath}Gallery/`
+const galleryBasePath = `${imagesBasePath}/Gallery`
 const galleryImagesName = [
   "Gallery1",
   "Gallery2",
@@ -28,12 +29,32 @@ const galleryImagesName = [
 export const galleryImages: IGalleryProps["Images"] = galleryImagesName.map(name => (
   {
     Key: name,
-    Src: `${galleryBasePath}${name}-1440.webp`,
+    Src: `${galleryBasePath}/${name}-1440.webp`,
     SrcSet: `
-      ${galleryBasePath}${name}-900.webp 900w,
-      ${galleryBasePath}${name}-1440.webp 1440w,
-      ${galleryBasePath}${name}-1920.webp 1920w
+      ${galleryBasePath}/${name}-900.webp 900w,
+      ${galleryBasePath}/${name}-1440.webp 1440w,
+      ${galleryBasePath}/${name}-1920.webp 1920w
     `,
+  }
+))
+
+const videoPreviewBasePath = `${imagesBasePath}/Video`
+const videoPreviewName = [
+  "Video1",
+  "Video2",
+  "Video3",
+]
+export const videoPreviewImages: ReadonlyArray<ImgHTMLAttributes<HTMLImageElement>> = videoPreviewName.map(name => (
+  {
+    alt: '',
+    src: `${videoPreviewBasePath}/${name}-1440.webp`,
+    srcSet: `
+      ${videoPreviewBasePath}/${name}-900.webp 900w,
+      ${videoPreviewBasePath}/${name}-1440.webp 1440w,
+      ${videoPreviewBasePath}/${name}-1920.webp 1920w
+    `,
+    loading: "lazy",
+    sizes: "100vw",
   }
 ))
 
