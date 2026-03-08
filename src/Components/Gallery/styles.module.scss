@@ -1,12 +1,12 @@
 .galleryContainer {
   width: calc(100% + var(--padding-x) * 2);
-  height: 352px;
+  height: 205px;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
   margin-left: calc(0px - var(--padding-x));
-  gap: 18px;
+  gap: 8px;
   
   scrollbar-width: none;
   -ms-overflow-style: none;
@@ -16,9 +16,13 @@
   }
   user-select: none;
 
-  @media (max-width: 1024px) {
-    height: 205px;
-    gap: 8px;
+  @media (min-width: 1024px) {
+    height: 300px;
+    gap: 14px;
+  }
+  @media (min-width: 1920px) {
+    height: 352px;
+    gap: 18px;
   }
 }
 

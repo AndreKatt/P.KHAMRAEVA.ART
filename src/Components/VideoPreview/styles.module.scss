@@ -6,12 +6,15 @@
 
 .videoPreviewTitleWrapper {
   position: absolute;
-  top: 130px;
+  top: -25px;
   left: var(--padding-x);
   z-index: 1;
-
-  @media (max-width: 1024px) {
-    top: -25px;
+  
+  @media (min-width: 1024px) {
+    top: 0;
+  }
+  @media (min-width: 1920px) {
+    top: 130px;
   }
 }
 
@@ -37,4 +40,15 @@
 .videoPreviewPlayButton {
   position: absolute;
   cursor: pointer;
+}
+
+.videoPreviewPlayIcon {
+  width: 62px;
+
+  @media (min-width: 1024px) {
+    width: 92px;
+  }
+  @media (min-width: 1280px) {
+    width: unset;
+  }
 }

@@ -4,12 +4,16 @@
   flex-direction: column;
   align-items: flex-start;
   padding: 0 var(--padding-x);
-  gap: 130px;
+  gap: 32px;
   position: relative;
-  margin-bottom: 260px;
+  margin-bottom: 80px;
 
-  @media (max-width: 1024px) {
-    gap: 25px;
-    margin-bottom: 50px;
+  @media (min-width: 1024px) {
+    gap: 72px;
+    margin-bottom: 140px;
+  }
+  @media (min-width: 1920px) {
+    gap: 130px;
+    margin-bottom: 260px;
   }
 }

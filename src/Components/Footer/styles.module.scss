@@ -1,13 +1,16 @@
 .footer {
   width: 100%;
-  height: 184px;
+  height: 96px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 50px;
+  gap: 20px;
 
-  @media (max-width: 1024px) {
-    height: 96px;
-    gap: 20px;
+  @media (min-width: 1024px) {
+    gap: 40px;
+  }
+  @media (min-width: 1920px) {
+    height: 184px;
+    gap: 50px;
   }
 }

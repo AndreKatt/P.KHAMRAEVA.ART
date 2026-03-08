@@ -21,7 +21,7 @@ export const Preview: FC<IPreviewProps> = ({
         onClick={OnClose}
         className={styles.previewClose}
       >
-        <CrossIcon />
+        <CrossIcon className={styles.previewCloseIcon}/>
       </div>
 
       <div
@@ -30,7 +30,7 @@ export const Preview: FC<IPreviewProps> = ({
           [styles.disabled]: ArrowLeft.IsDisabled,
         })}
       >
-        <ArrowLeftIcon />
+        <ArrowLeftIcon className={styles.previewArrowLeftIcon}/>
       </div>
       <img
         src={Image.Src}
@@ -45,7 +45,7 @@ export const Preview: FC<IPreviewProps> = ({
           [styles.disabled]: ArrowRight.IsDisabled,
         })}
       >
-        <ArrowRightIcon />
+        <ArrowRightIcon className={styles.previewArrowRightIcon}/>
       </div>
     </div>,
     document.body,

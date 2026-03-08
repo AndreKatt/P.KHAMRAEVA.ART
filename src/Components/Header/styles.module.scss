@@ -2,27 +2,47 @@
   width: 100%;
   height: var(--header-height);
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   border-bottom: 2px solid #D9D9D9;
   background-color: black;
-  padding: 10px 92px 10px 182px;
+  padding: 10px 0;
   position: fixed;
   top: 0;
 
   z-index: 50;
 
-  @media (max-width: 1024px) {
-    padding: 10px 0;
-    justify-content: center;
+  @media (min-width: 1024px) {
+    justify-content: space-between;
+    padding: 10px 20px 10px 52px;
+  }
+  @media (min-width: 1280px) {
+    padding: 10px 50px 10px 92px;
+  }
+  @media (min-width: 1920px) {
+    padding: 10px 92px 10px 182px;
   }
 }
 
 .headerTitle {
   font-size: var(--header-font-size);
+  line-height: var(--header-line-height);
   font-weight: 300;
   opacity: 0.8;
-  text-wrap: none;
+  padding-right: 30px;
+}
+
+.menuButton {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+
+  cursor: pointer;
+}
+
+.menuIcon {
+  height: 40px;
+  width: 40px;
 }
 
 .headerMenuItem {
@@ -45,11 +65,20 @@
   &:hover {
     opacity: 0.8;
   }
+
+  @media (min-width: 1024px) {
+    font-size: 16px;
+    line-height: 16px;
+  }
 }
 
 .headerMenuContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 52px;
+  gap: 16px;
+
+  @media (min-width: 1920px) {
+    gap: 52px;
+  }
 }

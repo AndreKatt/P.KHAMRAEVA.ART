@@ -3,15 +3,22 @@
   flex-direction: column;
   align-items: flex-start;
   white-space: pre-line;
-  gap: 40px;
-
-  @media (max-width: 1024px) {
-    gap: 14px;
+  gap: 14px;
+  
+  @media (min-width: 1024px) {
+    gap: 18px;
+  }
+  @media (min-width: 1280px) {
+    gap: 24px;
+  }
+  @media (min-width: 1920px) {
+    gap: 40px;
   }
 }
 
 .title {
   font-size: var(--header-font-size);
+  line-height: var(--header-line-height);
   font-weight: 300;
 }
 
@@ -19,4 +26,11 @@
   font-size: 14px;
   font-weight: 300;
   opacity: 0.9;
+
+  @media (min-width: 1280px) {
+    font-size: 18px;
+  }
+  @media (min-width: 1920px) {
+    font-size: 20px;
+  }
 }

@@ -26,9 +26,7 @@ export const VideoPreview: FC<IVideoPreviewProps> = ({
 
   const $playButton = WhithoutPlayButton ? null : (
     <div className={styles.videoPreviewPlayButton}>
-      <PlayIcon
-        width={62}
-      />
+      <PlayIcon className={styles.videoPreviewPlayIcon}/>
     </div>
   )
 

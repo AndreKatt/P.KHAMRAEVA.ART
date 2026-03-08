@@ -1,8 +1,9 @@
 import classNames from 'classnames'
+import {useWindowWidth} from '../../utils/useWindowWidth'
 import OpenIcon from '../../assets/Icons/ArrowOpen.svg'
+import MenuIcon from '../../assets/Icons/Menu.svg'
 
 import styles from "./styles.module.scss"
-import { useWindowWidth } from '../../utils/useWindowWidth'
 
 export const Header = () => {
   const windowWidth = useWindowWidth();
@@ -29,7 +30,13 @@ export const Header = () => {
         КОНТАКТЫ
       </div>
     </>
-  ) : null;
+  ) : null
+
+  const $menuButton = windowWidth === 'small' ? (
+    <div className={styles.menuButton}>
+      <MenuIcon className={styles.menuIcon}/>
+    </div>
+  ) : null
 
   return (
     <div className={styles.headerContainer}>
@@ -38,6 +45,7 @@ export const Header = () => {
       </div>
 
       {$headerItems}
+      {$menuButton}
     </div>
   )
 }

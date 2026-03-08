@@ -15,37 +15,62 @@
 .previewClose {
   position: absolute;
   top: 18px;
-  right: 35px;
-  height: 24px;
-  width: 24px;
+  right: 18px;
+
+  @media (min-width: 1024px) {
+    right: 35px;
+  }
+}
+
+.previewCloseIcon {
+  height: 20px;
+  width: 20px;
+  
+  @media (min-width: 1024px) {
+    height: 24px;
+    width: 24px;
+  }
 }
 
 .previewClose,
 .previewArrowLeft,
 .previewArrowRight {
-  opacity: 0.7;
+  opacity: 0.8;
   transition: opacity 0.15s ease-out;
 
   cursor: pointer;
 
   &:hover {
-    opacity: 0.9;
+    opacity: 1;
   }
 
   &.disabled {
-    opacity: 0.4;
+    opacity: 0.5;
     cursor: not-allowed;
   }
 }
 
 .previewArrowLeft {
   position: absolute;
-  left: 18px;
+  left: 0;
+  
+  @media (min-width: 1024px) {
+    left: 18px;
+  }
+}
+
+.previewArrowLeftIcon,
+.previewArrowRightIcon {
+  height: 32px;
 }
 
 .previewArrowRight {
   position: absolute;
-  right: 18px;
+  right: 0;
+  
+  @media (min-width: 1024px) {
+    right: 18px;
+  }
 }
 
 .image {

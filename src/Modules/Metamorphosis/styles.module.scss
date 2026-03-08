@@ -21,17 +21,25 @@
 }
 
 .textContainer {
-  --text-container-padding: 25px;
-
+  --text-container-padding: 14px;
+  
   width: calc(100% + var(--text-container-padding));
   display: flex;
   flex-direction: column;
+  padding-right: var(--padding-x);
   gap: 50px;
-  
-  @media (max-width: 1024px) {
-    --text-container-padding: 14px;
 
-    padding-right: var(--padding-x);
+  @media (min-width: 1024px) {
+    --text-container-padding: 18px;
+
+    padding-right: 0;
+  }
+  @media (min-width: 1280px) {
+    --text-container-padding: 24px;
+  }
+  
+  @media (min-width: 1920px) {
+    --text-container-padding: 25px;
   }
 }
 

@@ -7,29 +7,37 @@
 .descriptionBlock {
   width: 100%;
   display: flex;
+  flex-direction: column-reverse;
   justify-content: space-between;
   align-items: center;
 
-  @media (max-width: 1024px) {
-    flex-direction: column-reverse;
+  @media (min-width: 1024px) {
+    flex-direction: row;
+    gap: 32px;
   }
 }
 
 .descriptionText {
-  width: 450px;
-
-  @media (max-width: 1024px) {
-    width: 100%;
+  width: 100%;
+  
+  @media (min-width: 1024px) {
+    max-width: 450px;
   }
 }
 
 .descriptionImage {
-  height: 632px;
+  height: auto;
+  width: 100%;
 
-  @media (max-width: 1024px) {
-    height: auto;
-    width: 100%;
-    // object-fit: contain;
+  @media (min-width: 1024px) {
+    width: auto;
+    height: 490px;
+  }
+  @media (min-width: 1280px) {
+    height: 570px;
+  }
+  @media (min-width: 1920px) {
+    height: 632px;
   }
 }
 
@@ -39,10 +47,16 @@
 
 .textWithFrame {
   width: 100%;
-  padding: 38px 75px;
+  padding: 14px;
   border: 1px solid white;
-
-  @media (max-width: 1024px) {
-    padding: 14px;
+  
+  @media (min-width: 1024px) {
+    padding: 18px;
+  }
+  @media (min-width: 1280px) {
+    padding: 24px;
+  }
+  @media (min-width: 1920px) {
+    padding: 38px 75px;
   }
 }
