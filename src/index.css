@@ -22,6 +22,8 @@ a {
 
 body {
   --padding-x: 235px;
+  --header-height: 82px;
+  --header-font-size: 47px;
 
   width: 100%;
   height: 100%;
@@ -36,6 +38,14 @@ body {
 
   scrollbar-width: thin;
   scrollbar-color: #9e9e9e transparent;
+
+  @media (max-width: 1024px) {
+    --padding-x: 10px;
+    --header-height: 63px;
+    --header-font-size: 26px;
+
+    font-size: 14px;
+  }
 }
 
 img {

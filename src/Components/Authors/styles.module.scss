@@ -1,16 +1,23 @@
 .authorsContainer {
   width: 100%;
-  font-size: 18px;
   font-weight: 300;
   display: flex;
   flex-direction: column;
   align-items: center;
   opacity: 0.6;
   gap: 20px;
+
+   @media (max-width: 1024px) {
+    gap: 12px;
+  }
 }
 
 .authors {
   width: 100%;
+
+  @media (max-width: 1024px) {
+    font-size: 10px;
+  }
 }
 
 .authorItem {

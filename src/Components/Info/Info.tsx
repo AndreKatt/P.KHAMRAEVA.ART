@@ -3,8 +3,19 @@ import Polina_1440 from '../../assets/Images/Polina-1440.webp';
 import Polina_1920 from '../../assets/Images/Polina-1920.webp';
 
 import styles from "./styles.module.scss"
+import { useWindowWidth } from '../../utils/useWindowWidth';
 
 export const Info = () => {
+  const windowSize = useWindowWidth();
+
+  const $text = windowSize !== 'small' ? (
+    <>
+      <TextTop />
+      <TextBottomFirst />
+      <TextBottomSecond />
+    </>
+  ) : null;
+
   return (
     <div
       className={styles.infoWrapper}
@@ -13,9 +24,7 @@ export const Info = () => {
         className={styles.infoContainer}
       >
         <BackgroundImage />
-        <TextTop />
-        <TextBottomFirst />
-        <TextBottomSecond />
+        {$text}
       </div>
       <div
         className={styles.bottomGradient}

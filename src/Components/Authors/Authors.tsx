@@ -11,9 +11,7 @@ export const Authors: FC<IAuthorsProps> = ({
   const title = ProjectName ? `${baseTitle} ${ProjectName}` : baseTitle;
 
   return (
-    <div
-      className={styles.authorsContainer}
-    >
+    <div className={styles.authorsContainer}>
       <div>
         {title}
       </div>

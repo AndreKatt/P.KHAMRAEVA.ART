@@ -4,4 +4,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 50px;
+
+  @media (max-width: 1024px) {
+    height: 96px;
+    gap: 20px;
+  }
 }

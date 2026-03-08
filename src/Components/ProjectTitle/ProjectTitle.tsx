@@ -8,17 +8,11 @@ export const ProjectTitle: FC<IProjectTitleProps> = ({
   Description,
 }) => {
   return (
-    <div
-      className={styles.titleContainer}
-    >
-      <div
-        className={styles.title}
-      >
+    <div className={styles.titleContainer}>
+      <div className={styles.title}>
         {Title}
       </div>
-      <div
-        className={styles.description}
-      >
+      <div className={styles.description}>
         {Description}
       </div>
     </div>

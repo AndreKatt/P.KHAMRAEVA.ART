@@ -9,6 +9,10 @@
   top: 130px;
   left: var(--padding-x);
   z-index: 1;
+
+  @media (max-width: 1024px) {
+    top: -25px;
+  }
 }
 
 .videoPreviewImageContainer {

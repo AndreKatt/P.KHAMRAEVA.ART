@@ -7,4 +7,9 @@
   gap: 130px;
   position: relative;
   margin-bottom: 260px;
+
+  @media (max-width: 1024px) {
+    gap: 25px;
+    margin-bottom: 50px;
+  }
 }

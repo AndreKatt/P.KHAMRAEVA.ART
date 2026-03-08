@@ -8,6 +8,10 @@
 
 .imagePreviewHorizontal {
   width: calc(100% * 0.8);
+
+  @media (max-width: 1024px) {
+    width: 100%;
+  }
 }
 
 .projectDescription {
@@ -18,10 +22,17 @@
 
 .textContainer {
   --text-container-padding: 25px;
+
+  width: calc(100% + var(--text-container-padding));
   display: flex;
   flex-direction: column;
   gap: 50px;
-  width: calc(100% + var(--text-container-padding));
+  
+  @media (max-width: 1024px) {
+    --text-container-padding: 14px;
+
+    padding-right: var(--padding-x);
+  }
 }
 
 .text {
