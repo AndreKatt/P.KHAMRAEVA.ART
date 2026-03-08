@@ -25,11 +25,16 @@
 }
 
 .headerTitle {
+  font-family: angst-thin;
   font-size: var(--header-font-size);
   line-height: var(--header-line-height);
   font-weight: 300;
   opacity: 0.8;
   padding-right: 30px;
+
+  @media (min-width: 1024px) {
+    padding-right: 0;
+  }
 }
 
 .menuButton {
@@ -46,6 +51,7 @@
 }
 
 .headerMenuItem {
+  font-family: raleway-regular;
   font-size: 18px;
   line-height: 18px;
   display: flex;
@@ -70,6 +76,11 @@
     font-size: 16px;
     line-height: 16px;
   }
+}
+
+.contacts {
+  border-bottom: 1px solid white;
+  padding: 0;
 }
 
 .headerMenuContainer {

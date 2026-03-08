@@ -17,15 +17,14 @@
 }
 
 .title {
+  font-family: raleway-light;
   font-size: var(--header-font-size);
   line-height: var(--header-line-height);
-  font-weight: 300;
 }
 
 .description {
+  font-family: raleway-extraLight;
   font-size: 14px;
-  font-weight: 300;
-  opacity: 0.9;
 
   @media (min-width: 1280px) {
     font-size: 18px;

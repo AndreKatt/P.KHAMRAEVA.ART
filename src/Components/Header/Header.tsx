@@ -26,7 +26,7 @@ export const Header = () => {
         </div>
       </div>
 
-      <div className={styles.headerMenuItem}>
+      <div className={classNames(styles.headerMenuItem, styles.contacts)}>
         КОНТАКТЫ
       </div>
     </>

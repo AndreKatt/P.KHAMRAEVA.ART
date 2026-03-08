@@ -36,7 +36,7 @@ export const galleryImages: IGalleryProps["Images"] = galleryImagesName.map(name
 
 export const authors: IAuthorsProps["Items"] = [
   {
-    Role: "АВТОР ТОТАЛЬНЫХ ИНСТАЛЛЯЦИЙ / ХУДОЖНИК ПОСТАНОВЩИК",
+    Role: "АВТОР ТОТАЛЬНЫХ ИНСТАЛЛЯЦИЙ / ХУДОЖНИК",
     Name: "ПОЛИНА ХАМРАЕВА",
   },
   {
