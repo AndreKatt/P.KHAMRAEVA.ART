@@ -1,0 +1,11 @@
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  background-color: black;
+  border-left: 1px solid #D9D9D9;
+  padding-top: var(--header-height);
+
+  z-index: 40;
+}

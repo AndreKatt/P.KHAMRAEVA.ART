@@ -9,6 +9,7 @@
   padding: 10px 0;
   position: fixed;
   top: 0;
+  user-select: none;
 
   z-index: 50;
 
@@ -29,7 +30,6 @@
   font-size: var(--header-font-size);
   line-height: var(--header-line-height);
   font-weight: 300;
-  opacity: 0.8;
   padding-right: 30px;
 
   @media (min-width: 1024px) {
@@ -78,7 +78,7 @@
   }
 }
 
-.contacts {
+.contactsButton {
   border-bottom: 1px solid white;
   padding: 0;
 }
@@ -91,5 +91,61 @@
 
   @media (min-width: 1920px) {
     gap: 52px;
+  }
+}
+
+.contacts {
+  font-family: arial;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 42px 37px;
+  gap: 22px
+}
+
+.contactsAvatar {
+  height: 123px;
+  width: 123px;
+  border-radius: 100%;
+  background-color: #D9D9D9;
+}
+
+.contactItem {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  gap: 6px;
+  user-select: none;
+  
+  &:hover {
+    .contactText {
+      opacity: 0.8;
+    }
+  }
+}
+
+.contactText {
+  transition: opacity 0.15s ease-out;
+}
+
+.tooltip {
+  font-size: 12px;
+  line-height: 12px;
+  color: black;
+  background-color: white;
+  border-radius: 4px;
+  opacity: 0.8;
+  padding: 4px;
+
+  position: absolute;
+  right: -24px;
+  top: -24px;
+
+  transition: opacity 0.15s ease-out;
+
+  &.hidden {
+    opacity: 0;
   }
 }

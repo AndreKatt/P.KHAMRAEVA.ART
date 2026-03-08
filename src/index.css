@@ -1,18 +1,18 @@
 @font-face {
   font-family: raleway-regular;
-  src: url('./fonts/Raleway-Regular.woff2') format('woff2');
+  src: url('/fonts/Raleway-Regular.woff2') format('woff2');
 }
 @font-face {
   font-family: raleway-light;
-  src: url('./fonts/Raleway-Light.woff2') format('woff2');
+  src: url('/fonts/Raleway-Light.woff2') format('woff2');
 }
 @font-face {
   font-family: raleway-extraLight;
-  src: url('./fonts/Raleway-ExtraLight.woff2') format('woff2');
+  src: url('/fonts/Raleway-ExtraLight.woff2') format('woff2');
 }
 @font-face {
   font-family: angst-thin;
-  src: url('./fonts/Angst-Thin.woff2') format('woff2');
+  src: url('/fonts/Angst-Thin.woff2') format('woff2');
 }
 
 * {
@@ -76,6 +76,11 @@ body {
   @media (min-width: 1920px) {
     --padding-x: 235px;
   }
+}
+
+a {
+  color: white;
+  text-decoration: none;
 }
 
 img {
