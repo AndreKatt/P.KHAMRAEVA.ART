@@ -1,11 +1,11 @@
+import type {ImgHTMLAttributes} from "react"
 import type {IGalleryProps} from "../../Components/Gallery/types.ts"
-import type { IAuthorsProps } from "../../Components/Authors/types.ts"
+import type {IAuthorsProps} from "../../Components/Authors/types.ts"
 
 import SPBConcertLogo from "../../assets/Icons/SPBConcertLogo.svg"
 import AttaqueDePaniqueLogo from "../../assets/Icons/AttaqueDePaniqueLogo.svg"
 import ClassicElectricLogo from "../../assets/Icons/ClassicElectricLogo.svg"
 import PlanetariumLogo from "../../assets/Icons/PlanetariumLogo.svg"
-import type { ImgHTMLAttributes } from "react"
 
 export const footerIcons = [
   SPBConcertLogo,
