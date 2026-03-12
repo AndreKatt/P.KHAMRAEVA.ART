@@ -1,18 +1,22 @@
 @font-face {
   font-family: raleway-regular;
   src: url('/fonts/Raleway-Regular.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: raleway-light;
   src: url('/fonts/Raleway-Light.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: raleway-extraLight;
   src: url('/fonts/Raleway-ExtraLight.woff2') format('woff2');
+  font-display: swap;
 }
 @font-face {
   font-family: angst-thin;
   src: url('/fonts/Angst-Thin.woff2') format('woff2');
+  font-display: swap;
 }
 
 * {
@@ -20,12 +24,8 @@
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color-scheme: light;
+  font-family: raleway-light, 'Helvetica Neue', Arial, sans-serif;
 
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-text-size-adjust: 100%;
 	width: 100%;
