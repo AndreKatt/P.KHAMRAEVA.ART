@@ -1,14 +1,14 @@
 import {Authors} from "../../Components/Authors/Authors"
-import {Container} from "../../Components/Container/Container"
+import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview"
 import {VideoPreview} from "../../Components/VideoPreview/VideoPreview"
-import {imagesBasePath as path} from "../EdenIllusion/constants"
+import {imagesBasePath as path} from "../../Pages/EdenIllusion/constants"
 import {authors, imagesBasePath} from "./constants"
 
 import styles from './styles.module.scss'
 
-export const CrepeDeChine = () => {
+export function Component() {
   return (
-    <Container>
+    <>
       <VideoPreview
         ImageSrc={`${path}/EdenIllusion-1440.webp`}
         ImageSrcSet={`
@@ -27,9 +27,7 @@ export const CrepeDeChine = () => {
         Шесть новелл раскрывают парадокс: попытки вырваться из-под гнета родовых сценариев приводят к роковому повторению их паттернов. Центральный конфликт — борьба социальных масок с глубинным «Я» — воплощён в архетипах рода, которые примеряет на себя героиня.
       </div>
 
-      <VideoPreview
-        WhithoutPlayButton
-        WhithoutGradient
+      <ProjectPreview
         ImageSrc={`${imagesBasePath}/Photo-1440.webp`}
         ImageSrcSet={`
           ${imagesBasePath}/Photo-900.webp 900w,
@@ -72,6 +70,6 @@ export const CrepeDeChine = () => {
           </div>
         </div>
       </div>
-    </Container>
+    </>
   )
 }

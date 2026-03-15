@@ -1,5 +1,5 @@
 import {Image} from '../Image/Image.tsx'
-import {useWindowWidth} from '../../utils/useWindowWidth';
+import {useIsMobile} from '../../utils/useIsMobile.ts';
 import Polina_900 from '../../assets/Images/Polina-900.webp';
 import Polina_1440 from '../../assets/Images/Polina-1440.webp';
 import Polina_1920 from '../../assets/Images/Polina-1920.webp';
@@ -7,9 +7,9 @@ import Polina_1920 from '../../assets/Images/Polina-1920.webp';
 import styles from "./styles.module.scss"
 
 export const Info = () => {
-  const windowSize = useWindowWidth();
+  const isMobile = useIsMobile();
 
-  const $text = windowSize !== 'small' ? (
+  const $text = isMobile ? (
     <></>
   ) : null;
 

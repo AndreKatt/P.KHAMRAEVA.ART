@@ -6,6 +6,7 @@ import HermitageLogo from "../../assets/Icons/HermitageLogo.svg"
 import StranaSvetaLogo from "../../assets/Icons/StranaSvetaLogo.svg"
 import GazpromLogo from "../../assets/Icons/GazpromLogo.svg"
 import T2Logo from "../../assets/Icons/T2Logo.svg"
+import type { IProjectPreviewProps } from "../../Components/ProjectPreview/types.ts"
 
 export const footerIcons = [
   FundLogo,
@@ -41,7 +42,19 @@ export const authors: IAuthorsProps["Items"] = [
     Name: "РОМАН КОЧЕРЖЕВСКИЙ",
   },
 ]
+
 export const imagesBasePath = "/Images/Metamorphosis"
+
+export const previewProps: IProjectPreviewProps = {
+  ImageSrc: `${imagesBasePath}/StranaSveta-1440.webp`,
+  ImageSrcSet: `
+    ${imagesBasePath}/StranaSveta-900.webp 900w,
+    ${imagesBasePath}/StranaSveta-1440.webp 1440w,
+    ${imagesBasePath}/StranaSveta-1920.webp 1920w
+  `,
+  Title: 'МЕТАМОРФОЗЫ\nПЕТЕРБУРГСКОГО ДОМА',
+  Description: 'ПОБЕДИТЕЛЬ ВСЕРОССИЙСКОГО МЕДИА-КОНКУРСА\n«СТРАНА СВЕТА 2025». МАППИНГ-ШОУ.',
+}
 
 const galleryImagesBasePath = `${imagesBasePath}/Gallery`
 const galleryImagesName = [

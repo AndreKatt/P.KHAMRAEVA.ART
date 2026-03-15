@@ -1,0 +1,15 @@
+.projectsContainer {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 1024px) {
+    flex-direction: row;
+  }
+}
+
+.divider {
+  height: 1px;
+  width: 100vw;
+  background-color: #E5E5E5;
+  margin-left: calc(0px - var(--padding-x));
+}

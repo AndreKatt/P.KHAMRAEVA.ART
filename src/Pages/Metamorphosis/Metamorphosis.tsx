@@ -1,32 +1,24 @@
 import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Authors} from "../../Components/Authors/Authors.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
-import {VideoPreview} from "../../Components/VideoPreview/VideoPreview.tsx"
-import {Container} from "../../Components/Container/Container.tsx"
 import {Image} from '../../Components/Image/Image.tsx'
+import {VideoPreview} from "../../Components/VideoPreview/VideoPreview.tsx"
 import {
   authors,
+  imagesBasePath,
   footerIcons,
   galleryImages,
-  imagesBasePath,
+  previewProps,
 } from "./constants.ts"
 
 import styles from "./styles.module.scss"
 
-export const Metamorphosis = () => {
+export function Component() {
   return (
-    <Container>
+    <>
       <div>
-        <VideoPreview
-          ImageSrc={`${imagesBasePath}/StranaSveta-1440.webp`}
-          ImageSrcSet={`
-            ${imagesBasePath}/StranaSveta-900.webp 900w,
-            ${imagesBasePath}/StranaSveta-1440.webp 1440w,
-            ${imagesBasePath}/StranaSveta-1920.webp 1920w
-          `}
-          Title={'МЕТАМОРФОЗЫ\nПЕТЕРБУРГСКОГО ДОМА'}
-          Description={'ПОБЕДИТЕЛЬ ВСЕРОССИЙСКОГО МЕДИА-КОНКУРСА\n«СТРАНА СВЕТА 2025». МАППИНГ-ШОУ.'}
-        />
+        <VideoPreview {...previewProps}/>
+
         <div className={styles.projectDescription}>
           Петербург — город, чей образ неотделим от русской литературы. Наш медиапроект предлагает взглянуть на знакомую архитектуру через призму знаковых текстов Пушкина, Гоголя и Достоевского.
           <br />
@@ -71,6 +63,6 @@ export const Metamorphosis = () => {
         />
       </div>
       <Footer Icons={footerIcons}/>
-    </Container>
+    </>
   )
 }

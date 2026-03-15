@@ -1,33 +1,24 @@
 import {Authors} from "../../Components/Authors/Authors.tsx"
-import {Container} from "../../Components/Container/Container.tsx"
 import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
-import {VideoPreview} from "../../Components/VideoPreview/VideoPreview.tsx"
+import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview.tsx"
 import {Image} from '../../Components/Image/Image.tsx'
+import {VideoPreview} from "../../Components/VideoPreview/VideoPreview.tsx"
 import {
   authors,
   footerIcons,
   galleryImages,
   imagesBasePath,
   videoPreviewImages,
+  previewProps,
 } from "./constants.ts"
 
 import styles from "./styles.module.scss"
 
-export const EdenIllusion = () => {
+export function Component() {
   return (
-    <Container>
-      <VideoPreview
-        WhithoutPlayButton
-        ImageSrc={`${imagesBasePath}/EdenIllusion-1440.webp`}
-        ImageSrcSet={`
-          ${imagesBasePath}/EdenIllusion-900.webp 900w,
-          ${imagesBasePath}/EdenIllusion-1440.webp 1440w,
-          ${imagesBasePath}/EdenIllusion-1920.webp 1920w
-        `}
-        Title='EDEN ILLUSION'
-        Description='МУЛЬТИМЕДИЙНЫЙ СПЕКТАКЛЬ'
-      />
+    <>
+      <ProjectPreview {...previewProps}/>
 
       <div>
         Перформанс «Eden Illusion» — это размышление о трансформации образа рая в современной культуре: от древнего сакрального символа к утопической мечте о будущем.
@@ -75,6 +66,6 @@ export const EdenIllusion = () => {
         ProjectName="«Eden Illusion»"
       />
       <Footer Icons={footerIcons}/>
-    </Container>
+    </>
   )
 }

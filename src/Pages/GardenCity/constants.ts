@@ -1,5 +1,6 @@
 import type { IAuthorsProps } from "../../Components/Authors/types"
 import type {IGalleryProps} from "../../Components/Gallery/types"
+import type {IProjectPreviewProps} from "../../Components/ProjectPreview/types"
 
 import ArtRussiaLogo from "../../assets/Icons/ArtRussiaLogo.svg"
 import BeInOpenLogo from "../../assets/Icons/BeInOpenLogo.svg"
@@ -9,6 +10,15 @@ import MarsLogo from "../../assets/Icons/MarsLogo.svg"
 import DesignFabricLogo from "../../assets/Icons/DesignFabricLogo.svg"
 
 export const imagesBasePath = "/Images/GardenCity"
+
+export const previewProps: IProjectPreviewProps = {
+  ImageSrc: `${imagesBasePath}/GardenCity-1440.webp`,
+  ImageSrcSet: `
+    ${imagesBasePath}/GardenCity-900.webp 900w,
+    ${imagesBasePath}/GardenCity-1440.webp 1440w,
+    ${imagesBasePath}/GardenCity-1920.webp 1920w
+  `,
+}
 
 const galleryImagesBasePath = `${imagesBasePath}/Gallery`
 const galleryImagesName = [

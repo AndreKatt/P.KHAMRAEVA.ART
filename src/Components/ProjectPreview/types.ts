@@ -1,10 +1,10 @@
 import type { ReactNode } from "react";
 
-export type IVideoPreviewProps = {
+export type IProjectPreviewProps = {
   ImageSrc: string,
   ImageSrcSet: string,
   Title?: ReactNode,
   Description?: ReactNode,
-  WhithoutPlayButton?: boolean,
-  WhithoutGradient?: boolean,
+  WhithGradient?: boolean,
+  OnClick?: VoidFunction,
 }

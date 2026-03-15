@@ -1,35 +1,29 @@
-import { Authors } from "../../Components/Authors/Authors"
-import {Container} from "../../Components/Container/Container"
-import { Footer } from "../../Components/Footer/Footer"
-import {Gallery} from "../../Components/Gallery/Gallery"
-import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle"
-import {VideoPreview} from "../../Components/VideoPreview/VideoPreview"
+import {Authors} from "../../Components/Authors/Authors.tsx"
+import {Footer} from "../../Components/Footer/Footer.tsx"
+import {Gallery} from "../../Components/Gallery/Gallery.tsx"
+import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle.tsx"
 import {Image} from '../../Components/Image/Image.tsx'
+import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview.tsx"
 import {
   imagesBasePath,
   galleryImages,
   authors,
   footerIcons,
-} from "./constants"
+  previewProps,
+} from "./constants.ts"
 
 import styles from './styles.module.scss'
 
-export const GardenCity = () => {
+export function Component() {
   return (
-    <Container>
-      <ProjectTitle
-        Title='ФИДЖИТАЛ ВЫСТАВКА «ГОРОД САД»'
-        Description='«Город сад: мультивселенные» погружает зрителя в мир ближайшего будущего – в пространство смешанной реальности, где у каждого есть аватары и миры, разнообразие которых ограничено только нашим воображением. Это живой организм — целостная среда, связывающая инсталляции и медиа-арт в единый путь.'
-      />
-      <VideoPreview
-        WhithoutPlayButton
-        ImageSrc={`${imagesBasePath}/GardenCity-1440.webp`}
-        ImageSrcSet={`
-          ${imagesBasePath}/GardenCity-900.webp 900w,
-          ${imagesBasePath}/GardenCity-1440.webp 1440w,
-          ${imagesBasePath}/GardenCity-1920.webp 1920w
-        `}
-      />
+    <>
+      <div className={styles.titleWrapper}>
+        <ProjectTitle
+          Title='ФИДЖИТАЛ ВЫСТАВКА «ГОРОД САД»'
+          Description='«Город сад: мультивселенные» погружает зрителя в мир ближайшего будущего – в пространство смешанной реальности, где у каждого есть аватары и миры, разнообразие которых ограничено только нашим воображением. Это живой организм — целостная среда, связывающая инсталляции и медиа-арт в единый путь.'
+        />
+      </div>
+      <ProjectPreview {...previewProps}/>
 
       <div>
         ИНСТАЛЛЯЦИЯ КОНСТРУКТОР: «ТРАНСФОРМАТОР» и «ГОРКИ»
@@ -62,9 +56,7 @@ export const GardenCity = () => {
             className={styles.descriptionImage}
           />
         </div>
-        <VideoPreview
-          WhithoutPlayButton
-          WhithoutGradient
+        <ProjectPreview
           ImageSrc={`${imagesBasePath}/Installation-1440.webp`}
           ImageSrcSet={`
             ${imagesBasePath}/Installation-900.webp 900w,
@@ -94,6 +86,6 @@ export const GardenCity = () => {
         Items={authors}
       />
       <Footer Icons={footerIcons}/>
-    </Container>
+    </>
   )
 }

@@ -1,0 +1,122 @@
+.headerContainer  {
+  width: 100%;
+  height: var(--header-height);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #E5E5E5;
+  background-color: black;
+  padding: 8px 0;
+  position: fixed;
+  top: 0;
+  user-select: none;
+
+  z-index: 50;
+
+  @media (min-width: 1024px) {
+    justify-content: space-between;
+    padding: 10px 20px 10px 52px;
+  }
+  @media (min-width: 1280px) {
+    padding: 10px 50px 10px 92px;
+  }
+  @media (min-width: 1920px) {
+    padding: 10px 92px 10px 182px;
+  }
+}
+
+.headerTitle {
+  font-family: angst-thin;
+  font-size: var(--header-font-size);
+  font-weight: 300;
+  padding-right: 30px;
+  margin-top: 4px;
+
+  @media (min-width: 1024px) {
+    padding-right: 0;
+  }
+}
+
+.menuButton {
+  position: absolute;
+  right: 8px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.menuIcon {
+  height: 40px;
+  width: 40px;
+}
+
+.headerMenuItem {
+  width: fit-content;
+  font-family: raleway-regular;
+  font-size: 18px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  gap: 6px;
+
+  transition: all 0.15s ease-out;
+
+  cursor: pointer;
+
+  &.blue {
+    color: #4A86FF;
+    border-top: 1px solid #4A86FF;
+    border-bottom: 1px solid #4A86FF;
+  }
+  &:hover {
+    opacity: 0.8;
+  }
+  @media (min-width: 1024px) {
+    font-size: 16px;
+    line-height: 16px;
+  }
+}
+
+.contactsButton {
+  border: none;
+  
+  @media (min-width: 1024px) {
+    border-bottom: 1px solid white;
+  }
+}
+
+.headerMenuContainer {
+  display: flex;
+  flex-direction: inherit;
+  justify-content: space-between;
+  gap: 22px;
+
+  @media (min-width: 1024px) {
+    align-items: center;
+    gap: 16px;
+  }
+  @media (min-width: 1920px) {
+    gap: 52px;
+  }
+}
+
+.drawerMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 42px 58px;
+}
+
+.goToPrevButton {
+  position: absolute;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  left: 8px;
+}
+
+.goToPrevButtonIcon {
+  height: 32px;
+  width: 32px;
+}

@@ -1,12 +1,17 @@
 .titleContainer {
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
   white-space: pre-line;
+  padding-bottom: 18px;
   gap: 14px;
   
   @media (min-width: 1024px) {
+    justify-content: flex-start;
     gap: 18px;
+    padding-bottom: 0;
   }
   @media (min-width: 1280px) {
     gap: 24px;
@@ -18,13 +23,18 @@
 
 .title {
   font-family: raleway-light;
-  font-size: var(--header-font-size);
-  line-height: var(--header-line-height);
+  font-size: 18px;
+  line-height: 18px;
+
+  @media (min-width: 1024px) {
+    font-size: var(--header-font-size);
+    line-height: var(--header-line-height);
+  }
 }
 
 .description {
   font-family: raleway-extraLight;
-  font-size: 14px;
+  font-size: 10px;
 
   @media (min-width: 1280px) {
     font-size: 18px;

@@ -6,6 +6,7 @@ import AttaqueDePaniqueLogo from "../../assets/Icons/AttaqueDePaniqueLogo.svg"
 import ClassicElectricLogo from "../../assets/Icons/ClassicElectricLogo.svg"
 import PlanetariumLogo from "../../assets/Icons/PlanetariumLogo.svg"
 import type { IImageProps } from "../../Components/Image/types.ts"
+import type { IProjectPreviewProps } from "../../Components/ProjectPreview/types.ts"
 
 export const footerIcons = [
   SPBConcertLogo,
@@ -15,6 +16,18 @@ export const footerIcons = [
 ]
 
 export const imagesBasePath = "/Images/EdenIllusion"
+
+export const previewProps: IProjectPreviewProps = {
+  WhithGradient: true,
+  ImageSrc: `${imagesBasePath}/EdenIllusion-1440.webp`,
+  ImageSrcSet: `
+    ${imagesBasePath}/EdenIllusion-900.webp 900w,
+    ${imagesBasePath}/EdenIllusion-1440.webp 1440w,
+    ${imagesBasePath}/EdenIllusion-1920.webp 1920w
+  `,
+  Title: 'EDEN ILLUSION',
+  Description: 'МУЛЬТИМЕДИЙНЫЙ СПЕКТАКЛЬ 360°',
+}
 
 const galleryBasePath = `${imagesBasePath}/Gallery`
 const galleryImagesName = [
