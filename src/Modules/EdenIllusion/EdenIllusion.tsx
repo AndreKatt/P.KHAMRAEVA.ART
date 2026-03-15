@@ -3,7 +3,14 @@ import {Container} from "../../Components/Container/Container.tsx"
 import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
 import {VideoPreview} from "../../Components/VideoPreview/VideoPreview.tsx"
-import {authors, footerIcons, galleryImages, imagesBasePath, videoPreviewImages} from "./constants.ts"
+import {Image} from '../../Components/Image/Image.tsx'
+import {
+  authors,
+  footerIcons,
+  galleryImages,
+  imagesBasePath,
+  videoPreviewImages,
+} from "./constants.ts"
 
 import styles from "./styles.module.scss"
 
@@ -31,7 +38,8 @@ export const EdenIllusion = () => {
 
       <div className={styles.videoPreviewContainer}>
         {videoPreviewImages.map((image, idx) => (
-          <img
+          <Image
+            IsLazy
             key={idx}
             className={styles.videoPreviewImage}
             {...image}

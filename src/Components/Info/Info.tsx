@@ -1,9 +1,10 @@
+import {Image} from '../Image/Image.tsx'
+import {useWindowWidth} from '../../utils/useWindowWidth';
 import Polina_900 from '../../assets/Images/Polina-900.webp';
 import Polina_1440 from '../../assets/Images/Polina-1440.webp';
 import Polina_1920 from '../../assets/Images/Polina-1920.webp';
 
 import styles from "./styles.module.scss"
-import { useWindowWidth } from '../../utils/useWindowWidth';
 
 export const Info = () => {
   const windowSize = useWindowWidth();
@@ -31,15 +32,13 @@ export const Info = () => {
 
 const BackgroundImage = () => {
   return (
-    <img
-      src={Polina_1440}
-      srcSet={`
+    <Image
+      Src={Polina_1440}
+      SrcSet={`
         ${Polina_900} 900w,
         ${Polina_1440} 1440w,
         ${Polina_1920} 1920w
       `}
-      sizes="100vw"
-      loading="eager"
       className={styles.backgroundImage}
     />
   )

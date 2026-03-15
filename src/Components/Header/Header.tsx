@@ -1,24 +1,48 @@
 import classNames from 'classnames'
 import {useRef, useState} from 'react'
 import {Drawer} from '../Drawer/Drawer'
+import {Image} from '../Image/Image.tsx'
 import {useWindowWidth} from '../../utils/useWindowWidth'
 import OpenIcon from '../../assets/Icons/ArrowOpen.svg'
 import MenuIcon from '../../assets/Icons/Menu.svg'
+import MenuCloseIcon from '../../assets/Icons/MenuClose.svg'
 import CopyIcon from '../../assets/Icons/Copy.svg'
 import TelegramIcon from '../../assets/Icons/TelegramLogo.svg'
 import PhoneIcon from '../../assets/Icons/Phone.svg'
 
 import styles from "./styles.module.scss"
 
+const imageBasePath = '/Images/Contacts'
+
 export const Header = () => {
-  const [isOpenContacts, setIsOpenContacts] = useState(false);
+  const [isOpenDrawer, setIsOpenDrawer] = useState(false);
+  const [drawerContent, setDrawerContent] = useState<'menu' | 'contacts'>('contacts');
   const windowWidth = useWindowWidth();
 
-  const $headerItems = windowWidth !== 'small' ? (
+  const isMobile = windowWidth === 'small'
+
+  const onToggleOpenContacts = () => {
+    if (drawerContent !== 'contacts') {
+      setDrawerContent('contacts')
+    }
+    if (isMobile) {
+      return
+    }
+    setIsOpenDrawer(!isOpenDrawer)
+  }
+
+  const onToggleOpenMenu = () => {
+    if (drawerContent !== 'menu') {
+      setDrawerContent('menu')
+    }
+    setIsOpenDrawer(!isOpenDrawer)
+  }
+
+  const $headerItems = (
     <>
       <div className={styles.headerMenuContainer}>
         <div className={styles.headerMenuItem}>
-          БИО
+          ГЛАВНАЯ
         </div>
         <div className={styles.headerMenuItem}>
           ПРОЕКТЫ
@@ -28,24 +52,39 @@ export const Header = () => {
           СИНИЙ КРЕПДЕШИН
         </div>
         <div className={styles.headerMenuItem}>
-          ПУБЛИКАЦИИ
+          БИО
         </div>
       </div>
 
       <div
         className={classNames(styles.headerMenuItem, styles.contactsButton)}
-        onClick={() => setIsOpenContacts(!isOpenContacts)}
+        onClick={onToggleOpenContacts}
       >
         КОНТАКТЫ
       </div>
     </>
-  ) : null
+  );
 
-  const $menuButton = windowWidth === 'small' ? (
-    <div className={styles.menuButton}>
-      <MenuIcon className={styles.menuIcon}/>
+  const $menuButton = isMobile ? (
+    <div
+      className={styles.menuButton}
+      onClick={onToggleOpenMenu}
+    >
+      {isOpenDrawer ? (
+        <MenuCloseIcon className={styles.menuIcon}/>
+      ) : (
+        <MenuIcon className={styles.menuIcon}/>
+      )}
     </div>
   ) : null
+
+  const drawerContent$ = drawerContent === 'menu' ? (
+    <div className={styles.drawerMenu}>
+      {$headerItems}
+    </div>
+  ) : (
+    <Contacts />
+  )
 
   return (
     <>
@@ -54,12 +93,12 @@ export const Header = () => {
           ПОЛИНА ХАМРАЕВА
         </div>
 
-        {$headerItems}
+        {!isMobile ? $headerItems : null}
         {$menuButton}
       </div>
-      {isOpenContacts ? (
+      {isOpenDrawer ? (
         <Drawer>
-          <Contacts />
+          {drawerContent$}
         </Drawer>
       ) : null}
     </>
@@ -85,10 +124,22 @@ const Contacts = () => {
 
   return (
     <div className={styles.contacts}>
-      <div className={styles.contactsAvatar}/>
+      <div className={styles.contactsAvatarWrapper}>
+        <div className={styles.contactsAvatar}>
+          <Image
+            Src={`${imageBasePath}/ContactsPhoto-1440.webp`}
+            SrcSet={`
+              ${imageBasePath}/ContactsPhoto-900.webp 900w,
+              ${imageBasePath}/ContactsPhoto-1440.webp 1440w,
+              ${imageBasePath}/ContactsPhoto-1920.webp 1920w`}
+            Sizes='50wv'
+            className={styles.contactsAvatarImage}
+          />
+        </div>
+      </div>
       <div
         ref={emailRef}
-        className={styles.contactItem}
+        className={classNames(styles.contactItem, styles.first)}
         onClick={onClickEmail}
       >
         <CopyIcon />
@@ -117,7 +168,7 @@ const Contacts = () => {
       </a>
       <a
         href='tel:+79500148784'
-        className={styles.contactItem}
+        className={classNames(styles.contactItem, styles.last)}
       >
         <PhoneIcon />
         <div className={styles.contactText}>

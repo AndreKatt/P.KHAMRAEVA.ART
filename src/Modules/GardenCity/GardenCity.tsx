@@ -4,7 +4,13 @@ import { Footer } from "../../Components/Footer/Footer"
 import {Gallery} from "../../Components/Gallery/Gallery"
 import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle"
 import {VideoPreview} from "../../Components/VideoPreview/VideoPreview"
-import {imagesBasePath, galleryImages, authors, footerIcons} from "./constants"
+import {Image} from '../../Components/Image/Image.tsx'
+import {
+  imagesBasePath,
+  galleryImages,
+  authors,
+  footerIcons,
+} from "./constants"
 
 import styles from './styles.module.scss'
 
@@ -44,15 +50,15 @@ export const GardenCity = () => {
             <br />
             Ключевое свойство «Полихромика» — масштабируемость. Объект может расти от камерного до гигантского, становясь прототипом тотальной свето-цветовой инсталляции. В логике «Города Сада» он работает как линза, фокусирующая тему телесного и цифрового восприятия: если «Живот Сада» предлагает тактильный вход в виртуальность, то «Полихромик» исследует чистую оптику, превращая физику света в инструмент изменения реальности.
           </div>
-          <img
-            src={`${imagesBasePath}/PhotoEllips-1440.webp`}
-            srcSet={`
+          <Image
+            IsLazy
+            Src={`${imagesBasePath}/PhotoEllips-1440.webp`}
+            SrcSet={`
               ${imagesBasePath}/PhotoEllips-900.webp 900w,
               ${imagesBasePath}/PhotoEllips-1440.webp 1440w,
               ${imagesBasePath}/PhotoEllips-1920.webp 1920w
             `}
-            sizes="50vw"
-            loading="lazy"
+            Sizes="50vw"
             className={styles.descriptionImage}
           />
         </div>

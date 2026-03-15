@@ -1,5 +1,6 @@
 import classNames from 'classnames'
 import {ProjectTitle} from '../ProjectTitle/ProjectTitle.tsx'
+import {Image} from '../Image/Image.tsx'
 import PlayIcon from '../../assets/Icons/Play.svg'
 
 import type {FC} from 'react'
@@ -37,11 +38,10 @@ export const VideoPreview: FC<IVideoPreviewProps> = ({
         [styles.gradient]: !WhithoutGradient,
       })}>
         {$playButton}
-        <img
-          src={ImageSrc}
-          srcSet={ImageSrcSet}
-          sizes="100vw"
-          loading="lazy"
+        <Image
+          IsLazy
+          Src={ImageSrc}
+          SrcSet={ImageSrcSet}
           className={styles.imagePreviewHorizontal}
         />
       </div>

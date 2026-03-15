@@ -4,9 +4,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 2px solid #D9D9D9;
+  border-bottom: 1px solid #E5E5E5;
   background-color: black;
-  padding: 10px 0;
+  padding: 8px 0;
   position: fixed;
   top: 0;
   user-select: none;
@@ -39,25 +39,25 @@
 
 .menuButton {
   position: absolute;
-  right: 10px;
-  top: 10px;
-
-  cursor: pointer;
+  right: 8px;
+  top: 8px;
 }
 
 .menuIcon {
-  height: 40px;
-  width: 40px;
+  height: 45px;
+  width: 45px;
 }
 
 .headerMenuItem {
+  width: fit-content;
   font-family: raleway-regular;
   font-size: 18px;
   line-height: 18px;
   display: flex;
   align-items: center;
-  gap: 6px;
   padding: 5px;
+  gap: 6px;
+
   transition: all 0.15s ease-out;
 
   cursor: pointer;
@@ -67,11 +67,9 @@
     border-top: 1px solid #4A86FF;
     border-bottom: 1px solid #4A86FF;
   }
-
   &:hover {
     opacity: 0.8;
   }
-
   @media (min-width: 1024px) {
     font-size: 16px;
     line-height: 16px;
@@ -85,10 +83,14 @@
 
 .headerMenuContainer {
   display: flex;
+  flex-direction: inherit;
   justify-content: space-between;
-  align-items: center;
-  gap: 16px;
+  gap: 22px;
 
+  @media (min-width: 1024px) {
+    align-items: center;
+    gap: 16px;
+  }
   @media (min-width: 1920px) {
     gap: 52px;
   }
@@ -101,27 +103,76 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 42px 37px;
-  gap: 22px
+  padding: 58px 0;
+  
+  @media (min-width: 1024px) {
+    align-items: flex-end;
+    padding: 34px 28px;
+    gap: 22px;
+  }
+}
+
+.contactsAvatarWrapper {
+  width: 100%;
+  margin-bottom: 48px;
+  
+  @media (min-width: 1024px) {
+    margin-bottom: 18px;
+  }
 }
 
 .contactsAvatar {
-  height: 123px;
-  width: 123px;
+  height: 180px;
+  width: 180px;
   border-radius: 100%;
   background-color: #D9D9D9;
+  overflow: hidden;
+  margin: 0 auto;
+
+  @media (min-width: 1024px) {
+    height: 142px;
+    width: 142px;
+  }
+}
+
+.contactsAvatarImage {
+  width: 100%;
+  height: 100%;
 }
 
 .contactItem {
   position: relative;
-  cursor: pointer;
+  width: 100%;
+  font-size: 24px;
   display: flex;
+  justify-content: center;
+  border-bottom: 1px solid #E5E5E5;
+  padding: 20px 0;
   gap: 6px;
+  
   user-select: none;
+  cursor: pointer;
   
   &:hover {
     .contactText {
       opacity: 0.8;
+    }
+  }
+  &.first {
+    border-top: 1px solid #E5E5E5;
+  }
+  &.last {
+    border-bottom: 1px solid #E5E5E5;
+  }
+  @media (min-width: 1024px) {
+    width: fit-content;
+    font-size: 18px;
+    border: none;
+    padding: 0;
+
+    &.first, 
+    &.last {
+      border: none
     }
   }
 }
@@ -131,21 +182,34 @@
 }
 
 .tooltip {
-  font-size: 12px;
-  line-height: 12px;
+  font-size: 16px;
+  line-height: 16px;
   color: black;
-  background-color: white;
+  background-color: #E5E5E5;
   border-radius: 4px;
-  opacity: 0.8;
+  opacity: 1;
   padding: 4px;
 
   position: absolute;
-  right: -24px;
-  top: -24px;
+  right: 12px;
+  top: -18px;
 
   transition: opacity 0.15s ease-out;
 
   &.hidden {
     opacity: 0;
   }
+  @media (min-width: 1024px) {
+    font-size: 12px;
+    line-height: 12px;
+    right: -24px;
+    top: -24px;
+  }
+}
+
+.drawerMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 42px 58px;
 }

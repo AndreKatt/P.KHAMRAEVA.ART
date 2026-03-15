@@ -1,5 +1,6 @@
 import {useState, type FC} from "react"
-import { Preview } from "./Preview/Preview.tsx";
+import {Preview} from "./Preview/Preview.tsx";
+import {Image} from '../Image/Image.tsx'
 
 import type {IGalleryProps, IImage} from "./types.ts"
 
@@ -38,12 +39,10 @@ export const Gallery: FC<IGalleryProps> = ({
             className={styles.galleryImageWrapper}
             onClick={() => setPreviewImage(image)}
           >
-            <img
-              src={image.Src}
-              srcSet={image.SrcSet}
-              sizes="100vw"
-              loading="lazy"
+            <Image
+              IsLazy
               className={styles.galleryImage}
+              {...image}
             />
           </div>
         ))}

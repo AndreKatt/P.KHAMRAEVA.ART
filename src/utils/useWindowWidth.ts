@@ -9,8 +9,6 @@ export const useWindowWidth = (): IWindowWidth | null => {
     const resizeCallback = () => {
       const width = window.innerWidth;
 
-      console.log(width)
-
       if (width < 1024) {
         setWidth('small')
         

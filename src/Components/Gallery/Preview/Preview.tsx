@@ -1,4 +1,5 @@
-import { createPortal } from 'react-dom'
+import {createPortal} from 'react-dom'
+import {Image as ImageComponent} from '../../Image/Image.tsx'
 import classNames from 'classnames'
 import ArrowLeftIcon from '../../../assets/Icons/ArrowLeft.svg'
 import ArrowRightIcon from '../../../assets/Icons/ArrowRight.svg'
@@ -32,12 +33,10 @@ export const Preview: FC<IPreviewProps> = ({
       >
         <ArrowLeftIcon className={styles.previewArrowLeftIcon}/>
       </div>
-      <img
-        src={Image.Src}
-        srcSet={Image.SrcSet}
-        sizes="100vw"
-        loading="lazy"
+      <ImageComponent
+        IsLazy
         className={styles.image}
+        {...Image}
       />
       <div
         onClick={ArrowRight.OnClick}

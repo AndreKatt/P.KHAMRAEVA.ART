@@ -2,8 +2,14 @@ import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Authors} from "../../Components/Authors/Authors.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
 import {VideoPreview} from "../../Components/VideoPreview/VideoPreview.tsx"
-import {authors, footerIcons, galleryImages, imagesBasePath} from "./constants.ts"
 import {Container} from "../../Components/Container/Container.tsx"
+import {Image} from '../../Components/Image/Image.tsx'
+import {
+  authors,
+  footerIcons,
+  galleryImages,
+  imagesBasePath,
+} from "./constants.ts"
 
 import styles from "./styles.module.scss"
 
@@ -30,15 +36,14 @@ export const Metamorphosis = () => {
       </div>
 
       <div className={styles.imagePreviewHorizontalWrapper}>
-        <img
-          src={`${imagesBasePath}/MednyiVsadnik-1440.webp`}
-          srcSet={`
+        <Image
+          IsLazy
+          Src={`${imagesBasePath}/MednyiVsadnik-1440.webp`}
+          SrcSet={`
             ${imagesBasePath}/MednyiVsadnik-900.webp 900w,
             ${imagesBasePath}/MednyiVsadnik-1440.webp 1440w,
             ${imagesBasePath}/MednyiVsadnik-1920.webp 1920w
           `}
-          sizes="100vw"
-          loading="lazy"
           className={styles.imagePreviewHorizontal}
         />
       </div>
