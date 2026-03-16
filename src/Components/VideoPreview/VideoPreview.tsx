@@ -9,6 +9,7 @@ import styles from './styles.module.scss'
 
 export const VideoPreview: FC<IVideoPreviewProps> = ({
   VideoId,
+  IsLazy,
   ...props
 }) => {
   const [isShowVideo, setIsShowVideo] = useState(false);
@@ -26,7 +27,7 @@ export const VideoPreview: FC<IVideoPreviewProps> = ({
         allowFullScreen
         width="100%"
         height="100%"
-        loading='lazy'
+        loading={IsLazy ? 'lazy' : 'eager'}
       >
       </iframe>
     </div>

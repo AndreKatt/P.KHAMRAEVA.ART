@@ -1,5 +1,6 @@
 .projectPreviewContainer {
-  height: calc(100vh - var(--header-height));
+  width: 100wv;
+  height: auto;
   margin-left: calc(0px - var(--padding-x));
   overflow: hidden;
   position: relative;
@@ -23,6 +24,9 @@
       opacity: 0.3;
     }
   }
+  @media (min-width: 1024px) {
+    height: calc(100vh - var(--header-height));
+  }
 }
 
 .projectPreviewTitleWrapper {
@@ -33,6 +37,9 @@
   z-index: 1;
   
   @media (min-width: 1024px) {
+    top: 52px;
+  }
+  @media (min-width: 1280px) {
     top: 80px;
   }
   @media (min-width: 1920px) {
