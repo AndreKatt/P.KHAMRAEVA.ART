@@ -1,6 +1,7 @@
 .projectPreviewContainer {
-  width: 100vw;
+  height: calc(100vh - var(--header-height));
   margin-left: calc(0px - var(--padding-x));
+  overflow: hidden;
   position: relative;
   cursor: pointer;
 
@@ -33,9 +34,6 @@
   
   @media (min-width: 1024px) {
     top: 80px;
-  }
-  @media (min-width: 1280px) {
-    top: 110px;
   }
   @media (min-width: 1920px) {
     top: 130px;

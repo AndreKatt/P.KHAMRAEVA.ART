@@ -17,7 +17,10 @@ export function Component() {
   return (
     <>
       <div>
-        <VideoPreview {...previewProps}/>
+        <VideoPreview
+          VideoId="bCkWuGGuKgiqvBY5b4rXat"
+          {...previewProps}
+        />
 
         <div className={styles.projectDescription}>
           Петербург — город, чей образ неотделим от русской литературы. Наш медиапроект предлагает взглянуть на знакомую архитектуру через призму знаковых текстов Пушкина, Гоголя и Достоевского.

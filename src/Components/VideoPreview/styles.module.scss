@@ -1,6 +1,21 @@
+.videoPreviewContainer {
+  position: relative;
+  display: flex;
+}
+
+.projectPreviewWrapper {
+  opacity: 1;
+  transition: opacity 0.3s ease-out;
+
+  &.hidden {
+    opacity: 0;
+  }
+}
+
 .videoPreviewPlayButton {
   position: absolute;
   cursor: pointer;
+  z-index: 1;
 }
 
 .videoPreviewPlayIcon {
@@ -11,5 +26,19 @@
   }
   @media (min-width: 1280px) {
     width: unset;
+  }
+}
+
+.videoPlayer {
+  width: calc(100% + var(--padding-x));
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  margin-left: calc(0px - var(--padding-x));
+
+  &.hidden {
+    display: none;
   }
 }
