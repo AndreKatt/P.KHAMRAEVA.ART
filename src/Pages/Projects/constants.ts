@@ -1,4 +1,4 @@
-import {previewProps as metamorphosisProps} from "../Metamorphosis/constants";
+import {videoPreviewProps as metamorphosisProps} from "../Metamorphosis/constants";
 import {
   galleryBasePath as edenGalleryPath,
   previewProps as edenPreviewProps,

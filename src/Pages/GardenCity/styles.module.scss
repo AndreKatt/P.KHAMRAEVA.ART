@@ -1,5 +1,9 @@
 .titleWrapper {
   margin-top: 18px;
+
+  @media (min-width: 1024px) {
+    margin-top: var(--header-height);
+  }
 }
 
 .contentContainer {
@@ -52,7 +56,7 @@
 }
 
 .descriptionTextWrapper {
-  width: calc(100% - var(--padding-x));
+  width: 100vw;
 }
 
 .textWithFrame {

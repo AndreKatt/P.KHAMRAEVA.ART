@@ -6,6 +6,7 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import {MainLayout} from './Layouts/Main'
+import { MainPage } from './Pages/Main/Main'
 
 import './index.css'
 
@@ -14,6 +15,10 @@ export const router = createBrowserRouter([
     path: '/',
     element: <MainLayout />,
     children: [
+      {
+        index: true,
+        element: <MainPage />,
+      },
       {
         path: 'projects',
         element: <Outlet />,

@@ -8,7 +8,8 @@ import {
   imagesBasePath,
   footerIcons,
   galleryImages,
-  previewProps,
+  videoPreviewProps,
+  videoId,
 } from "./constants.ts"
 
 import styles from "./styles.module.scss"
@@ -18,8 +19,8 @@ export function Component() {
     <>
       <div>
         <VideoPreview
-          VideoId="bCkWuGGuKgiqvBY5b4rXat"
-          {...previewProps}
+          VideoId={videoId}
+          {...videoPreviewProps}
         />
 
         <div className={styles.projectDescription}>
