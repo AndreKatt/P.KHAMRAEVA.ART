@@ -29,7 +29,7 @@ export const previewProps: IProjectPreviewProps = {
   Description: 'МУЛЬТИМЕДИЙНЫЙ СПЕКТАКЛЬ 360°',
 }
 
-const galleryBasePath = `${imagesBasePath}/Gallery`
+export const galleryBasePath = `${imagesBasePath}/Gallery`
 const galleryImagesName = [
   "Gallery1",
   "Gallery2",

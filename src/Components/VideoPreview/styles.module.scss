@@ -37,8 +37,4 @@
   left: 0;
   display: flex;
   margin-left: calc(0px - var(--padding-x));
-
-  &.hidden {
-    display: none;
-  }
 }

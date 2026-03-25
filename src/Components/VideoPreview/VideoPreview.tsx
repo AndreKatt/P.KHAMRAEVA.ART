@@ -14,11 +14,9 @@ export const VideoPreview: FC<IVideoPreviewProps> = ({
 }) => {
   const [isShowVideo, setIsShowVideo] = useState(false);
 
-  const $video = VideoId ? (
+  const $video = VideoId && isShowVideo ? (
     <div
-      className={classNames(styles.videoPlayer, {
-        [styles.hidden]: !isShowVideo
-      })}
+      className={styles.videoPlayer}
     >
       <iframe
         src={`https://kinescope.io/embed/${VideoId}?autoplay=1&loop=1`}

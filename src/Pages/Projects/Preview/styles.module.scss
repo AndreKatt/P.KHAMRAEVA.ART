@@ -1,0 +1,48 @@
+.projectPreviewWrapper {
+  position: relative;
+  cursor: pointer;
+  border-right: 1px solid #E5E5E5;
+  border-bottom: 1px solid #E5E5E5;
+
+  &::before {
+    content: "";
+    background: radial-gradient(transparent 40%, #000000ae);
+    position: absolute;
+    inset: 0;
+  }
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+
+    transition: opacity 0.3s ease-out;
+  }
+
+  &:hover {
+    &::after {
+      opacity: 0.4;
+    }
+  }
+}
+
+.projectPreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.projectPreviewTitle {
+  --header-font-size: 35px;
+  --header-line-height: 37px;
+
+  position: absolute;
+  top: 0;
+  justify-content: space-between;
+  padding: 24px;
+}

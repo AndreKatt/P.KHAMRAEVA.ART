@@ -1,23 +1,21 @@
 import {Authors} from "../../Components/Authors/Authors"
 import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview"
-import {VideoPreview} from "../../Components/VideoPreview/VideoPreview"
-import {imagesBasePath as path} from "../../Pages/EdenIllusion/constants"
 import {authors, imagesBasePath} from "./constants"
+import {Image} from "../../Components/Image/Image"
 
 import styles from './styles.module.scss'
 
 export function Component() {
   return (
     <>
-      <VideoPreview
-        ImageSrc={`${path}/EdenIllusion-1440.webp`}
-        ImageSrcSet={`
-          ${path}/EdenIllusion-900.webp 900w,
-          ${path}/EdenIllusion-1440.webp 1440w,
-          ${path}/EdenIllusion-1920.webp 1920w
-        `}
-        Title='СИНИЙ КРЕПДЕШИН'
-        Description='ЭКСПЕРИМЕНТАЛЬНЫЙ СПЕКТАКЛЬ-ТРАГИФАРС'
+      <Image
+        Src={`${imagesBasePath}/Cover-1440.webp`}
+        SrcSet={`
+          ${imagesBasePath}/Cover-900.webp 900w,
+          ${imagesBasePath}/Cover-1440.webp 1440w,
+          ${imagesBasePath}/Cover-1920.webp 1920w
+          `}
+        className={styles.coverImage}
       />
 
       <div>

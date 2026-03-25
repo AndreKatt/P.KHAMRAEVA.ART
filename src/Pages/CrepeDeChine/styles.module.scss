@@ -1,3 +1,9 @@
+.coverImage {
+  width: 100vw;
+  margin-left: calc(0px - var(--padding-x));
+  object-fit: contain;
+}
+
 .authorsContainer {
   width: 100%;
   display: flex;
