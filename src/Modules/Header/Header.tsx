@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import { useLocation, useNavigate } from 'react-router'
 import classNames from 'classnames'
 import {Drawer} from '../../Components/Drawer/Drawer.tsx'
 import {useIsMobile} from '../../utils/useIsMobile.ts'
@@ -6,19 +7,19 @@ import {Contacts} from './Contacts/Contacts.tsx'
 import OpenIcon from '../../assets/Icons/ArrowOpen.svg'
 import MenuIcon from '../../assets/Icons/Menu.svg'
 import MenuCloseIcon from '../../assets/Icons/MenuClose.svg'
-
 import ArrowLeftIcon from '../../assets/Icons/ArrowLeft.svg'
 
 import styles from "./styles.module.scss"
-import { useNavigate } from 'react-router'
 
 export const Header = () => {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [drawerContent, setDrawerContent] = useState<'menu' | 'contacts'>('contacts');
   const navigate = useNavigate();
+  const {pathname} = useLocation();
   const isMobile = useIsMobile();
 
-  const isGoToPrevButtonVisible = isMobile && isOpenDrawer && drawerContent === 'contacts'
+  const isMainPage = pathname === '/'
+  const isGoToPrevEnabled = isOpenDrawer ? drawerContent === 'contacts' : !isMainPage
 
   const onCloseDrawer = () => {
     if (isOpenDrawer) {
@@ -36,15 +37,24 @@ export const Header = () => {
     setIsOpenDrawer(!isOpenDrawer)
   }
 
-  const onOpenMenu = () => {
+  const onShowMenu = () => {
     if (drawerContent !== 'menu') {
       setDrawerContent('menu')
     }
   }
 
   const onToggleOpenMenu = () => {
-    onOpenMenu()
+    onShowMenu()
     setIsOpenDrawer(!isOpenDrawer)
+  }
+
+  const onGoPrev = () => {
+    if (drawerContent === 'contacts') {
+      onShowMenu()
+
+      return
+    }
+    navigate(-1)
   }
 
   const $headerItems = (
@@ -119,10 +129,10 @@ export const Header = () => {
     <Contacts />
   )
 
-  const $goToPrevButton = isGoToPrevButtonVisible ? (
+  const $goToPrevButton = isMobile && isGoToPrevEnabled ? (
     <div
       className={styles.goToPrevButton}
-      onClick={onOpenMenu}
+      onClick={onGoPrev}
     >
       <ArrowLeftIcon className={styles.goToPrevButtonIcon}/>
     </div>
