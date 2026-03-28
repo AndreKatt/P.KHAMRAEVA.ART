@@ -1,9 +1,10 @@
 import {useState} from 'react'
-import { useLocation, useNavigate } from 'react-router'
+import { useLocation } from 'react-router'
 import classNames from 'classnames'
 import {Drawer} from '../../Components/Drawer/Drawer.tsx'
 import {useIsMobile} from '../../utils/useIsMobile.ts'
 import {Contacts} from './Contacts/Contacts.tsx'
+import { useNavigateCustom } from '../../utils/useNavigate.ts'
 import OpenIcon from '../../assets/Icons/ArrowOpen.svg'
 import MenuIcon from '../../assets/Icons/Menu.svg'
 import MenuCloseIcon from '../../assets/Icons/MenuClose.svg'
@@ -14,7 +15,7 @@ import styles from "./styles.module.scss"
 export const Header = () => {
   const [isOpenDrawer, setIsOpenDrawer] = useState(false);
   const [drawerContent, setDrawerContent] = useState<'menu' | 'contacts'>('contacts');
-  const navigate = useNavigate();
+  const navigate = useNavigateCustom();
   const {pathname} = useLocation();
   const isMobile = useIsMobile();
 

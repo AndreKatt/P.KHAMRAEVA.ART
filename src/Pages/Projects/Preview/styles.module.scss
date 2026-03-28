@@ -1,7 +1,6 @@
 .projectPreviewWrapper {
   position: relative;
   cursor: pointer;
-  border-right: 1px solid #E5E5E5;
   border-bottom: 1px solid #E5E5E5;
 
   &::before {
@@ -10,7 +9,6 @@
     position: absolute;
     inset: 0;
   }
-
   &::after {
     content: '';
     width: 100%;
@@ -23,11 +21,14 @@
 
     transition: opacity 0.3s ease-out;
   }
-
   &:hover {
     &::after {
       opacity: 0.4;
     }
+  }
+
+  @media (min-width: 1024px) {
+    border-right: 1px solid #E5E5E5;
   }
 }
 

@@ -1,9 +1,9 @@
-import { useNavigate } from "react-router";
 import {Image} from "../../Components/Image/Image";
 import { Gallery } from "../../Components/Gallery/Gallery";
 import { VideoPreview } from "../../Components/VideoPreview/VideoPreview";
 import { galleryItems, videoProps } from "./constants";
 import { useIsMobile } from "../../utils/useIsMobile";
+import { useNavigateCustom } from "../../utils/useNavigate";
 import PolinaImage_900 from "../../assets/Images/PolinaMobile-900.webp"
 import PolinaImage_1440 from "../../assets/Images/Polina-1440.webp"
 import PolinaImage_1920 from "../../assets/Images/Polina-1920.webp"
@@ -12,7 +12,7 @@ import ArrowOpenIcon from "../../assets/Icons/ArrowOpen.svg"
 import styles from "./styles.module.scss"
 
 export const MainPage = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigateCustom()
   const isMobile = useIsMobile()
 
   const $description = isMobile ? <DescriptionMobile /> : <DescriptionDesk />
@@ -51,18 +51,27 @@ export const MainPage = () => {
     </>
   ) : null
 
+  const $image = isMobile ? (
+    <Image
+      Src={PolinaImage_900}
+      className={styles.polinaImage}
+    />
+  ) : (
+    <Image
+      Src={PolinaImage_1440}
+      SrcSet={`
+        ${PolinaImage_900} 900w,
+        ${PolinaImage_1440} 1440w,
+        ${PolinaImage_1920} 1920w,
+      `}
+      className={styles.polinaImage}
+    />
+  )
+
   return (
     <>
       <div className={styles.content}>
-        <Image
-          Src={PolinaImage_1440}
-          SrcSet={`
-            ${PolinaImage_900} 900w,
-            ${PolinaImage_1440} 1440w,
-            ${PolinaImage_1920} 1920w,
-          `}
-          className={styles.polinaImage}
-        />
+        {$image}
         {$description}
       </div>
       {$textMobile}

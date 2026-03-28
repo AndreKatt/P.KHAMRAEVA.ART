@@ -1,6 +1,6 @@
-import { useNavigate } from 'react-router-dom'
 import {Image} from '../../../Components/Image/Image'
 import { ProjectTitle } from '../../../Components/ProjectTitle/ProjectTitle'
+import { useNavigateCustom } from '../../../utils/useNavigate'
 
 import type { FC } from 'react'
 import type { IProjectPreviewProps } from './types'
@@ -14,7 +14,7 @@ export const Preview: FC<IProjectPreviewProps> = ({
   Title,
   Description,
 }) => {
-  const nav = useNavigate();
+  const nav = useNavigateCustom();
 
   const navigate = () => {
     if (!Link) {
