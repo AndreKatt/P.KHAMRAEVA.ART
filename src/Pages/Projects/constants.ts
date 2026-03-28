@@ -5,6 +5,7 @@ import {
 } from "../EdenIllusion/constants";
 import {previewProps as gardenProps} from "../GardenCity/constants";
 import {imagesBasePath as crepeImagesPath} from "../CrepeDeChine/constants";
+import {previewProps as zavistProps} from "../Zavist/constants";
 
 import type { IProjectPreviewProps } from "./Preview/types";
 
@@ -46,15 +47,11 @@ export const previewItems: ReadonlyArray<IProjectPreviewProps> = [
     Description: `ЭКСПЕРИМЕНТАЛЬНЫЙ\nСПЕКТАКЛЬ-ТРАГИФАРС`,
   },
   {
-    Src: '/Images/Zavist/Zavist-1440.webp',
-    SrcSet: `
-      /Images/Zavist/Zavist-900.webp 900w,
-      /Images/Zavist/Zavist-1440.webp 1440w,
-      /Images/Zavist/Zavist-1920.webp 1920w
-    `,
+    Src: zavistProps.ImageSrc,
+    SrcSet: zavistProps.ImageSrcSet,
     Link: 'zavist',
-    Title: 'ZAVIST',
-    Description: `СПЕКТАКЛЬ ПО МАЛЕНЬКОЙ ТРАГЕДИИ\nПУШКИНА «МОЦАРТ И САЛЬЕРИ»`,
+    Title: zavistProps.Title,
+    Description: zavistProps.Description,
   },
   {
     Src: '/Images/Films/Films-1440.webp',

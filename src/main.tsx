@@ -43,6 +43,10 @@ export const router = createBrowserRouter([
             path: 'crepedechine',
             lazy: () => import('./Pages/CrepeDeChine/CrepeDeChine'),
           },
+          {
+            path: 'zavist',
+            lazy: () => import('./Pages/Zavist/Zavist'),
+          },
         ]
       },
     ]
