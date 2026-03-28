@@ -3,6 +3,7 @@ import {Authors} from "../../Components/Authors/Authors.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
 import {Image} from '../../Components/Image/Image.tsx'
 import {VideoPreview} from "../../Components/VideoPreview/VideoPreview.tsx"
+import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth.tsx"
 import {
   authors,
   imagesBasePath,
@@ -31,7 +32,7 @@ export function Component() {
         </div>
       </div>
 
-      <div className={styles.imagePreviewHorizontalWrapper}>
+      <ContainerFullWidth className={styles.imagePreviewHorizontalWrapper}>
         <Image
           IsLazy
           Src={`${imagesBasePath}/MednyiVsadnik-1440.webp`}
@@ -42,7 +43,7 @@ export function Component() {
           `}
           className={styles.imagePreviewHorizontal}
         />
-      </div>
+      </ContainerFullWidth>
       
       <div>
         «Нашей задачей было не просто проиллюстрировать сюжеты, а изменить само восприятие архитектуры. Фасад становится сценой, а здание — главным героем. Самым сложным было уместить эту масштабную историю в 2,5 минуты, не потеряв её глубины».

@@ -23,13 +23,18 @@
   }
 }
 
-.projectPreviewWrapper {
+.videoPreviewWrapper {
   opacity: 1;
   transition: opacity 0.3s ease-out;
 
   &.hidden {
     opacity: 0;
   }
+}
+
+.videoPreview {
+  width: 100%;
+  margin: unset;
 }
 
 .videoPreviewPlayButton {
@@ -50,11 +55,10 @@
 }
 
 .videoPlayer {
-  width: 100vw;
+  width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
   display: flex;
-  margin-left: calc(0px - var(--padding-x));
 }

@@ -1,11 +1,9 @@
 .galleryContainer {
-  width: 100vw;
   height: 205px;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
   overflow-y: hidden;
-  margin-left: calc(0px - var(--padding-x));
   gap: 8px;
   
   scrollbar-width: none;

@@ -1,6 +1,7 @@
 import {useState, type FC} from 'react'
 import classNames from 'classnames'
 import {ProjectPreview} from '../ProjectPreview/ProjectPreview'
+import { ContainerFullWidth } from '../ContainerFullWidth/ContainerFullWidth'
 import PlayIcon from '../../assets/Icons/Play.svg'
 
 import type {IVideoPreviewProps} from './types'
@@ -15,9 +16,7 @@ export const VideoPreview: FC<IVideoPreviewProps> = ({
   const [isShowVideo, setIsShowVideo] = useState(false);
 
   const $video = VideoId && isShowVideo ? (
-    <div
-      className={styles.videoPlayer}
-    >
+    <div className={styles.videoPlayer}>
       <iframe
         src={`https://kinescope.io/embed/${VideoId}?autoplay=1&loop=1`}
         allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
@@ -39,15 +38,16 @@ export const VideoPreview: FC<IVideoPreviewProps> = ({
   }
 
   return (
-    <div className={styles.videoPreviewContainer}>
+    <ContainerFullWidth className={styles.videoPreviewContainer}>
       <div
-        className={classNames(styles.projectPreviewWrapper, {
+        className={classNames(styles.videoPreviewWrapper, {
           [styles.hidden]: isShowVideo
         })}
       >
         <ProjectPreview
           WhithGradient
           OnClick={onShowVideo}
+          className={styles.videoPreview}
           {...props}
         >
           <div className={styles.videoPreviewPlayButton}>
@@ -57,6 +57,6 @@ export const VideoPreview: FC<IVideoPreviewProps> = ({
       </div>
 
       {$video}
-    </div>
+    </ContainerFullWidth>
   )
 }

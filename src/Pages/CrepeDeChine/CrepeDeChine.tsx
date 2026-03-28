@@ -2,21 +2,24 @@ import {Authors} from "../../Components/Authors/Authors"
 import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview"
 import {authors, imagesBasePath} from "./constants"
 import {Image} from "../../Components/Image/Image"
+import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth"
 
 import styles from './styles.module.scss'
 
 export function Component() {
   return (
     <>
-      <Image
-        Src={`${imagesBasePath}/Cover-1440.webp`}
-        SrcSet={`
-          ${imagesBasePath}/Cover-900.webp 900w,
-          ${imagesBasePath}/Cover-1440.webp 1440w,
-          ${imagesBasePath}/Cover-1920.webp 1920w
-          `}
-        className={styles.coverImage}
-      />
+      <ContainerFullWidth>
+        <Image
+          Src={`${imagesBasePath}/Cover-1440.webp`}
+          SrcSet={`
+            ${imagesBasePath}/Cover-900.webp 900w,
+            ${imagesBasePath}/Cover-1440.webp 1440w,
+            ${imagesBasePath}/Cover-1920.webp 1920w
+            `}
+          className={styles.coverImage}
+        />
+      </ContainerFullWidth>
 
       <div>
         «Синий крепдешин» — экспериментальный спектакль трагифарс, исследующий феномен семейной травмы и экзистенциального поиска.
@@ -55,17 +58,6 @@ export function Component() {
         />
         <div className={styles.authorsText}>
           ТЕКСТЫ : ПОЛИНА ХАМРАЕВА, ЕКАТЕРИНА ХАМРАЕВА, ТАТЬЯНА ДРОЗД, ИНГМАР БЕРГМАН, ЛЮДМИЛА&nbsp;ПЕТРУШЕВСКАЯ          
-        </div>
-      </div>
-
-      <div className={styles.footer}>
-        <div>
-          Станьте нашим партнером. Мы ищем  тех, кто готов поддержать спектакль и дать ему новую жизнь на&nbsp;сцене.
-        </div>
-        <div>
-          <div>
-            узнать подробнее о проекте / смотреть фргамент спекталкля
-          </div>
         </div>
       </div>
     </>

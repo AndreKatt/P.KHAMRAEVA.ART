@@ -1,8 +1,6 @@
 .projectsContainer {
-  width: 100vw;
   display: flex;
   flex-direction: column;
-  margin-left: calc(0px - var(--padding-x));
 
   @media (min-width: 1024px) {
     display: grid;

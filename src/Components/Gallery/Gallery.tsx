@@ -1,6 +1,7 @@
 import {useState, type FC} from "react"
 import {Preview} from "./Preview/Preview.tsx";
 import {Image} from '../Image/Image.tsx'
+import { ContainerFullWidth } from "../ContainerFullWidth/ContainerFullWidth.tsx";
 
 import type {IGalleryProps, IImage} from "./types.ts"
 
@@ -30,9 +31,7 @@ export const Gallery: FC<IGalleryProps> = ({
 
   return (
     <>
-      <div
-        className={styles.galleryContainer}
-      >
+      <ContainerFullWidth className={styles.galleryContainer}>
         {Images.map((image) => (
           <div
             key={image.Key}
@@ -46,7 +45,7 @@ export const Gallery: FC<IGalleryProps> = ({
             />
           </div>
         ))}
-      </div>
+      </ContainerFullWidth>
 
       {previewImage && (
         <Preview

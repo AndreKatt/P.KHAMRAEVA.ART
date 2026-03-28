@@ -1,6 +1,7 @@
 import classNames from 'classnames'
 import {ProjectTitle} from '../ProjectTitle/ProjectTitle.tsx'
 import {Image} from '../Image/Image.tsx'
+import {ContainerFullWidth} from '../ContainerFullWidth/ContainerFullWidth.tsx'
 
 import type {FC, PropsWithChildren} from 'react'
 import type {IProjectPreviewProps} from './types.ts'
@@ -15,6 +16,7 @@ export const ProjectPreview: FC<PropsWithChildren<IProjectPreviewProps>> = ({
   WhithGradient,
   OnClick,
   children,
+  className,
 }) => {
   const $title = Title ? (
     <div className={styles.projectPreviewTitleWrapper}>
@@ -26,8 +28,8 @@ export const ProjectPreview: FC<PropsWithChildren<IProjectPreviewProps>> = ({
   ) : null
 
   return (
-    <div
-      className={styles.projectPreviewContainer}
+    <ContainerFullWidth
+      className={classNames(styles.projectPreviewContainer, className)}
       onClick={OnClick}
     >
       {$title}
@@ -41,7 +43,7 @@ export const ProjectPreview: FC<PropsWithChildren<IProjectPreviewProps>> = ({
           SrcSet={ImageSrcSet}
         />
       </div>
-    </div>
+    </ContainerFullWidth>
   )
 }
 
