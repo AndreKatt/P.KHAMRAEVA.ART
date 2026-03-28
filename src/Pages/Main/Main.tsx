@@ -1,18 +1,18 @@
 import {Image} from "../../Components/Image/Image";
 import { Gallery } from "../../Components/Gallery/Gallery";
 import { VideoPreview } from "../../Components/VideoPreview/VideoPreview";
-import { galleryItems, videoProps } from "./constants";
+import { ProjectTitle } from "../../Components/ProjectTitle/ProjectTitle";
+import { ButtonLink } from "./ButtonLink/ButtonLink";
+import { ContainerFullWidth } from "../../Components/ContainerFullWidth/ContainerFullWidth";
+import { creepImageProps, galleryItems, videoProps } from "./constants";
 import { useIsMobile } from "../../utils/useIsMobile";
-import { useNavigateCustom } from "../../utils/useNavigate";
 import PolinaImage_900 from "../../assets/Images/PolinaMobile-900.webp"
 import PolinaImage_1440 from "../../assets/Images/Polina-1440.webp"
 import PolinaImage_1920 from "../../assets/Images/Polina-1920.webp"
-import ArrowOpenIcon from "../../assets/Icons/ArrowOpen.svg"
 
 import styles from "./styles.module.scss"
 
 export const MainPage = () => {
-  const navigate = useNavigateCustom()
   const isMobile = useIsMobile()
 
   const $description = isMobile ? <DescriptionMobile /> : <DescriptionDesk />
@@ -70,10 +70,10 @@ export const MainPage = () => {
 
   return (
     <>
-      <div className={styles.content}>
+      <ContainerFullWidth className={styles.content}>
         {$image}
         {$description}
-      </div>
+      </ContainerFullWidth>
       {$textMobile}
       <div>
         Моя специализация — полный цикл: от концепции и эскиза до реализации в формате спектакля, тотальной инсталляции или выставки.
@@ -88,31 +88,56 @@ export const MainPage = () => {
       </div>
       <Gallery Images={galleryItems} />
 
-      <div
-        className={styles.projectsButtonContainer}
-        onClick={() => navigate('projects')}
-      >
+      <ContainerFullWidth className={styles.projectsButtonContainer}>
         <div className={styles.projectsButtonBorder}/>
-
-        <div className={styles.projectsButtonContent}>
-          <ArrowOpenIcon className={styles.projectsButtonIconLeft}/>
-          <div className={styles.projectsButtonText}>
-            СМОТРЕТЬ ПРОЕКТЫ
-          </div>
-          <ArrowOpenIcon className={styles.projectsButtonIconRight}/>
-        </div>
-
+        <ButtonLink
+          Title="СМОТРЕТЬ ПРОЕКТЫ"
+          Link="projects"
+        />
         <div className={styles.projectsButtonBorder}/>
-      </div>
+      </ContainerFullWidth>
 
       <div>
-        <div className={styles.projectsVideoPreviewBorder}/>
+        <ContainerFullWidth className={styles.projectsVideoPreviewBorder}/>
         <VideoPreview
           {...videoProps}
           Title={!isMobile && videoProps.Title}
         />
-        <div className={styles.projectsVideoPreviewBorder}/>
+        <ContainerFullWidth className={styles.projectsVideoPreviewBorder}/>
       </div>
+      
+      <ProjectTitle Title='Актуальное'/>
+      <ContainerFullWidth>  
+        <div className={styles.creepTitle}>
+          СИНИЙ
+          <br />
+          КРЕПДЕШИН
+        </div>
+        <Image
+          {...creepImageProps}
+        />
+      </ContainerFullWidth>
+
+      <div>
+        «Синий крепдешин» — трагифарс в жанре автофикшн, похожий на причудливый сон. Сквозь шесть новелл спектакль вскрывает феномен семейной травмы и экзицистенциального поиска. Обнаружен парадокс - попытка вырваться из родовых сценариев оборачивается роковым повторением их паттернов.
+        <br />
+        Это художественный эксперимент, где личная история автора обретает универсальное звучание, а пронзительная драма сменяется гротескной клоунадой.
+        <br />
+        <br />
+        Режиссёр Полина Хамраева исследует экзистенциальную пустоту: возможно ли разорвать порочный круг травм, уходящих корнями в прошлое, или они навсегда удерживают личность в своих тенетах?
+      </div>
+
+      <ContainerFullWidth className={styles.creepInfo}>
+        <div>
+          Станьте частью команды Синий Крепдешин! Мы ищем партнеров для премьеры спектакля в Москве и Петербурге.
+          <br />
+          Давайте сделаем этот спектакль вместе — присоединяйтесь!
+        </div>
+        <ButtonLink
+          Title="ПОДРОБНЕЕ О ПРОЕКТЕ"
+          Link="projects/crepedechine"
+        />
+      </ContainerFullWidth>
     </>
   )
 }

@@ -1,0 +1,35 @@
+.projectsButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  gap: 8px;
+  cursor: pointer;
+
+  transition: gap 0.15s ease-out;
+
+  &:hover {
+    gap: 14px;
+
+    .projectsButtonText {
+      opacity: 0.8;
+    }
+  }
+}
+
+.projectsButtonIconLeft {
+  transform: rotate(-90deg);
+}
+.projectsButtonIconRight {
+  transform: rotate(90deg);
+}
+
+.projectsButtonText {
+  font-size: 16px;
+  line-height: 16px;
+  border-bottom: 1px solid white;
+  user-select: none;
+  opacity: 1;
+
+  transition: opacity 0.3s ease-out;
+}
