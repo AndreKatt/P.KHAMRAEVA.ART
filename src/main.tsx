@@ -49,6 +49,10 @@ export const router = createBrowserRouter([
           },
         ]
       },
+      {
+        path: 'bio',
+        lazy: () => import('./Pages/Bio/Bio'),
+      }
     ]
   }
 ])

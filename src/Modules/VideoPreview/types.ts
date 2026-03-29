@@ -1,4 +1,4 @@
-import type { IProjectPreviewProps } from "../ProjectPreview/types";
+import type { IProjectPreviewProps } from "../../Components/ProjectPreview/types";
 
 export type IVideoPreviewProps = IProjectPreviewProps & {
   VideoId?: string;

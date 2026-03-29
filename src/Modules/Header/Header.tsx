@@ -94,7 +94,10 @@ export const Header = () => {
 
         <div
           className={styles.headerMenuItem}
-          // onClick={() => navigate('bio')}
+          onClick={() => {
+            navigate('bio')
+            onCloseDrawer()
+          }}
         >
           БИО
         </div>
