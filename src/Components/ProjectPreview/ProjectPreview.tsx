@@ -15,8 +15,9 @@ export const ProjectPreview: FC<PropsWithChildren<IProjectPreviewProps>> = ({
   Description,
   WhithGradient,
   OnClick,
-  children,
+  ClassNameImage,
   className,
+  children,
 }) => {
   const $title = Title ? (
     <div className={styles.projectPreviewTitleWrapper}>
@@ -41,6 +42,7 @@ export const ProjectPreview: FC<PropsWithChildren<IProjectPreviewProps>> = ({
           IsLazy
           Src={ImageSrc}
           SrcSet={ImageSrcSet}
+          className={ClassNameImage}
         />
       </div>
     </ContainerFullWidth>

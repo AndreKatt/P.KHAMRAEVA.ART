@@ -1,0 +1,17 @@
+.helpInfoItem {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1 1;
+  gap: 18px;
+  
+  @media (min-width: 1024px) {
+    text-align: start;
+    gap: 36px;
+  }
+}
+
+.helpInfoTitle {
+  font-size: var(--header-font-size);
+}

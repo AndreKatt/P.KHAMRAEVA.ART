@@ -1,12 +1,162 @@
-import {Authors} from "../../Components/Authors/Authors"
-import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview"
-import {authors, imagesBasePath} from "./constants"
 import {Image} from "../../Components/Image/Image"
 import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth"
+import {HelpInfoItem} from "./HelpInfoItem/HelpInfoItem"
+import {VideoPreview} from "../../Components/VideoPreview/VideoPreview"
+import { Gallery } from "../../Components/Gallery/Gallery"
+import { Title } from "./Title/Title"
+import { ProjectPreview } from "../../Components/ProjectPreview/ProjectPreview"
+import { AuthorItem } from "./AuthorItem/AuthorItem"
+import { useIsMobile } from "../../utils/useIsMobile"
+import {
+  authorBlockProps,
+  authorItems,
+  authorText,
+  crepeImageProps,
+  endImageProps,
+  endText,
+  galleryImages,
+  guideBlockProps,
+  guideText,
+  helpInfoItems,
+  imagesBasePath,
+  mediaBlockProps,
+  oneActressBlockProps,
+  oneActressText,
+  scenographyBlockProps,
+  videoPreviewAuditoriumProps,
+  videoPreviewProps,
+} from "./constants"
 
 import styles from './styles.module.scss'
 
 export function Component() {
+  const isMobile = useIsMobile();
+
+  const $textInfoBlock = (
+    <ContainerFullWidth className={styles.textInfoBlock}>
+      Спектакль “Синий крепдешин” — это независимый проект,{' '}
+      создаваемый вне государственных институций.{' '}
+      Первый показ в Калуге собрал полный зал 400 человек и доказал,{' '}
+      что эта история нужна зрителям. Сейчас мы готовим новую редакцию спектакля:{' '}
+      обновляем костюмы и декорации и ищем тех, кто поможет запустить спектакль в прокат на большой сцене в Москве и Санкт-Петербурге.
+      <br />
+      <br />
+      Мы ищем поддержку в 3х направлениях:
+      <div className={styles.helpInfoBlock}>
+        {helpInfoItems.map(item => (
+          <HelpInfoItem
+            key={item.Title}
+            {...item}
+          />
+        ))}
+      </div>
+      <ContainerFullWidth className={styles.helpInfoBlockFooter}>
+        <div className={styles.helpInfoBlockFooterButton}>
+          <div className={styles.helpInfoBlockFooterButtonText}>
+            поддержать проект
+          </div>
+        </div>
+        <div className={styles.helpInfoBlockFooterContacts}>
+          задать вопрос и обсудить условия:
+          <div className={styles.helpInfoBlockFooterContactsItem}>
+            +79500148784
+          </div>
+          /
+          <div className={styles.helpInfoBlockFooterContactsItem}>
+            hamhamkham@icloud.com
+          </div>
+        </div>
+      </ContainerFullWidth>
+    </ContainerFullWidth>
+  )
+
+  const $oneActressBlock = isMobile ? (
+    <>
+      <Title Text={oneActressBlockProps.Title}/>
+      <Image
+        Src={oneActressBlockProps.ImageSrc}
+        SrcSet={oneActressBlockProps.ImageSrcSet}
+      />
+      {oneActressText}
+    </>
+  ) : (
+    <div className={styles.blockWrapper}>
+      <ProjectPreview
+        {...oneActressBlockProps}
+        ClassNameImage={styles.oneActressBlockImage}
+      />
+      <div className={styles.blockActorName}>
+        Светлана Никифорова
+      </div>
+    </div>
+  )
+  const $scenographyBlock = isMobile ? (
+    <>
+      <Title Text={scenographyBlockProps.Title}/>
+      <Image
+        Src={scenographyBlockProps.ImageSrc}
+        SrcSet={scenographyBlockProps.ImageSrcSet}
+      />
+      {scenographyBlockProps.Description}
+    </>
+  ) : (
+    <ProjectPreview {...scenographyBlockProps}/>
+  )
+  const $guideBlock = isMobile ? (
+    <>
+      <Title Text={guideBlockProps.Title}/>
+      <Image
+        Src={guideBlockProps.ImageSrc}
+        SrcSet={guideBlockProps.ImageSrcSet}
+      />
+      {guideText}
+    </>
+  ) : (
+    <div className={styles.blockWrapper}>
+      <ProjectPreview
+        {...guideBlockProps}
+        ClassNameImage={styles.guideBlockImage}
+      />
+      <div className={styles.blockActorName}>
+        Александр Казанцев
+      </div>
+    </div>
+  )
+  const $mediaBlock = isMobile ? (
+    <>
+      <Title Text={mediaBlockProps.Title}/>
+      <Image
+        Src={mediaBlockProps.ImageSrc}
+        SrcSet={mediaBlockProps.ImageSrcSet}
+      />
+      {mediaBlockProps.Description}
+    </>
+  ) : (
+    <ProjectPreview {...mediaBlockProps}/>
+  )
+  const $authorBlock = isMobile ? (
+    <>
+      <Title Text={authorBlockProps.Title}/>
+      <Image
+        Src={authorBlockProps.ImageSrc}
+        SrcSet={authorBlockProps.ImageSrcSet}
+      />
+      {authorText}
+    </>
+  ) : (
+    <div className={styles.blockWrapper}>
+      <ProjectPreview
+        {...authorBlockProps}
+        ClassNameImage={styles.authorBlockImage}
+      />
+       <div className={styles.blockActorName}>
+        Полина Хамраева
+        <br />
+        Автор спектакля, Режиссёр-постановщик
+      </div>
+    </div>
+  )
+
   return (
     <>
       <ContainerFullWidth>
@@ -22,44 +172,120 @@ export function Component() {
       </ContainerFullWidth>
 
       <div>
-        «Синий крепдешин» — экспериментальный спектакль трагифарс, исследующий феномен семейной травмы и экзистенциального поиска.
+        «Синий Крепдешин» — экспериментальный спектакль-трагифарс, созданный режиссёром-художником Полиной Хамраевой.
         <br />
         <br />
-        Шесть новелл раскрывают парадокс: попытки вырваться из-под гнета родовых сценариев приводят к роковому повторению их паттернов. Центральный конфликт — борьба социальных масок с глубинным «Я» — воплощён в архетипах рода, которые примеряет на себя героиня.
-      </div>
-
-      <ProjectPreview
-        ImageSrc={`${imagesBasePath}/Photo-1440.webp`}
-        ImageSrcSet={`
-          ${imagesBasePath}/Photo-900.webp 900w,
-          ${imagesBasePath}/Photo-1440.webp 1440w,
-          ${imagesBasePath}/Photo-1920.webp 1920w
-        `}
-      />
-
-      <div>
-        Это художественный эксперимент, где личная история семьи автора обретает универсальность. Спектакль напоминает причудливый сон, где реальность сплетается с метафорой, а драма соседствует с абсурдом. Пронзительные монологи сменяются гротескной клоунадой, а за внешним смехом таится боль. Внезапные сценические метаморфозы усиливают ощущение сна, в котором переплетаются прошлое, настоящее и будущее, а социальные роли обретают гиперболизированные, почти гротескные формы.
+        Это спектакль - исследование феномена семейных травм и экзистенциального поиска. Через шесть новелл раскрывается парадокс: попытки вырваться из-под гнета родовых сценариев приводят к роковому повторению их паттернов. Травмы и одиночество передаются по наследству: от матери к дочери, от дочери к её детям.
         <br />
-        Этот жанровый вихрь становится выражением внутреннего хаоса героини.
-      </div>
-
-      <div>КАРТИНКА</div>
-
-      <div>
-        Завершая повествование, спектакль не предлагает простых ответов, а оставляет зрителя в пространстве глубокого размышления. Трагедия героини ставит перед нами зеркало, отражающее мучительные вопросы: возможно ли преодолеть экзистенциальную пустоту и способен ли кто-то извне её заполнить?
         <br />
-        Есть ли шанс разорвать порочный круг травм, уходящих корнями в прошлое, или же они навсегда держат личность в своих тенетах?
-      </div>
-
-      <div className={styles.authorsContainer}>
-        <Authors
-          ProjectName="Синий крепдешин"
-          Items={authors}
-        />
-        <div className={styles.authorsText}>
-          ТЕКСТЫ : ПОЛИНА ХАМРАЕВА, ЕКАТЕРИНА ХАМРАЕВА, ТАТЬЯНА ДРОЗД, ИНГМАР БЕРГМАН, ЛЮДМИЛА&nbsp;ПЕТРУШЕВСКАЯ          
+        Осмысляя семейную историю не как факт частной жизни, но как социально значимое высказывание, автор интегрирует личную травму в широкий контекст культурного кода. Документальная основа здесь — материал для художественного эксперимента, где реальность переплетается с метафорой.
+        <div className={styles.transparentText}>
+          <br />
+          <br />
+          Длительность : 1 час 30 минут
+          <br />
+          <br />
+          Тексты : Полина Хамраева, Екатерина Хамраева, Татьяна Дрозд, Ингмар Бергман, Людмила Петрушевская
         </div>
       </div>
+      {$textInfoBlock}
+
+      <VideoPreview {...videoPreviewProps}/>
+      <div>
+        Спектакль визуализирует сложную материю подсознания —{' '}
+        где в шкафу плащи с брюками танцуют канкан.{' '}
+        Мужской костюм протянув рукав, застенчиво приглашает на танец.{' '}
+        Руки способны схватить за хвост самолет в котором улетел любимый,{' '}
+        а телефонный звонок телепортирует в черную ночь, где ты ребенком остался один.{' '}
+        Женщина рожает прямо на сцене. Крыса, живущая в шкафу примеряет шляпу и становится чемпионом в американском боксе,{' '}
+        а бабушка в деменции становится все больше похожа на Алису в Стране чудес.
+        <br />
+        <br />
+        Это не сон - это способ вспоминать. Попытка упорядочить хаос травмы.{' '}
+        Облечь невыносимо ужасное чувство в метафору — значит лишить его части власти над собой.
+      </div>
+
+      {$oneActressBlock}
+      {$scenographyBlock}
+      {$guideBlock}
+      {$mediaBlock}
+
+      <Title Text="ТВОРЧЕСКИЙ МЕТОД"/>
+      <div>
+        Спектакль исследует восприятие реальности через призму детского сознания,{' '}
+        где даже самые страшные психологические травмы обретают форму игры —{' '}
+        как если бы ребенок нарисовал свой страх яркими красками, пытаясь сделать его менее пугающим.
+      </div>
+
+      <Gallery Images={galleryImages}/>
+
+      <div>
+        Спектакль напоминает причудливый сон, в котором драма соседствует с абсурдом.{' '}
+        Пронзительные монологи сменяются гротескной клоунадой. а за внешним смехом таится внутренняя боль.
+      </div>
+      
+      <ContainerFullWidth>
+        <Image {...crepeImageProps}/>
+      </ContainerFullWidth>
+
+      <div>
+        Эта попытка заглянуть в бездну внутреннего одиночества с вопросом о том,{' '}
+        возможно ли преодолеть эту экзистенциальную пустоту,{' '}
+        и способен ли кто-то извне ее заполнить и есть ли шанс разорвать порочный круг травм,{' '}
+        уходящих корнями в прошлое, или же они навсегда держат в своих прочных тенетах, предопределяя будущее?
+      </div>
+
+      <VideoPreview
+        {...videoPreviewAuditoriumProps}
+        ClassNameImage={styles.videoPreviewAuditoriumImage}
+      />
+
+      <div className={styles.textBlockBoder}>
+        <Title
+          Text="АКТУАЛЬНОСТЬ"
+          className={styles.textBlockBorderTitle}
+        />
+        Наш зритель — это люди 14–60 лет. Дети и родители.{' '}
+        Те, кто пытается осознать свои страхи и боли. Этот спектакль поможет родственникам понять друг друга.{' '}
+        Увидеть на сцене свою историю и перестать чувствовать себя одинокими.
+        <br />
+        Прожить то, что не прожито, и услышать честный разговор о том, о чем в семьях молчат поколениями.
+        <br />
+        <br />
+        Тема сепарации, семейных травм и повторения родительских сценариев — вечная тема и главный общественный запрос последних лет.
+        <br />
+        Тысячи людей в России и мире приходят в терапию, пытаясь разорвать круг,{' '}
+        в котором оказались не по своей воле. Автофикшен стал самым востребованным жанром.{' '}
+        В момент, когда зрителю нужны поддержка и соучастие, мы предлагаем честные высказывания, созвучные личному опыту каждого.
+        <br />
+        <br />
+        «Синий крепдешин» говорит о боли без жалости к себе, о травме — с юмором, о поиске себя — с надеждой.
+      </div>
+
+      {$authorBlock}
+
+      <ContainerFullWidth className={styles.authorsBlock}>
+        <Title
+          Text="КОМАНДА"
+          className={styles.authorsTitle}
+        />
+        <div className={styles.authorsContainer}>
+          {authorItems.map(author => (
+            <AuthorItem
+              key={author.Name}
+              {...author}
+            />
+          ))}
+        </div>
+      </ContainerFullWidth>
+
+      <ContainerFullWidth className={styles.endContainer}>
+        <Image
+          {...endImageProps}
+          className={styles.endImage}
+        />
+        {endText}
+      </ContainerFullWidth>
     </>
   )
 }

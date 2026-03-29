@@ -38,10 +38,12 @@ export const VideoPreview: FC<IVideoPreviewProps> = ({
   }
 
   return (
-    <ContainerFullWidth className={styles.videoPreviewContainer}>
+    <ContainerFullWidth className={classNames(styles.videoPreviewContainer, {
+      [styles.onPlay]: isShowVideo,
+    })}>
       <div
         className={classNames(styles.videoPreviewWrapper, {
-          [styles.hidden]: isShowVideo
+          [styles.hidden]: isShowVideo,
         })}
       >
         <ProjectPreview

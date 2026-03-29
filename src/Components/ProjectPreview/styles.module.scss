@@ -9,10 +9,12 @@
 }
 
 .projectPreviewTitleWrapper {
-  position: absolute;
+  width: 100%;
   height: 100%;
+  position: absolute;
   top: 18px;
-  left: var(--padding-x);
+  left: 0;
+  padding: 0 var(--padding-x);
   z-index: 1;
   
   @media (min-width: 1024px) {
