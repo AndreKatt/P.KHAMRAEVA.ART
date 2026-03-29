@@ -1,10 +1,10 @@
 import { galleryImages as metamorphosisImages } from "../Metamorphosis/constants";
 import { galleryImages as edenImages } from "../EdenIllusion/constants";
 import { imagesBasePath as gardenImagesPath } from "../GardenCity/constants";
-import { videoPreviewProps, videoId } from "../Metamorphosis/constants";
+import { videoPreviewProps } from "../Metamorphosis/constants";
 
 import type { IGalleryProps } from "../../Components/Gallery/types";
-import type { IVideoPreviewProps } from "../../Components/VideoPreview/types";
+import type { IVideoPreviewProps } from "../../Modules/VideoPreview/types";
 import type { IImageProps } from "../../Components/Image/types";
 
 export const galleryItems: IGalleryProps['Images'] = [
@@ -24,7 +24,7 @@ export const galleryItems: IGalleryProps['Images'] = [
 export const videoProps: IVideoPreviewProps = {
   ImageSrc: videoPreviewProps.ImageSrc,
   ImageSrcSet: videoPreviewProps.ImageSrcSet,
-  VideoId: videoId,
+  VideoId: 'fWjVmSjsmFVrGw7p9UWAxK',
   Title: "ШОУРИЛ",
 }
 

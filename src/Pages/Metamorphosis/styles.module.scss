@@ -4,14 +4,6 @@
   justify-content: center;
 }
 
-.imagePreviewHorizontal {
-  width: calc(100% * 0.8);
-
-  @media (max-width: 1024px) {
-    width: 100%;
-  }
-}
-
 .projectDescription {
   position: relative;
   padding-right: var(--padding-x);

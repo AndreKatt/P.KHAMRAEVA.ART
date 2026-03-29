@@ -1,5 +1,5 @@
 import {ProjectPreview} from '../../Components/ProjectPreview/ProjectPreview'
-import {VideoPreview} from '../../Components/VideoPreview/VideoPreview'
+import {VideoPreview} from '../../Modules/VideoPreview/VideoPreview'
 import {Image} from '../../Components/Image/Image'
 import {ContainerFullWidth} from '../../Components/ContainerFullWidth/ContainerFullWidth'
 import {Authors} from '../../Components/Authors/Authors'

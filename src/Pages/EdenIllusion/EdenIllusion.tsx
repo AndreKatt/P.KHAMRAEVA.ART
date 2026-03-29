@@ -3,14 +3,14 @@ import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
 import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview.tsx"
 import {Image} from '../../Components/Image/Image.tsx'
-import {VideoPreview} from "../../Components/VideoPreview/VideoPreview.tsx"
+import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview.tsx"
 import {
   authors,
   footerIcons,
   galleryImages,
-  imagesBasePath,
   videoPreviewImages,
   previewProps,
+  videoPreviewProps,
 } from "./constants.ts"
 
 import styles from "./styles.module.scss"
@@ -46,14 +46,8 @@ export function Component() {
           Доживем ли мы до будущего, в котором человечество предпочтет укрыться от реальных проблем в цифровом мире, как в убежище? Может ли цифровая иллюзия стать для человека новой средой обитания — в той же степени, что некогда были природа и материальная цивилизация?
         </div>
 
-        <VideoPreview
-          ImageSrc={`${imagesBasePath}/Photo-1440.webp`}
-          ImageSrcSet={`
-            ${imagesBasePath}/Photo-900.webp 900w,
-            ${imagesBasePath}/Photo-1440.webp 1440w,
-            ${imagesBasePath}/Photo-1920.webp 1920w
-          `}
-        />
+        <VideoPreview {...videoPreviewProps}/>
+
         <div className={styles.textContainer}>
           «Eden Illusion» — это художественное высказывание о выборе, стоящем перед человеком сегодня. Спектакль не предлагает готовых ответов, но создает целостный опыт, позволяющий прочувствовать парадокс цифрового рая: его совершенную красоту и глубокую оторванность от действительности. Проект представляет собой новый формат синтеза технологий, классической музыкальной традиции и актуального философского поиска.
         </div>

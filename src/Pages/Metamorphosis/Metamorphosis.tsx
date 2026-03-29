@@ -1,16 +1,13 @@
 import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Authors} from "../../Components/Authors/Authors.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
-import {Image} from '../../Components/Image/Image.tsx'
-import {VideoPreview} from "../../Components/VideoPreview/VideoPreview.tsx"
-import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth.tsx"
+import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview.tsx"
 import {
   authors,
-  imagesBasePath,
   footerIcons,
   galleryImages,
   videoPreviewProps,
-  videoId,
+  videoMednyiPreviewProps,
 } from "./constants.ts"
 
 import styles from "./styles.module.scss"
@@ -19,10 +16,7 @@ export function Component() {
   return (
     <>
       <div>
-        <VideoPreview
-          VideoId={videoId}
-          {...videoPreviewProps}
-        />
+        <VideoPreview {...videoPreviewProps}/>
 
         <div className={styles.projectDescription}>
           Петербург — город, чей образ неотделим от русской литературы. Наш медиапроект предлагает взглянуть на знакомую архитектуру через призму знаковых текстов Пушкина, Гоголя и Достоевского.
@@ -32,18 +26,7 @@ export function Component() {
         </div>
       </div>
 
-      <ContainerFullWidth className={styles.imagePreviewHorizontalWrapper}>
-        <Image
-          IsLazy
-          Src={`${imagesBasePath}/MednyiVsadnik-1440.webp`}
-          SrcSet={`
-            ${imagesBasePath}/MednyiVsadnik-900.webp 900w,
-            ${imagesBasePath}/MednyiVsadnik-1440.webp 1440w,
-            ${imagesBasePath}/MednyiVsadnik-1920.webp 1920w
-          `}
-          className={styles.imagePreviewHorizontal}
-        />
-      </ContainerFullWidth>
+      <VideoPreview {...videoMednyiPreviewProps}/>
       
       <div>
         «Нашей задачей было не просто проиллюстрировать сюжеты, а изменить само восприятие архитектуры. Фасад становится сценой, а здание — главным героем. Самым сложным было уместить эту масштабную историю в 2,5 минуты, не потеряв её глубины».

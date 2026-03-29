@@ -1,6 +1,6 @@
 import {Image} from "../../Components/Image/Image";
 import { Gallery } from "../../Components/Gallery/Gallery";
-import { VideoPreview } from "../../Components/VideoPreview/VideoPreview";
+import { VideoPreview } from "../../Modules/VideoPreview/VideoPreview";
 import { ProjectTitle } from "../../Components/ProjectTitle/ProjectTitle";
 import { ButtonLink } from "./ButtonLink/ButtonLink";
 import { ContainerFullWidth } from "../../Components/ContainerFullWidth/ContainerFullWidth";

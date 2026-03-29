@@ -1,7 +1,7 @@
 import {Image} from "../../Components/Image/Image"
 import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth"
 import {HelpInfoItem} from "./HelpInfoItem/HelpInfoItem"
-import {VideoPreview} from "../../Components/VideoPreview/VideoPreview"
+import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview"
 import { Gallery } from "../../Components/Gallery/Gallery"
 import { Title } from "./Title/Title"
 import { ProjectPreview } from "../../Components/ProjectPreview/ProjectPreview"

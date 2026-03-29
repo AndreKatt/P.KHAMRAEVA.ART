@@ -1,12 +1,13 @@
-import type {IGalleryProps} from "../../Components/Gallery/types.ts"
-import type {IAuthorsProps} from "../../Components/Authors/types.ts"
-
 import SPBConcertLogo from "../../assets/Icons/SPBConcertLogo.svg"
 import AttaqueDePaniqueLogo from "../../assets/Icons/AttaqueDePaniqueLogo.svg"
 import ClassicElectricLogo from "../../assets/Icons/ClassicElectricLogo.svg"
 import PlanetariumLogo from "../../assets/Icons/PlanetariumLogo.svg"
+
+import type {IGalleryProps} from "../../Components/Gallery/types.ts"
+import type {IAuthorsProps} from "../../Components/Authors/types.ts"
 import type { IImageProps } from "../../Components/Image/types.ts"
 import type { IProjectPreviewProps } from "../../Components/ProjectPreview/types.ts"
+import type { IVideoPreviewProps } from "../../Modules/VideoPreview/types.ts"
 
 export const footerIcons = [
   SPBConcertLogo,
@@ -27,6 +28,17 @@ export const previewProps: IProjectPreviewProps = {
   `,
   Title: 'EDEN ILLUSION',
   Description: 'МУЛЬТИМЕДИЙНЫЙ СПЕКТАКЛЬ 360°',
+}
+
+export const videoPreviewProps: IVideoPreviewProps = {
+  WhithGradient: true,
+  ImageSrc: `${imagesBasePath}/Photo-1440.webp`,
+  ImageSrcSet: `
+    ${imagesBasePath}/Photo-900.webp 900w,
+    ${imagesBasePath}/Photo-1440.webp 1440w,
+    ${imagesBasePath}/Photo-1920.webp 1920w
+  `,
+  VideoId:'toErC6LtF9QyEutk19gu7Q',
 }
 
 export const galleryBasePath = `${imagesBasePath}/Gallery`

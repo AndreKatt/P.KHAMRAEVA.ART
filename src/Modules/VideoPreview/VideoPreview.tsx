@@ -1,7 +1,7 @@
 import {useState, type FC} from 'react'
 import classNames from 'classnames'
-import {ProjectPreview} from '../ProjectPreview/ProjectPreview'
-import { ContainerFullWidth } from '../ContainerFullWidth/ContainerFullWidth'
+import {ProjectPreview} from '../../Components/ProjectPreview/ProjectPreview'
+import {ContainerFullWidth} from '../../Components/ContainerFullWidth/ContainerFullWidth'
 import PlayIcon from '../../assets/Icons/Play.svg'
 
 import type {IVideoPreviewProps} from './types'

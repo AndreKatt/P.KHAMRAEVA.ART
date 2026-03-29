@@ -1,12 +1,13 @@
-import type { IGalleryProps } from "../../Components/Gallery/types"
-import type { IImageProps } from "../../Components/Image/types"
-import type { IProjectPreviewProps } from "../../Components/ProjectPreview/types"
-import type { IVideoPreviewProps } from "../../Components/VideoPreview/types"
-import type { IAuthorItemProps } from "./AuthorItem/types"
-import type { IHelpInfoItemProps } from "./HelpInfoItem/types"
+import {Title} from "./Title/Title"
+
+import type {IGalleryProps} from "../../Components/Gallery/types"
+import type {IImageProps} from "../../Components/Image/types"
+import type {IProjectPreviewProps} from "../../Components/ProjectPreview/types"
+import type {IVideoPreviewProps} from "../../Modules/VideoPreview/types"
+import type {IAuthorItemProps} from "./AuthorItem/types"
+import type {IHelpInfoItemProps} from "./HelpInfoItem/types"
 
 import styles from './styles.module.scss'
-import { Title } from "./Title/Title"
 
 export const imagesBasePath = "/Images/CrepeDeChine"
 
@@ -75,6 +76,7 @@ export const videoPreviewProps: IVideoPreviewProps = {
     ${imagesBasePath}/VideoPreview-1440.webp 1440w,
     ${imagesBasePath}/VideoPreview-1920.webp 1920w
   `,
+  VideoId: 'uUwnQThsvarcprHomNff5H',
 }
 
 export const oneActressText = (
@@ -451,6 +453,7 @@ export const videoPreviewAuditoriumProps: IVideoPreviewProps = {
     ${imagesBasePath}/VideoPreviewAuditorium-1440.webp 1440w,
     ${imagesBasePath}/VideoPreviewAuditorium-1920.webp 1920w
   `,
+  VideoId: 'kmXWYFmPCLcWiSfGDp8Gkv',
 }
 
 export const endImageProps: IImageProps = {
