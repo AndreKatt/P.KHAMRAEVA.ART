@@ -1,0 +1,30 @@
+.videoWrapper {
+  position: relative;
+  height: calc(100vw * 0.3);
+}
+
+.videoAriaClickable {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    .videoPlayButton {
+      opacity: 1;
+    }
+  }
+}
+
+.videoPlayButton {
+  transform: rotate(-90deg);
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
+  height: 42px;
+  width: 42px;
+}

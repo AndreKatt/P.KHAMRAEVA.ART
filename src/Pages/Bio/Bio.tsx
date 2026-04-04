@@ -47,12 +47,6 @@ export function Component() {
         </div>
       </div>
       <div className={styles.rightSideContainer}>
-        <div className={styles.contacts}>
-          Контактная информация:
-          <br />
-          <br />
-          +79500148784 /  hamhamkham@gmail.com /  @polina_khamr
-        </div>
         Я создаю проекты на стыке классического искусства и новых медиа.{' '}
         Моя компетенция — полный цикл производства: от сценария{' '}
         и художественной концепции до реализации в формате иммерсивного спектакля,{' '}

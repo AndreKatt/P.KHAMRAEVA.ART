@@ -53,16 +53,3 @@
     padding-bottom: 0;
   }
 }
-
-.contacts {
-  width: 100%;
-  padding: 32px;
-  border: 1px solid #d9d9d977;
-
-  @media (min-width: 1024px) {
-    padding: 28px;
-  }
-  @media (min-width: 1280px) {
-    padding: 48px;
-  }
-}

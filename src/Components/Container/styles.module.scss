@@ -9,9 +9,12 @@
   margin-bottom: 32px;
   margin-top: var(--header-height);
 
+  @media (min-width: 600px) {
+    gap: 72px;
+  }
   @media (min-width: 1024px) {
     margin-bottom: 80px;
-    gap: 72px;
+    gap: 100px;
   }
   @media (min-width: 1920px) {
     gap: 130px;

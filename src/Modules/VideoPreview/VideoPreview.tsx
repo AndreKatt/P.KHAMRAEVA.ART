@@ -2,7 +2,8 @@ import {useState, type FC} from 'react'
 import classNames from 'classnames'
 import {ProjectPreview} from '../../Components/ProjectPreview/ProjectPreview'
 import {ContainerFullWidth} from '../../Components/ContainerFullWidth/ContainerFullWidth'
-import PlayIcon from '../../assets/Icons/Play.svg'
+import {Video} from '../../Components/Video/Video'
+import PlayIcon from '../../assets/Icons/ArrowOpen.svg'
 
 import type {IVideoPreviewProps} from './types'
 
@@ -16,18 +17,10 @@ export const VideoPreview: FC<IVideoPreviewProps> = ({
   const [isShowVideo, setIsShowVideo] = useState(false);
 
   const $video = VideoId && isShowVideo ? (
-    <div className={styles.videoPlayer}>
-      <iframe
-        src={`https://kinescope.io/embed/${VideoId}?autoplay=1&loop=1`}
-        allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
-        frameBorder="0"
-        allowFullScreen
-        width="100%"
-        height="100%"
-        loading={IsLazy ? 'lazy' : 'eager'}
-      >
-      </iframe>
-    </div>
+    <Video
+      VideoId={VideoId}
+      IsLazy={IsLazy}
+    />
   ) : null
 
   const onShowVideo = () => {

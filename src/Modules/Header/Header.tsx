@@ -79,17 +79,16 @@ export const Header = () => {
           }}
         >
           ПРОЕКТЫ
-          <OpenIcon />
         </div>
 
         <div
-          className={classNames(styles.headerMenuItem, styles.blue)}
+          className={styles.headerMenuItem}
           onClick={() => {
             navigate('projects/crepedechine')
             onCloseDrawer()
           }}
         >
-          СИНИЙ КРЕПДЕШИН
+          АКТУАЛЬНОЕ
         </div>
 
         <div
@@ -104,10 +103,15 @@ export const Header = () => {
       </div>
 
       <div
-        className={classNames(styles.headerMenuItem, styles.contactsButton)}
+        className={classNames(styles.headerMenuItem, styles.contactsButtonContainer)}
         onClick={onToggleOpenContacts}
       >
-        КОНТАКТЫ
+        <div
+          className={styles.contactsButton}
+        >
+          КОНТАКТЫ
+        </div>
+        <OpenIcon />
       </div>
     </>
   );

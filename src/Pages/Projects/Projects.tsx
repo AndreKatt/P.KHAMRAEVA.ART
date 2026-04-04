@@ -1,6 +1,6 @@
 import { ContainerFullWidth } from "../../Components/ContainerFullWidth/ContainerFullWidth";
-import { Preview } from "./Preview/Preview";
-import { previewItems } from "./constants";
+import { ProjectItem } from "../../Modules/ProjectItem/ProjectItem";
+import { previewItems } from "./constants.tsx";
 
 import styles from './styles.module.scss'
 
@@ -8,7 +8,7 @@ export function Component() {
   return (
     <ContainerFullWidth className={styles.projectsContainer}>
       {previewItems.map(item => (
-        <Preview
+        <ProjectItem
           key={item.Link}
           {...item}
         />
