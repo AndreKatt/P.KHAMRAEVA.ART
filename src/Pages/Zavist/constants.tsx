@@ -25,7 +25,13 @@ export const previewProps: IProjectPreviewProps = {
     ${imagesBasePath}/Zavist-1920.webp 1920w
   `,
   Title: 'ZAVIST',
-  Description: `СПЕКТАКЛЬ ПО МАЛЕНЬКОЙ ТРАГЕДИИ\nПУШКИНА «МОЦАРТ И САЛЬЕРИ»`,
+  Description: (
+    <>
+      СПЕКТАКЛЬ ПО МАЛЕНЬКОЙ ТРАГЕДИИ
+      <br />
+      ПУШКИНА «МОЦАРТ И САЛЬЕРИ»
+    </>
+  ),
 }
 
 export const videoPreviewProps: IVideoPreviewProps = {

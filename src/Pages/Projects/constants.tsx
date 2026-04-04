@@ -50,7 +50,13 @@ export const crepeItem: IProjectItemProps = {
   `,
   Link: 'crepedechine',
   Title: 'СИНИЙ КРЕПДЕШИН',
-  Description: `ЭКСПЕРИМЕНТАЛЬНЫЙ\nСПЕКТАКЛЬ-ТРАГИФАРС`,
+  Description: (
+    <>
+      ЭКСПЕРИМЕНТАЛЬНЫЙ
+      <br />
+      СПЕКТАКЛЬ-ТРАГИФАРС
+    </>
+  ),
 }
 
 export const previewItems: ReadonlyArray<IProjectItemProps> = [
@@ -73,7 +79,13 @@ export const previewItems: ReadonlyArray<IProjectItemProps> = [
   {
     ...garderItem,
     Title: gardenTitle,
-    Description: `ФИДЖИТАЛ ВЫСТАВКА.\nТОТАЛЬНАЯ ИНСТАЛЛЯЦИЯ`,
+    Description: (
+      <>
+        ФИДЖИТАЛ ВЫСТАВКА.
+        <br />
+        ТОТАЛЬНАЯ ИНСТАЛЛЯЦИЯ
+      </>
+    ),
   },
   crepeItem,
   {
@@ -90,6 +102,12 @@ export const previewItems: ReadonlyArray<IProjectItemProps> = [
     `,
     Link: 'films',
     Title: 'КИНО',
-    Description: `РАБОТЫ ДЛЯ КИНО\nИ КОММЕРЧЕСКИХ ПРОЕКТОВ`,
+    Description: (
+      <>
+        РАБОТЫ ДЛЯ КИНО
+        <br />
+        И КОММЕРЧЕСКИХ ПРОЕКТОВ
+      </>
+    ),
   },
 ]

@@ -8,7 +8,7 @@ import {
   galleryImages,
   videoPreviewProps,
   videoMednyiPreviewProps,
-} from "./constants.ts"
+} from "./constants.tsx"
 
 import styles from "./styles.module.scss"
 

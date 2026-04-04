@@ -53,7 +53,13 @@ export const videoPreviewProps: IVideoPreviewProps = {
     ${imagesBasePath}/StranaSveta-1920.webp 1920w
   `,
   Title: 'МЕТАМОРФОЗЫ ПЕТЕРБУРГСКОГО ДОМА',
-  Description: 'ПОБЕДИТЕЛЬ ВСЕРОССИЙСКОГО МЕДИА-КОНКУРСА\n«СТРАНА СВЕТА 2025». МАППИНГ-ШОУ.',
+  Description: (
+    <>
+      ПОБЕДИТЕЛЬ ВСЕРОССИЙСКОГО МЕДИА-КОНКУРСА
+      <br />
+      «СТРАНА СВЕТА 2025». МАППИНГ-ШОУ.
+    </>
+  ),
   VideoId: 'bCkWuGGuKgiqvBY5b4rXat',
 }
 

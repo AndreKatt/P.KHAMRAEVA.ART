@@ -12,7 +12,7 @@ import {
   imageProps,
   previewProps,
   videoPreviewProps
-} from './constants'
+} from './constants.tsx'
 
 export function Component() {
   return (
