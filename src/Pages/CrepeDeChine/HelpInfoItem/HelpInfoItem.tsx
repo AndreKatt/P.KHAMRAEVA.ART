@@ -1,7 +1,8 @@
+import {Title as TitleComponent} from '../Title/Title'
 import type {FC} from 'react'
+import type {IHelpInfoItemProps} from './types'
 
 import styles from './styles.module.scss'
-import type { IHelpInfoItemProps } from './types'
 
 export const HelpInfoItem: FC<IHelpInfoItemProps> = ({
   Title,
@@ -9,9 +10,10 @@ export const HelpInfoItem: FC<IHelpInfoItemProps> = ({
 }) => {
   return (
     <div className={styles.helpInfoItem}>
-      <div className={styles.helpInfoTitle}>
-        {Title}
-      </div>
+      <TitleComponent
+        Text={Title}
+        className={styles.helpInfoTitle}
+      />
       {Description}
     </div>
   )

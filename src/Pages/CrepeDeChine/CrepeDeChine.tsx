@@ -1,12 +1,15 @@
+import {useState} from "react"
+import classNames from "classnames"
 import {Image} from "../../Components/Image/Image"
 import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth"
 import {HelpInfoItem} from "./HelpInfoItem/HelpInfoItem"
 import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview"
-import { Gallery } from "../../Components/Gallery/Gallery"
-import { Title } from "./Title/Title"
-import { ProjectPreview } from "../../Components/ProjectPreview/ProjectPreview"
-import { AuthorItem } from "./AuthorItem/AuthorItem"
-import { useIsMobile } from "../../utils/useIsMobile"
+import {Gallery} from "../../Components/Gallery/Gallery"
+import {Title} from "./Title/Title"
+import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview"
+import {AuthorItem} from "./AuthorItem/AuthorItem"
+import {ButtonLink} from "../Main/ButtonLink/ButtonLink"
+import {useIsMobile} from "../../utils/useIsMobile"
 import {
   authorBlockProps,
   authorItems,
@@ -31,39 +34,59 @@ import styles from './styles.module.scss'
 
 export function Component() {
   const isMobile = useIsMobile();
+  const [isOpenHelpBlock, setIsOpenHelpBlock] = useState(false)
 
   const $textInfoBlock = (
     <ContainerFullWidth className={styles.textInfoBlock}>
-      Спектакль “Синий крепдешин” — это независимый проект,{' '}
-      создаваемый вне государственных институций.{' '}
-      Первый показ в Калуге собрал полный зал 400 человек и доказал,{' '}
-      что эта история нужна зрителям. Сейчас мы готовим новую редакцию спектакля:{' '}
-      обновляем костюмы и декорации и ищем тех, кто поможет запустить спектакль в прокат на большой сцене в Москве и Санкт-Петербурге.
-      <br />
-      <br />
-      Мы ищем поддержку в 3х направлениях:
-      <div className={styles.helpInfoBlock}>
-        {helpInfoItems.map(item => (
-          <HelpInfoItem
-            key={item.Title}
-            {...item}
-          />
-        ))}
-      </div>
-      <ContainerFullWidth className={styles.helpInfoBlockFooter}>
-        <div className={styles.helpInfoBlockFooterButton}>
-          <div className={styles.helpInfoBlockFooterButtonText}>
-            поддержать проект
-          </div>
+      <Title
+        Text='ВАЖНОЕ СООБЩЕНИЕ'
+        className={styles.textInfoTitle}
+      />
+      Спектакль “Синий крепдешин” — это&nbsp;независимый проект,{' '}
+      создаваемый вне&nbsp;государственных институций.{' '}
+      Первый показ в&nbsp;Калуге собрал полный зал 400&nbsp;человек и&nbsp;доказал,{' '}
+      что эта&nbsp;история нужна зрителям. Сейчас мы готовим новую редакцию спектакля:{' '}
+      обновляем костюмы и&nbsp;декорации и&nbsp;ищем тех,{' '}
+      кто поможет запустить спектакль в&nbsp;прокат на&nbsp;большой сцене в&nbsp;Москве и&nbsp;Санкт-Петербурге.
+      <ContainerFullWidth className={styles.helpInfoContainer}>
+        <ButtonLink
+          Title="МЫ ИЩЕМ ПОДДЕРЖКУ"
+          IconClassName={classNames(styles.helpInfoButtonIcon, {
+            [styles.open]: isOpenHelpBlock
+          })}
+          OnClick={() => setIsOpenHelpBlock(!isOpenHelpBlock)}
+        />
+      </ContainerFullWidth>
+      <ContainerFullWidth
+        className={classNames(styles.helpInfoBlockFooter, {
+          [styles.hidden]: !isOpenHelpBlock
+        })}
+      >
+        <div className={styles.helpInfoBlock}>
+          {helpInfoItems.map(item => (
+            <HelpInfoItem
+              key={item.Title}
+              {...item}
+            />
+          ))}
         </div>
-        <div className={styles.helpInfoBlockFooterContacts}>
-          задать вопрос и обсудить условия:
-          <div className={styles.helpInfoBlockFooterContactsItem}>
-            +79500148784
+        <div className={styles.helpInfoFooter}>
+          <div className={styles.helpInfoBlockFooterButton}>
+            <div className={styles.helpInfoBlockFooterButtonText}>
+              ПОДДЕРЖАТЬ ПРОЕКТ
+            </div>
           </div>
-          /
-          <div className={styles.helpInfoBlockFooterContactsItem}>
-            hamhamkham@icloud.com
+          <div className={styles.helpInfoBlockFooterContacts}>
+            Задать вопрос и&nbsp;обсудить условия:
+            <div className={styles.helpInfoBlockFooterContactsItems}>
+              <div className={styles.helpInfoBlockFooterContactsItem}>
+                +79500148784
+              </div>
+              /
+              <div className={styles.helpInfoBlockFooterContactsItem}>
+                hamhamkham@icloud.com
+              </div>
+            </div>
           </div>
         </div>
       </ContainerFullWidth>

@@ -9,24 +9,16 @@
   transition: gap 0.15s ease-out;
 
   &:hover {
-    gap: 14px;
-
     .projectsButtonText {
       opacity: 0.8;
     }
   }
 }
 
-.projectsButtonIconLeft {
-  transform: rotate(-90deg);
-}
-.projectsButtonIconRight {
-  transform: rotate(90deg);
-}
-
 .projectsButtonText {
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  line-height: 16px;
+  line-height: 18px;
   border-bottom: 1px solid white;
   user-select: none;
   opacity: 1;

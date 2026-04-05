@@ -13,9 +13,13 @@
 
 .projectsContainerFirstRow {
   display: grid;
-  grid-template-columns: 2fr 3fr;
-  gap: 12px;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
   
+  @media (min-width: 600px) {
+    grid-template-columns: 2fr 3fr;
+    gap: 12px;
+  }
   @media (min-width: 1024px) {
     gap: 56px;
     padding-left: 24px;
@@ -27,9 +31,13 @@
 
 .projectsContainerSecondRow {
   display: grid;
-  grid-template-columns: 5fr 4fr;
-  gap: 12px;
-  
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+
+  @media (min-width: 600px) {
+    grid-template-columns: 5fr 4fr;
+    gap: 12px;
+  }
   @media (min-width: 1024px) {
     grid-template-columns: 2fr 1fr;
     gap: 38px;
@@ -41,7 +49,7 @@
 }
 
 .projectImage {
-  height: 130px;
+  height: 160px;
 
   @media (min-width: 600px) {
     height: 180px;
