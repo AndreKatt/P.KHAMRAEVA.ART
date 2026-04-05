@@ -4,13 +4,15 @@ import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerF
 import {Video} from "../../Components/Video/Video";
 import OpenIcon from '../../assets/Icons/ArrowOpen.svg'
 
-import type {IVideoProps} from "../../Components/Video/types";
+import type {IVideoBackgroundProps} from "./types";
 
 import styles from "./styles.module.scss"
 
-export const VideoBackground: FC<IVideoProps & {className?: string}> = ({
+export const VideoBackground: FC<IVideoBackgroundProps> = ({
+  VideoId,
+  BackgroundId,
+  IsLazy,
   className,
-  ...props
 }) => {
   const [isBackGroundVideo, setIsBackGroundVideo] = useState(true);
 
@@ -29,7 +31,8 @@ export const VideoBackground: FC<IVideoProps & {className?: string}> = ({
     >
       <Video
         IsBackground={isBackGroundVideo}
-        {...props}
+        VideoId={isBackGroundVideo ? BackgroundId || VideoId : VideoId}
+        IsLazy={IsLazy}
       />
       {$videoAriaClickable}
     </ContainerFullWidth>

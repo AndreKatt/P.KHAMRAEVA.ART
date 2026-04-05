@@ -12,11 +12,12 @@ import {
 import {videoPreviewAuditoriumProps} from "../CrepeDeChine/constants";
 
 import type { IProjectItemProps } from "../../Modules/ProjectItem/types";
-import type { IVideoProps } from "../../Components/Video/types";
 import type { IVideoPreviewProps } from "../../Modules/VideoPreview/types";
+import type { IVideoBackgroundProps } from "../../Modules/VideoBackground/types";
 
-export const videoProps: IVideoProps = {
-  VideoId: 'iUN14JzuvpGN8mQVLpauzh',
+export const videoProps: IVideoBackgroundProps = {
+  VideoId: 'fWjVmSjsmFVrGw7p9UWAxK',
+  BackgroundId: 'iUN14JzuvpGN8mQVLpauzh',
 }
 
 export const projectItemsFirstRow: ReadonlyArray<IProjectItemProps> = [
