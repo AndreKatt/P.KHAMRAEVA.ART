@@ -6,13 +6,23 @@ import {
 import {previewProps as gardenProps} from "../GardenCity/constants";
 import {imagesBasePath as crepeImagesPath} from "../CrepeDeChine/constants";
 import {previewProps as zavistProps} from "../Zavist/constants";
+import {routes} from "../../assets";
 
 import type { IProjectItemProps } from "../../Modules/ProjectItem/types";
+
+const {
+  METAMORPHOSIS,
+  EDEN,
+  GARDEN,
+  ZAVIST,
+  CREPE_DE_CHINE,
+  FILMS,
+} = routes
 
 export const metamorphosisItem: IProjectItemProps = {
   Src: metamorphosisProps.ImageSrc,
   SrcSet: metamorphosisProps.ImageSrcSet,
-  Link: 'metamorphosis',
+  Link: METAMORPHOSIS,
 };
 export const metamorphosisTitle = metamorphosisProps.Title
 
@@ -23,21 +33,21 @@ export const edenItem: IProjectItemProps = {
     ${edenGalleryPath}/Gallery2-1440.webp 1440w,
     ${edenGalleryPath}/Gallery2-1920.webp 1920w
   `,
-  Link: 'eden',
+  Link: EDEN,
 };
 export const edenTitle = edenPreviewProps.Title
 
 export const garderItem: IProjectItemProps = {
   Src: gardenProps.ImageSrc,
   SrcSet: gardenProps.ImageSrcSet,
-  Link: 'garden',
+  Link: GARDEN,
 }
 export const gardenTitle = 'ГОРОД САД: МУЛЬТИВСЕЛЕННЫЕ'
 
 export const zavistItem: IProjectItemProps = {
   Src: zavistProps.ImageSrc,
   SrcSet: zavistProps.ImageSrcSet,
-  Link: 'zavist',
+  Link: ZAVIST,
 }
 export const zavistTitle = zavistProps.Title
 
@@ -48,7 +58,7 @@ export const crepeItem: IProjectItemProps = {
     ${crepeImagesPath}/CrepeDeChine-1440.webp 1440w,
     ${crepeImagesPath}/CrepeDeChine-1920.webp 1920w
   `,
-  Link: 'crepedechine',
+  Link: CREPE_DE_CHINE,
   Title: 'СИНИЙ КРЕПДЕШИН',
   Description: (
     <>
@@ -100,7 +110,7 @@ export const previewItems: ReadonlyArray<IProjectItemProps> = [
       /Images/Films/Films-1440.webp 1440w,
       /Images/Films/Films-1920.webp 1920w
     `,
-    Link: 'films',
+    Link: FILMS,
     Title: 'КИНО',
     Description: (
       <>

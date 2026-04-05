@@ -6,13 +6,26 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 import {MainLayout} from './Layouts/Main'
-import { MainPage } from './Pages/Main/Main'
+import {MainPage} from './Pages/Main/Main'
+import {routes} from './assets'
 
 import './index.css'
 
+const {
+  MAIN,
+  PROJECTS,
+  METAMORPHOSIS,
+  EDEN,
+  GARDEN,
+  CREPE_DE_CHINE,
+  ZAVIST,
+  FILMS,
+  BIO,
+} = routes
+
 export const router = createBrowserRouter([
   {
-    path: '/',
+    path: MAIN,
     element: <MainLayout />,
     children: [
       {
@@ -20,7 +33,7 @@ export const router = createBrowserRouter([
         element: <MainPage />,
       },
       {
-        path: 'projects',
+        path: PROJECTS,
         element: <Outlet />,
         children: [
           {
@@ -28,29 +41,33 @@ export const router = createBrowserRouter([
             lazy: () => import('./Pages/Projects/Projects'),
           },
           {
-            path: 'metamorphosis',
+            path: METAMORPHOSIS,
             lazy: () => import('./Pages/Metamorphosis/Metamorphosis'),
           },
           {
-            path: 'eden',
+            path: EDEN,
             lazy: () => import('./Pages/EdenIllusion/EdenIllusion'),
           },
           {
-            path: 'garden',
+            path: GARDEN,
             lazy: () => import('./Pages/GardenCity/GardenCity'),
           },
           {
-            path: 'crepedechine',
+            path: CREPE_DE_CHINE,
             lazy: () => import('./Pages/CrepeDeChine/CrepeDeChine'),
           },
           {
-            path: 'zavist',
+            path: ZAVIST,
             lazy: () => import('./Pages/Zavist/Zavist'),
+          },
+          {
+            path: FILMS,
+            element: <>СТРАНИЦА В РАЗРАБОТКЕ</>,
           },
         ]
       },
       {
-        path: 'bio',
+        path: BIO,
         lazy: () => import('./Pages/Bio/Bio'),
       }
     ]
