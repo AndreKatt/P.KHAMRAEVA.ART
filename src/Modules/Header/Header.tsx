@@ -29,6 +29,7 @@ export const Header = () => {
 
   const isMainPage = pathname === '/'
   const isGoToPrevEnabled = isOpenDrawer ? drawerContent === 'contacts' : !isMainPage
+  const isOpenContacts = isOpenDrawer && drawerContent === 'contacts'
 
   const onCloseDrawer = () => {
     if (isOpenDrawer) {
@@ -122,7 +123,7 @@ export const Header = () => {
         className={classNames(
           styles.headerMenuItem,
           styles.contactsButtonContainer,
-          {[styles.active]: isOpenDrawer}
+          {[styles.active]: isOpenContacts}
         )}
         onClick={onToggleOpenContacts}
       >
@@ -131,7 +132,7 @@ export const Header = () => {
         </div>
         <OpenIcon
           className={classNames(styles.contactsIcon, {
-            [styles.open]: isOpenDrawer
+            [styles.open]: isOpenContacts
           })}
         />
       </div>
