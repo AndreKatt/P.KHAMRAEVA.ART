@@ -58,15 +58,15 @@
   display: flex;
   align-items: center;
   padding: 5px;
-  gap: 6px;
   opacity: 0.5;
 
   transition: all 0.15s ease-out;
 
   cursor: pointer;
 
+  &.active,
   &:hover {
-    opacity: 0.9;
+    opacity: 1;
   }
   @media (min-width: 1024px) {
     font-size: 16px;
@@ -76,6 +76,7 @@
 
 .contactsButtonContainer {
   display: flex;
+  gap: 8px;
 }
 
 .contactsButton {
@@ -83,6 +84,15 @@
   
   @media (min-width: 1024px) {
     border-bottom: 1px solid white;
+  }
+}
+
+.contactsIcon {
+  transform: rotate(-90deg);
+  transition: transform 0.2s ease-out;
+  
+  &.open {
+    transform: rotate(0deg);
   }
 }
 

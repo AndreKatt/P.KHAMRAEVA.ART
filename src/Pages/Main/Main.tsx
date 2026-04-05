@@ -2,6 +2,9 @@ import classNames from "classnames";
 import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth";
 import {ProjectItem} from "../../Modules/ProjectItem/ProjectItem";
 import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview";
+import {VideoBackground} from "../../Modules/VideoBackground/VideoBackground";
+import {useNavigateCustom} from "../../utils/useNavigate";
+import {routes} from "../../assets";
 import {
   projectItemsFirstRow,
   projectItemsSecondRow,
@@ -10,8 +13,6 @@ import {
 } from "./constants";
 
 import styles from "./styles.module.scss"
-import { VideoBackground } from "../../Modules/VideoBackground/VideoBackground";
-import { useNavigateCustom } from "../../utils/useNavigate";
 
 export const MainPage = () => {
   const navigate = useNavigateCustom()
@@ -79,7 +80,7 @@ export const MainPage = () => {
       
       <div className={styles.buttonWrapper}>
         <div
-          onClick={() => navigate('projects/crepeDeChine')}
+          onClick={() => navigate(routes.CREPE_DE_CHINE)}
           className={styles.button}
         >
           <div className={styles.buttonText}>

@@ -18,7 +18,7 @@ export const footerIcons = [
 
 export const authors: IAuthorsProps["Items"] = [
   {
-    Role: "РЕЖИССЁР И ХУДОЖНИК ПОСТАНОВЩИК",
+    Role: "РЕЖИССЁР И ХУДОЖНИК",
     Name: "ПОЛИНА ХАМРАЕВА",
   },
   {

@@ -601,27 +601,6 @@ export const authorItems: ReadonlyArray<IAuthorItemProps> = [
     `,
   },
   {
-    Name: 'Евгений Роднянский',
-    Profession: 'Звукорежиссер / Композитор',
-    Description: (
-      <>
-        Работает над созданием композиций
-        <br />
-        для спектаклей, фестивалей, рекламы.
-        <br />
-        Автор музыкального проекта Grenz
-        <br />
-        и участник группы  Vodoley GT.
-      </>
-    ),
-    Src: `${authorsImagesBasePath}/Jenya-1440.webp`,
-    SrcSet: `
-      ${authorsImagesBasePath}/Jenya-900.webp 900w,
-      ${authorsImagesBasePath}/Jenya-1440.webp 1440w,
-      ${authorsImagesBasePath}/Jenya-1920.webp 1920w
-    `,
-  },
-  {
     Name: 'Ильяс Индралиев',
     Profession: 'Музыкальный продюсер / композитор',
     Description: (

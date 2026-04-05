@@ -4,7 +4,8 @@ import classNames from 'classnames'
 import {Drawer} from '../../Components/Drawer/Drawer.tsx'
 import {useIsMobile} from '../../utils/useIsMobile.ts'
 import {Contacts} from './Contacts/Contacts.tsx'
-import { useNavigateCustom } from '../../utils/useNavigate.ts'
+import {useNavigateCustom} from '../../utils/useNavigate.ts'
+import {routes} from '../../assets.ts'
 import OpenIcon from '../../assets/Icons/ArrowOpen.svg'
 import MenuIcon from '../../assets/Icons/Menu.svg'
 import MenuCloseIcon from '../../assets/Icons/MenuClose.svg'
@@ -18,6 +19,13 @@ export const Header = () => {
   const navigate = useNavigateCustom();
   const {pathname} = useLocation();
   const isMobile = useIsMobile();
+
+  const {
+    MAIN,
+    PROJECTS,
+    CREPE_DE_CHINE,
+    BIO,
+  } = routes
 
   const isMainPage = pathname === '/'
   const isGoToPrevEnabled = isOpenDrawer ? drawerContent === 'contacts' : !isMainPage
@@ -62,9 +70,11 @@ export const Header = () => {
     <>
       <div className={styles.headerMenuContainer}>
         <div
-          className={styles.headerMenuItem}
+          className={classNames(styles.headerMenuItem, {
+            [styles.active]: isMainPage
+          })}
           onClick={() => {
-            navigate('/')
+            navigate(MAIN)
             onCloseDrawer()
           }}
         >
@@ -72,9 +82,11 @@ export const Header = () => {
         </div>
 
         <div
-          className={styles.headerMenuItem}
+          className={classNames(styles.headerMenuItem, {
+            [styles.active]: pathname === `/${PROJECTS}`
+          })}
           onClick={() => {
-            navigate('projects')
+            navigate(PROJECTS)
             onCloseDrawer()
           }}
         >
@@ -82,9 +94,11 @@ export const Header = () => {
         </div>
 
         <div
-          className={styles.headerMenuItem}
+          className={classNames(styles.headerMenuItem, {
+            [styles.active]: pathname.includes(CREPE_DE_CHINE)
+          })}
           onClick={() => {
-            navigate('projects/crepedechine')
+            navigate(CREPE_DE_CHINE)
             onCloseDrawer()
           }}
         >
@@ -92,9 +106,11 @@ export const Header = () => {
         </div>
 
         <div
-          className={styles.headerMenuItem}
+          className={classNames(styles.headerMenuItem, {
+            [styles.active]: pathname.includes(BIO)
+          })}
           onClick={() => {
-            navigate('bio')
+            navigate(BIO)
             onCloseDrawer()
           }}
         >
@@ -103,15 +119,21 @@ export const Header = () => {
       </div>
 
       <div
-        className={classNames(styles.headerMenuItem, styles.contactsButtonContainer)}
+        className={classNames(
+          styles.headerMenuItem,
+          styles.contactsButtonContainer,
+          {[styles.active]: isOpenDrawer}
+        )}
         onClick={onToggleOpenContacts}
       >
-        <div
-          className={styles.contactsButton}
-        >
+        <div className={styles.contactsButton}>
           КОНТАКТЫ
         </div>
-        <OpenIcon />
+        <OpenIcon
+          className={classNames(styles.contactsIcon, {
+            [styles.open]: isOpenDrawer
+          })}
+        />
       </div>
     </>
   );

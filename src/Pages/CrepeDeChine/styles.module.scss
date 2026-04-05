@@ -269,8 +269,13 @@
 
 .authorsContainer {
   width: 100%;
-  
-  @media (min-width: 1024px) {
+
+  @media (min-width: 600px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 32px;
+  }
+  @media (min-width: 1280px) {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
   }

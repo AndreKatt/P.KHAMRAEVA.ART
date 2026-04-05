@@ -1,8 +1,9 @@
-import type { FC } from "react"
+import {useNavigateCustom} from "../../../utils/useNavigate"
 import ArrowOpenIcon from "../../../assets/Icons/ArrowOpen.svg"
 
+import type {FC} from "react"
+
 import styles from "./styles.module.scss"
-import { useNavigateCustom } from "../../../utils/useNavigate"
 
 export const ButtonLink: FC<{
   Title: string,
