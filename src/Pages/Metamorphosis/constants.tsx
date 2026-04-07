@@ -18,11 +18,11 @@ export const footerIcons = [
 
 export const authors: IAuthorsProps["Items"] = [
   {
-    Role: "РЕЖИССЁР И ХУДОЖНИК",
+    Role: "РЕЖИССЁР-ХУДОЖНИК",
     Name: "ПОЛИНА ХАМРАЕВА",
   },
   {
-    Role: "ВИДЕО ХУДОЖНИК",
+    Role: "МЕДИА ХУДОЖНИК",
     Name: "ИГОРЬ ДОМАШКЕВИЧ",
   },
   {

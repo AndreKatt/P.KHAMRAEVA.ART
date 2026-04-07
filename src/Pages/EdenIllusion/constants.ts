@@ -82,16 +82,16 @@ export const videoPreviewImages: ReadonlyArray<IImageProps> = videoPreviewName.m
 
 export const authors: IAuthorsProps["Items"] = [
   {
-    Role: "ХУДОЖНИК",
+    Role: "РЕЖИССЁР-ХУДОЖНИК",
     Name: "ПОЛИНА ХАМРАЕВА",
   },
   {
-    Role: "РЕЖИССЁР / АРТ-ДИРЕКТОР",
-    Name: "ПОЛИНА ХАМРАЕВА",
+    Role: "МЕДИА ХУДОЖНИК",
+    Name: "ДАНИИЛ ЗВЯГИНЦЕВ",
   },
   {
-    Role: "МЕДИА ХУДОЖНИКИ",
-    Name: "ДАНИИЛ ЗВЯГИНЦЕВ И ПАВЕЛ РОБЕРТ",
+    Role: "МЕДИА ХУДОЖНИК",
+    Name: "ПАВЕЛ РОБЕРТ",
   },
   {
     Role: "ПРОДЮСЕР",
@@ -102,7 +102,19 @@ export const authors: IAuthorsProps["Items"] = [
     Name: "ЛЕПРА И АТАКДЕПАНИК",
   },
   {
-    Role: "ГЕНЕРАЛЬНЫЙ ПРТНЕР",
+    Role: "КОМПОЗИТОР",
+    Name: "ВАЛЕРИЯ ФИНКИШТЕЙН",
+  },
+  {
+    Role: "КОМПОЗИТОР",
+    Name: "АРТЁМ ПИТАЙКИН",
+  },
+  {
+    Role: "КОМПОЗИТОР",
+    Name: "ВЛАДИСЛАВ ГРИГОРЬЕВ",
+  },
+  {
+    Role: "ГЕНЕРАЛЬНЫЙ ПАРТНЕР",
     Name: "ПЛАНЕТАРИЙ 1",
   },
 ]
