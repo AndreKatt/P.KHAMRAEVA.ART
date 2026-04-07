@@ -95,12 +95,12 @@ export function Component() {
 
   const $oneActressBlock = isMobile ? (
     <>
+      <Title Text={oneActressBlockProps.Title}/>
       <Image
         Src={oneActressBlockProps.ImageSrc}
         SrcSet={oneActressBlockProps.ImageSrcSet}
         className={styles.blockImage}
       />
-      <Title Text={oneActressBlockProps.Title}/>
       {oneActressText}
     </>
   ) : (
@@ -218,7 +218,6 @@ export function Component() {
           Тексты : Полина Хамраева, Екатерина Хамраева, Татьяна Дрозд, Ингмар Бергман, Людмила Петрушевская
         </div>
       </div>
-      {$textInfoBlock}
 
       <VideoPreview {...videoPreviewProps}/>
       <div>
@@ -291,6 +290,8 @@ export function Component() {
         <br />
         «Синий крепдешин» говорит о боли без жалости к себе, о травме — с юмором, о поиске себя — с надеждой.
       </div>
+
+      {$textInfoBlock}
 
       {$authorBlock}
 
