@@ -6,6 +6,11 @@
   }
 }
 
+.title {
+  text-align: center;
+  padding-right: var(--padding-x);
+}
+
 .contentContainer {
   padding-top: 18px;
   display: flex;

@@ -2,6 +2,8 @@ import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Authors} from "../../Components/Authors/Authors.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
 import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview.tsx"
+import {useIsMobile} from "../../utils/useIsMobile.ts"
+import {ProjectTitleMobile} from "../../Modules/ProjectTitleMobile/ProjectTitleMobile.tsx"
 import {
   authors,
   footerIcons,
@@ -13,10 +15,30 @@ import {
 import styles from "./styles.module.scss"
 
 export function Component() {
+  const isMobile = useIsMobile()
+
+  const $titleMobile = isMobile ? (
+    <ProjectTitleMobile
+      Title={(
+      <>
+        МЕТАМОРФОЗЫ
+        <br />
+        ПЕТЕРБУРГСКОГО ДОМА
+      </>
+      )}
+      Description={videoPreviewProps.Description}
+    />
+  ) : null
+
   return (
     <>
       <div>
-        <VideoPreview {...videoPreviewProps}/>
+        {$titleMobile}
+        <VideoPreview
+          {...videoPreviewProps}
+          Title={isMobile ? undefined : videoPreviewProps.Title}
+          Description={isMobile ? undefined : videoPreviewProps.Description}
+        />
 
         <div className={styles.projectDescription}>
           Петербург — город, чей образ неотделим от русской литературы. Наш медиапроект предлагает взглянуть на знакомую архитектуру через призму знаковых текстов Пушкина, Гоголя и Достоевского.

@@ -1,3 +1,15 @@
+.projectPreview {
+  @media (max-width: 1024px) {
+    height: 100vw;
+  }
+}
+
+.projectPreviewImage {
+  @media (max-width: 1024px) {
+    height: 100%;
+  }
+}
+
 .textContainer {
   padding-right: var(--padding-x);
 }

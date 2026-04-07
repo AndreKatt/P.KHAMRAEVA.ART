@@ -4,6 +4,8 @@ import {Gallery} from "../../Components/Gallery/Gallery.tsx"
 import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview.tsx"
 import {Image} from '../../Components/Image/Image.tsx'
 import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview.tsx"
+import {ProjectTitleMobile} from "../../Modules/ProjectTitleMobile/ProjectTitleMobile.tsx"
+import {useIsMobile} from "../../utils/useIsMobile.ts"
 import {
   authors,
   footerIcons,
@@ -16,9 +18,27 @@ import {
 import styles from "./styles.module.scss"
 
 export function Component() {
+  const isMobile = useIsMobile()
+  
+  const $titleMobile = isMobile ? (
+    <ProjectTitleMobile
+      Title={previewProps.Title}
+      Description={previewProps.Description}
+    />
+  ) : null
+
   return (
     <>
-      <ProjectPreview {...previewProps}/>
+      <div>
+        {$titleMobile}
+        <ProjectPreview
+          {...previewProps}
+          Title={isMobile ? undefined : previewProps.Title}
+          Description={isMobile ? undefined : previewProps.Description}
+          className={styles.projectPreview}
+          ClassNameImage={styles.projectPreviewImage}
+        />
+      </div>
 
       <div>
         Перформанс «Eden Illusion» — это размышление о трансформации образа рая в современной культуре: от древнего сакрального символа к утопической мечте о будущем.

@@ -4,26 +4,48 @@ import {Gallery} from "../../Components/Gallery/Gallery.tsx"
 import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle.tsx"
 import {Image} from '../../Components/Image/Image.tsx'
 import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview.tsx"
+import {useIsMobile} from "../../utils/useIsMobile.ts"
 import {
   imagesBasePath,
   galleryImages,
   authors,
   footerIcons,
   previewProps,
+  titleDescription,
 } from "./constants.ts"
 
 import styles from './styles.module.scss'
 
 export function Component() {
-  return (
+  const isMobile = useIsMobile()
+
+  const $cover = isMobile ? (
+    <div className={styles.titleWrapper}>
+      <ProjectTitle
+        Title={(
+          <div className={styles.title}>
+            ФИДЖИТАЛ ВЫСТАВКА «ГОРОД&nbsp;САД»
+          </div>
+        )}
+      />
+      <ProjectPreview {...previewProps}/>
+    </div>
+  ) : (
     <>
       <div className={styles.titleWrapper}>
         <ProjectTitle
-          Title='ФИДЖИТАЛ ВЫСТАВКА «ГОРОД САД»'
-          Description='«Город сад: мультивселенные» погружает зрителя в мир ближайшего будущего – в пространство смешанной реальности, где у каждого есть аватары и миры, разнообразие которых ограничено только нашим воображением. Это живой организм — целостная среда, связывающая инсталляции и медиа-арт в единый путь.'
+          Title='ФИДЖИТАЛ ВЫСТАВКА «ГОРОД&nbsp;САД»'
+          Description={titleDescription}
         />
       </div>
       <ProjectPreview {...previewProps}/>
+    </>
+  )
+
+  return (
+    <>
+      {$cover}
+      {isMobile && titleDescription}
 
       <div>
         ИНСТАЛЛЯЦИЯ КОНСТРУКТОР: «ТРАНСФОРМАТОР» и «ГОРКИ»
