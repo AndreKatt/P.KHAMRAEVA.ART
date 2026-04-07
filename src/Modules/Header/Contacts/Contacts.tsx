@@ -37,7 +37,8 @@ export const Contacts = () => {
             SrcSet={`
               ${imageBasePath}/ContactsPhoto-900.webp 900w,
               ${imageBasePath}/ContactsPhoto-1440.webp 1440w,
-              ${imageBasePath}/ContactsPhoto-1920.webp 1920w`}
+              ${imageBasePath}/ContactsPhoto-1920.webp 1920w
+            `}
             Sizes='50wv'
             className={styles.contactsAvatarImage}
           />

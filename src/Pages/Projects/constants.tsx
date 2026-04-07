@@ -62,7 +62,7 @@ export const crepeItem: IProjectItemProps = {
   Title: 'СИНИЙ КРЕПДЕШИН',
   Description: (
     <>
-      ЭКСПЕРИМЕНТАЛЬНЫЙ
+      АКТУАЛЬНОЕ:
       <br />
       СПЕКТАКЛЬ-ТРАГИФАРС
     </>

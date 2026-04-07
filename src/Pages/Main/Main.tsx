@@ -10,7 +10,7 @@ import {
   projectItemsSecondRow,
   videoCrepeProps,
   videoProps,
-} from "./constants";
+} from "./constants.tsx";
 
 import styles from "./styles.module.scss"
 
@@ -33,41 +33,44 @@ export const MainPage = () => {
         В центре — идея тотального произведения искусства (Gesamtkunstwerk), где свет, звук, пространство и&nbsp;медиа служат единой драматургической цели.
       </div>
 
-      <ContainerFullWidth className={styles.projectsContainer}>
-        <div className={styles.projectsContainerFirstRow}>
-          {projectItemsFirstRow.map((project, index) => (
-            <ProjectItem
-              key={index}
-              WithoutBorder
-              WithoutGradient
-              ClassNameImage={styles.projectImage}
-              {...project}
-            />
-          ))}
-        </div>
-        <div className={styles.projectsContainerSecondRow}>
-          {projectItemsSecondRow.map((project, index) => {
-            const isLastItem = index === projectItemsSecondRow.length - 1
-
-            return (
+      <div className={styles.projectsWrapper}>
+        <ContainerFullWidth className={styles.projectsContainer}>
+          <div className={styles.projectsContainerFirstRow}>
+            {projectItemsFirstRow.map((project, index) => (
               <ProjectItem
                 key={index}
                 WithoutBorder
                 WithoutGradient
-                ClassNameImage={classNames(styles.projectImage, {
-                  [styles.rightPosition]: isLastItem
-                })}
+                ClassNameImage={styles.projectImage}
                 {...project}
               />
-            )
-          })}
-        </div>
-      </ContainerFullWidth>
+            ))}
+          </div>
+          <div className={styles.projectsContainerSecondRow}>
+            {projectItemsSecondRow.map((project, index) => {
+              const isLastItem = index === projectItemsSecondRow.length - 1
 
-      <VideoPreview
-        ClassNameImage={styles.videoPreviewAuditoriumImage}
-        {...videoCrepeProps}
-      />
+              return (
+                <ProjectItem
+                  key={index}
+                  WithoutBorder
+                  WithoutGradient
+                  ClassNameImage={classNames(styles.projectImage, {
+                    [styles.rightPosition]: isLastItem
+                  })}
+                  {...project}
+                />
+              )
+            })}
+          </div>
+        </ContainerFullWidth>
+        <div className={styles.videoPreviewCrepeWrapper}>
+          <VideoPreview
+            {...videoCrepeProps}
+            ClassNameImage={styles.videoPreviewCrepeImage}
+          />
+        </div>
+      </div>
 
       <div>
         «Синий крепдешин» — трагифарс в&nbsp;жанре автофикшн, похожий на&nbsp;причудливый сон. Сквозь шесть новелл спектакль вскрывает феномен семейной травмы и&nbsp;экзицистенциального поиска. Обнаружен парадокс - попытка вырваться из&nbsp;родовых сценариев оборачивается роковым повторением их&nbsp;паттернов.

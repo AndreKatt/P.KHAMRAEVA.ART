@@ -1,55 +1,57 @@
+.projectsWrapper {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -1px;
+    right: 0;
+    height: calc(100% + 2px);
+    width: 100vw;
+    background-color: white;
+
+    @media (min-width: 600px) {
+      top: -2px;
+      height: calc(100% + 4px);
+    }
+  }
+}
+
 .projectsContainer {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 0;
-  
-  @media (min-width: 1024px) {
-    gap: 24px;
-  }
-  @media (min-width: 1280px) {
-    gap: 32px;
-  }
+  gap: 1px;
 }
 
 .projectsContainerFirstRow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
+  grid-template-columns: 5fr 4fr;
+  gap: 1px;
   
   @media (min-width: 600px) {
-    grid-template-columns: 2fr 3fr;
-    gap: 12px;
-  }
-  @media (min-width: 1024px) {
-    gap: 56px;
-    padding-left: 24px;
-  }
-  @media (min-width: 1280px) {
-    gap: 72px;
+    grid-template-columns: 3fr 2fr;
+    gap: 2px;
   }
 }
 
 .projectsContainerSecondRow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px;
+  grid-template-columns: 3fr 4fr;
+  margin-top: -6px;
+  gap: 1px;
 
   @media (min-width: 600px) {
-    grid-template-columns: 5fr 4fr;
-    gap: 12px;
+    grid-template-columns: 3fr 4fr;
+    margin-top: -5px;
+    gap: 2px;
   }
   @media (min-width: 1024px) {
-    grid-template-columns: 2fr 1fr;
-    gap: 38px;
-    padding-right: 72px;
-  }
-  @media (min-width: 1280px) {
-    gap: 56px;
+    margin-top: -2px;
   }
 }
 
 .projectImage {
-  height: 160px;
+  height: 150px;
 
   @media (min-width: 600px) {
     height: 180px;
@@ -62,10 +64,28 @@
   }
 }
 
-.videoPreviewAuditoriumImage {
+.videoPreviewCrepeWrapper {
+  margin-top: -10px;
+
+  @media (min-width: 600px) {
+    margin-top: -10px;
+  }
+  @media (min-width: 1024px) {
+    margin-top: -4px;
+  }
+}
+
+.videoPreviewCrepeDescription {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+}
+
+.videoPreviewCrepeImage {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: top;
 }
 
 .buttonWrapper {

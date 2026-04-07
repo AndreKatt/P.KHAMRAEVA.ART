@@ -19,14 +19,14 @@ export const ProjectPreview: FC<PropsWithChildren<IProjectPreviewProps>> = ({
   className,
   children,
 }) => {
-  const $title = Title ? (
+  const $title = (
     <div className={styles.projectPreviewTitleWrapper}>
       <ProjectTitle
         Title={Title}
         Description={Description}
       />
     </div>
-  ) : null
+  )
 
   return (
     <ContainerFullWidth
