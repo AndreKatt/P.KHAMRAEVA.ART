@@ -13,7 +13,7 @@ export const Video: FC<IVideoProps> = ({
   return (
     <div className={styles.videoPlayer}>
       <iframe
-        src={`https://kinescope.io/embed/${VideoId}?autoplay=1&loop=1&autopause=1&playsinline=1&preload=1${background}`}
+        src={`https://kinescope.io/embed/${VideoId}?autoplay=1&loop=1&autopause=1&playsinline=1&preload=1${background}&transparent=false`}
         allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write; screen-wake-lock;"
         frameBorder="0"
         allowFullScreen
