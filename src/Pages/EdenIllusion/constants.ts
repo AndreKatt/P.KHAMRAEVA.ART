@@ -99,7 +99,11 @@ export const authors: IAuthorsProps["Items"] = [
   },
   {
     Role: "ХОР",
-    Name: "ЛЕПРА И АТАКДЕПАНИК",
+    Name: "ДМИТРИЙ ШЕЛКОВИН (ATTAQUEDEPANIQUE)",
+  },
+  {
+    Role: "ХОР",
+    Name: "ДАНИИЛ ЛАШИН (LEPRA)",
   },
   {
     Role: "КОМПОЗИТОР",
