@@ -221,6 +221,7 @@
 .oneActressBlockDescription,
 .guideBlockTitle,
 .guideBlockDescription,
+.stormBlockTitle,
 .authorBlockTitle,
 .authorBlockDescription,
 .endText {
@@ -232,9 +233,34 @@
   }
 }
 
+.stormBlock {
+  width: 100%;
+}
+.stormBlockTitle {
+  position: absolute;
+  top: 0;
+  right: var(--padding-x);
+}
+.stormBlockTitleMobile {
+  margin-bottom: 24px;
+}
+.stormBlockDescription {
+  margin-top: 18px;
+}
+.stormBlockImage {
+  width: 100%;
+}
+.stormBlockDescriptionSecond {
+  position: absolute;
+  bottom: 0;
+  left: var(--padding-x);
+  margin-bottom: 96px;
+}
+
 .scenographyBlockDescription,
 .guideBlockDescription,
-.mediaBlockDescription {
+.mediaBlockDescription,
+.stormBlockDescription {
   @media (max-width: 1024px) {
     font-size: 16px;
   }
@@ -248,22 +274,27 @@
 
 .oneActressBlockTitle,
 .guideBlockTitle {
-
   @media (min-width: 1024px) {
     margin-top: -48px;
     margin-bottom: 18px;
   }
 }
 
+.guideBlockImageContainerMobile {
+  padding: 0 18px;
+}
+
 .blockWrapper {
   position: relative;
 }
 .blockActorName {
-  position: absolute;
-  right: 55%;
   text-align: end;
   font-style: italic;
   opacity: 0.6;
+  @media (min-width: 1024px) {
+    position: absolute;
+    right: 55%;
+  }
 }
 
 .blockImage {
@@ -344,29 +375,53 @@
 
 .endContainer {
   position: relative;
+  padding-bottom: 180px;
+
+  @media (min-width: 1024px) {
+    padding-bottom: unset;
+  }
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: linear-gradient(black, #000000f1, transparent, transparent);
+
+    @media (min-width: 1024px) {
+      background: linear-gradient(#000000b0, transparent, transparent, transparent, #000000b0);
+  }
+  }
 }
 
 .endImage {
   width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: bottom;
+  height: 60%;
+  object-fit: cover;
+  object-position: 13% bottom;
   position: absolute;
-  top: 0;
+  bottom: 0;
   right: 0;
   display: flex;
   z-index: 1;
+
+  @media (min-width: 1024px) {
+    height: 100%;
+  }
 }
 
 .endText {
   font-style: italic;
-  padding-right: var(--padding-x);
+  padding: 0 var(--padding-x);
   position: relative;
   text-align: end;
   z-index: 2;
 
   @media (max-width: 1024px) {
-    font-size: 14px;
-    line-height: 18px;
+    font-size: 12px;
+    line-height: 16px;
+    padding-bottom: unset;
   }
 }

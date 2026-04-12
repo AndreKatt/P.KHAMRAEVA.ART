@@ -6,6 +6,7 @@ import type {IProjectPreviewProps} from "../../Components/ProjectPreview/types"
 import type {IVideoPreviewProps} from "../../Modules/VideoPreview/types"
 import type {IAuthorItemProps} from "./AuthorItem/types"
 import type {IHelpInfoItemProps} from "./HelpInfoItem/types"
+import type { IProjectTitleProps } from "../../Components/ProjectTitle/types"
 
 import styles from './styles.module.scss'
 
@@ -435,6 +436,88 @@ export const mediaBlockProps: IProjectPreviewProps = {
     </div>
   ),
 }
+
+export const stormBlockImageMobile: IImageProps = {
+  Src: `${imagesBasePath}/StormMobile-900.webp`,
+}
+export const stormBlockImageDesk: IImageProps = {
+  Src: `${imagesBasePath}/StormDesk-1440.webp`,
+  SrcSet: `
+    ${imagesBasePath}/StormDesk-1440.webp 1024w,
+    ${imagesBasePath}/StormDesk-1920.webp 1920w
+  `,
+}
+export const stormBlockTitle: IProjectTitleProps =  {
+  Title: <Title Text='ЖАНРОВЫЙ ВИХРЬ'/>,
+  Description: (
+    <div className={styles.stormBlockDescription}>
+      Спектакль балансирует на грани
+      <br />
+      реального и абсурдного, где сценическое
+      <br />
+      пространство подчиняется не логике,
+      <br />
+      а законам подсознания. Прошлое, настоящее
+      <br />
+      и будущее сплетаются в фантасмагорию,
+      <br />
+      а социальные роли обретают гротескные формы
+      <br />
+      <br />
+      Смешение клоунады, драмы и фарса
+      <br />
+      становится метафорой внутреннего хаоса
+      <br />
+      героини: сцены внезапно сменяют друг
+      <br />
+      друга, то подчиняясь ожиданиям зрителей,
+      <br />
+      то вступая с ними в противоречие.
+    </div>
+  ),
+}
+export const stormBlockDescriptionMobile = (
+  <>
+    Спектакль балансирует на&nbsp;грани реального и&nbsp;абсурдного,{' '}
+    где&nbsp;сценическое пространство подчиняется не&nbsp;логике,{' '}
+    а&nbsp;законам подсознания. Прошлое, настоящее и&nbsp;будущее сплетаются{' '}
+    в&nbsp;фантасмагорию, а&nbsp;социальные роли обретают гротескные формы.
+    <br />
+    <br />
+    Смешение клоунады, драмы и&nbsp;фарса становится метафорой внутреннего&nbsp;хаоса героини:{' '}
+    сцены внезапно сменяют друг&nbsp;друга, то&nbsp;подчиняясь ожиданиям зрителей, то&nbsp;вступая с&nbsp;ними в&nbsp;противоречие.
+  </>
+)
+export const stormBlockDescriptionSecond = (
+  <>
+    «В шкаф заползает крыса»,
+    <br />
+    этот сюрреалистический образ становится
+    <br />
+    воплощением наступающей депрессии.
+    <br />
+    Крыса здесь - не просто грызун,
+    <br />
+    а паразит сознания, пожирающий
+    <br />
+    покой изнутри.
+    <br />
+    <br />
+    Её появление в пыльном шкафу воспоминаний
+    <br />
+    символизирует внутренний распад:
+    <br />
+    депрессия больше не временный гость.
+    <br />
+    Крыса разрослась до столь чудовищных
+    <br />
+    размеров, что ее больше не спрятать в шкафу,
+    <br />
+    с этим придется либо смириться,
+    <br />
+    либо начать борьбу.
+  </>
+)
 
 export const crepeImageProps: IImageProps = {
   Src: `${imagesBasePath}/CrepeDeChine-1440.webp`,

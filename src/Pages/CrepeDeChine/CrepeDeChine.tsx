@@ -9,6 +9,7 @@ import {Title} from "./Title/Title"
 import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview"
 import {AuthorItem} from "./AuthorItem/AuthorItem"
 import {ButtonLink} from "../Main/ButtonLink/ButtonLink"
+import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle"
 import {useIsMobile} from "../../utils/useIsMobile"
 import {
   authorBlockProps,
@@ -26,8 +27,13 @@ import {
   oneActressBlockProps,
   oneActressText,
   scenographyBlockProps,
+  stormBlockDescriptionSecond,
+  stormBlockImageDesk,
+  stormBlockTitle,
+  stormBlockDescriptionMobile,
   videoPreviewAuditoriumProps,
   videoPreviewProps,
+  stormBlockImageMobile,
 } from "./constants"
 
 import styles from './styles.module.scss'
@@ -131,11 +137,13 @@ export function Component() {
   const $guideBlock = isMobile ? (
     <>
       <Title Text={guideBlockProps.Title}/>
-      <Image
-        Src={guideBlockProps.ImageSrc}
-        SrcSet={guideBlockProps.ImageSrcSet}
-        className={styles.blockImage}
-      />
+      <ContainerFullWidth className={styles.guideBlockImageContainerMobile}>
+        <Image
+          Src={guideBlockProps.ImageSrc}
+          SrcSet={guideBlockProps.ImageSrcSet}
+          className={styles.blockImage}
+        />
+      </ContainerFullWidth>
       {guideText}
     </>
   ) : (
@@ -152,11 +160,43 @@ export function Component() {
   const $mediaBlock = isMobile ? (
     <>
       <Title Text={mediaBlockProps.Title}/>
-      s
+      <ContainerFullWidth>
+        <Image
+          Src={mediaBlockProps.ImageSrc}
+          SrcSet={mediaBlockProps.ImageSrcSet}
+        />
+      </ContainerFullWidth>
       {mediaBlockProps.Description}
     </>
   ) : (
     <ProjectPreview {...mediaBlockProps}/>
+  )
+  const $stormBlock = isMobile ? (
+    <div className={styles.stormBlock}>
+      <Title
+        Text={stormBlockTitle.Title}
+        className={styles.stormBlockTitleMobile}
+      />
+      {stormBlockDescriptionMobile}
+      <ContainerFullWidth>
+        <Image
+          {...stormBlockImageMobile}
+          className={styles.stormBlockImage}
+        />
+      </ContainerFullWidth>
+      {stormBlockDescriptionSecond}
+    </div>
+  ) : (
+    <ContainerFullWidth className={styles.blockWrapper}>
+      <Image {...stormBlockImageDesk}/>
+      <ProjectTitle
+        {...stormBlockTitle}
+        className={styles.stormBlockTitle}
+      />
+      <div className={styles.stormBlockDescriptionSecond}>
+        {stormBlockDescriptionSecond}
+      </div>
+    </ContainerFullWidth>
   )
   const $authorBlock = isMobile ? (
     <>
@@ -167,6 +207,11 @@ export function Component() {
         SrcSet={authorBlockProps.ImageSrcSet}
       />
       {authorText}
+      <div className={styles.blockActorName}>
+        Полина Хамраева
+        <br />
+        Автор спектакля, Режиссёр-постановщик
+      </div>
     </>
   ) : (
     <div className={styles.blockWrapper}>
@@ -233,6 +278,7 @@ export function Component() {
       {$scenographyBlock}
       {$guideBlock}
       {$mediaBlock}
+      {$stormBlock}
 
       <Title Text="ТВОРЧЕСКИЙ МЕТОД"/>
       <div>
