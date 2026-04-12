@@ -46,11 +46,11 @@ export const authors: IAuthorsProps["Items"] = [
 export const imagesBasePath = "/Images/Metamorphosis"
 
 export const videoPreviewProps: IVideoPreviewProps = {
-  ImageSrc: `${imagesBasePath}/StranaSveta-1440.webp`,
+  ImageSrc: `${imagesBasePath}/StranaSvetaGif-1440.webp`,
   ImageSrcSet: `
-    ${imagesBasePath}/StranaSveta-900.webp 900w,
-    ${imagesBasePath}/StranaSveta-1440.webp 1440w,
-    ${imagesBasePath}/StranaSveta-1920.webp 1920w
+    ${imagesBasePath}/StranaSvetaGif-900.webp 900w,
+    ${imagesBasePath}/StranaSvetaGif-1440.webp 1440w,
+    ${imagesBasePath}/StranaSvetaGif-1920.webp 1920w
   `,
   Title: 'МЕТАМОРФОЗЫ ПЕТЕРБУРГСКОГО ДОМА',
   Description: (

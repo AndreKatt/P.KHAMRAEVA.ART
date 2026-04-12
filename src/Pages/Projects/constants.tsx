@@ -1,4 +1,5 @@
 import {videoPreviewProps as metamorphosisProps} from "../Metamorphosis/constants";
+import {imagesBasePath as metamorphosisImagesPath} from "../Metamorphosis/constants";
 import {
   galleryBasePath as edenGalleryPath,
   previewProps as edenPreviewProps,
@@ -20,8 +21,12 @@ const {
 } = routes
 
 export const metamorphosisItem: IProjectItemProps = {
-  Src: metamorphosisProps.ImageSrc,
-  SrcSet: metamorphosisProps.ImageSrcSet,
+  Src: `${metamorphosisImagesPath}/StranaSveta-1440.webp`,
+  SrcSet: `
+    ${metamorphosisImagesPath}/StranaSveta-900.webp 900w,
+    ${metamorphosisImagesPath}/StranaSveta-1440.webp 1440w,
+    ${metamorphosisImagesPath}/StranaSveta-1920.webp 1920w
+  `,
   Link: METAMORPHOSIS,
 };
 export const metamorphosisTitle = metamorphosisProps.Title

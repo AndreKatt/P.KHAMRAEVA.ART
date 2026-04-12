@@ -68,11 +68,11 @@ export function Component() {
           </div>
           <Image
             IsLazy
-            Src={`${imagesBasePath}/PhotoEllips-1440.webp`}
+            Src={`${imagesBasePath}/GifEllipsis-1440.webp`}
             SrcSet={`
-              ${imagesBasePath}/PhotoEllips-900.webp 900w,
-              ${imagesBasePath}/PhotoEllips-1440.webp 1440w,
-              ${imagesBasePath}/PhotoEllips-1920.webp 1920w
+              ${imagesBasePath}/GifEllipsis-900.webp 900w,
+              ${imagesBasePath}/GifEllipsis-1440.webp 1440w,
+              ${imagesBasePath}/GifEllipsis-1920.webp 1920w
             `}
             Sizes="50vw"
             className={styles.descriptionImage}
