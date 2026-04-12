@@ -39,15 +39,16 @@
 
 .menuButton {
   position: absolute;
-  right: 8px;
+  right: 0;
+  padding-right: 12px;
   height: 100%;
   display: flex;
   align-items: center;
 }
 
 .menuIcon {
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
 }
 
 .headerMenuItem {

@@ -71,11 +71,11 @@ export function Component() {
           ))}
         </div>
         <div className={styles.helpInfoFooter}>
-          <div className={styles.helpInfoBlockFooterButton}>
+          {/* <div className={styles.helpInfoBlockFooterButton}>
             <div className={styles.helpInfoBlockFooterButtonText}>
               ПОДДЕРЖАТЬ ПРОЕКТ
             </div>
-          </div>
+          </div> */}
           <div className={styles.helpInfoBlockFooterContacts}>
             Задать вопрос и&nbsp;обсудить условия:
             <div className={styles.helpInfoBlockFooterContactsItems}>
@@ -117,13 +117,13 @@ export function Component() {
   const $scenographyBlock = isMobile ? (
     <>
       <Title Text={scenographyBlockProps.Title}/>
-      {scenographyBlockProps.Description}
       <ContainerFullWidth>
         <Image
           Src={scenographyBlockProps.ImageSrc}
           SrcSet={scenographyBlockProps.ImageSrcSet}
         />
       </ContainerFullWidth>
+      {scenographyBlockProps.Description}
     </>
   ) : (
     <ProjectPreview {...scenographyBlockProps}/>
@@ -131,12 +131,12 @@ export function Component() {
   const $guideBlock = isMobile ? (
     <>
       <Title Text={guideBlockProps.Title}/>
-      {guideText}
       <Image
         Src={guideBlockProps.ImageSrc}
         SrcSet={guideBlockProps.ImageSrcSet}
         className={styles.blockImage}
       />
+      {guideText}
     </>
   ) : (
     <div className={styles.blockWrapper}>
@@ -152,25 +152,20 @@ export function Component() {
   const $mediaBlock = isMobile ? (
     <>
       <Title Text={mediaBlockProps.Title}/>
+      s
       {mediaBlockProps.Description}
-      <ContainerFullWidth>
-        <Image
-          Src={mediaBlockProps.ImageSrc}
-          SrcSet={mediaBlockProps.ImageSrcSet}
-        />
-      </ContainerFullWidth>
     </>
   ) : (
     <ProjectPreview {...mediaBlockProps}/>
   )
   const $authorBlock = isMobile ? (
     <>
+      <Title Text={authorBlockProps.Title}/>
       <Image
         Src={authorBlockProps.ImageSrc}
-        SrcSet={authorBlockProps.ImageSrcSet}
         className={styles.blockImage}
+        SrcSet={authorBlockProps.ImageSrcSet}
       />
-      <Title Text={authorBlockProps.Title}/>
       {authorText}
     </>
   ) : (

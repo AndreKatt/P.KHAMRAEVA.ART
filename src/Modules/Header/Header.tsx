@@ -7,8 +7,8 @@ import {Contacts} from './Contacts/Contacts.tsx'
 import {useNavigateCustom} from '../../utils/useNavigate.ts'
 import {routes} from '../../assets.ts'
 import OpenIcon from '../../assets/Icons/ArrowOpen.svg'
-import MenuIcon from '../../assets/Icons/Menu.svg'
-import MenuCloseIcon from '../../assets/Icons/MenuClose.svg'
+import BurgerIcon from '../../assets/Icons/Burger.svg'
+import MenuCloseIcon from '../../assets/Icons/Cross.svg'
 import ArrowLeftIcon from '../../assets/Icons/ArrowLeft.svg'
 
 import styles from "./styles.module.scss"
@@ -147,7 +147,7 @@ export const Header = () => {
       {isOpenDrawer ? (
         <MenuCloseIcon className={styles.menuIcon}/>
       ) : (
-        <MenuIcon className={styles.menuIcon}/>
+        <BurgerIcon className={styles.menuIcon}/>
       )}
     </div>
   ) : null
