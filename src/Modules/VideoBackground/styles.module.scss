@@ -23,8 +23,13 @@
 
 .videoPlayButton {
   transform: rotate(-90deg);
-  opacity: 0;
   transition: opacity 0.3s ease-out;
-  height: 42px;
-  width: 42px;
+  height: 24px;
+  width: 24px;
+
+  @media (min-width: 1024px) {
+    opacity: 0;
+    height: 42px;
+    width: 42px;
+  }
 }
