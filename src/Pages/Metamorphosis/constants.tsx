@@ -3,6 +3,9 @@ import HermitageLogo from "../../assets/Icons/HermitageLogo.svg"
 import StranaSvetaLogo from "../../assets/Icons/StranaSvetaLogo.svg"
 import GazpromLogo from "../../assets/Icons/GazpromLogo.svg"
 import T2Logo from "../../assets/Icons/T2Logo.svg"
+import StranaSveta_900 from '../../assets/Gif/StranaSveta-900.webp'
+import StranaSveta_1440 from '../../assets/Gif/StranaSveta-1440.webp'
+import StranaSveta_1920 from '../../assets/Gif/StranaSveta-1920.webp'
 
 import type {IAuthorsProps} from "../../Components/Authors/types.ts"
 import type {IGalleryProps} from "../../Components/Gallery/types.ts"
@@ -46,11 +49,11 @@ export const authors: IAuthorsProps["Items"] = [
 export const imagesBasePath = "/Images/Metamorphosis"
 
 export const videoPreviewProps: IVideoPreviewProps = {
-  ImageSrc: `${imagesBasePath}/StranaSvetaGif-1440.webp`,
+  ImageSrc: StranaSveta_900,
   ImageSrcSet: `
-    ${imagesBasePath}/StranaSvetaGif-900.webp 900w,
-    ${imagesBasePath}/StranaSvetaGif-1440.webp 1440w,
-    ${imagesBasePath}/StranaSvetaGif-1920.webp 1920w
+    ${StranaSveta_900} 900w,
+    ${StranaSveta_1440} 1440w,
+    ${StranaSveta_1920} 1920w
   `,
   Title: 'МЕТАМОРФОЗЫ ПЕТЕРБУРГСКОГО ДОМА',
   Description: (

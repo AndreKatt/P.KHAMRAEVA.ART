@@ -13,6 +13,9 @@ import {
   previewProps,
   titleDescription,
 } from "./constants.ts"
+import GifEllipsis_900 from '../../assets/Gif/GardenCityEllipsis-900.webp'
+import GifEllipsis_1440 from '../../assets/Gif/GardenCityEllipsis-1440.webp'
+import GifEllipsis_1920 from '../../assets/Gif/GardenCityEllipsis-1920.webp'
 
 import styles from './styles.module.scss'
 
@@ -68,11 +71,11 @@ export function Component() {
           </div>
           <Image
             IsLazy
-            Src={`${imagesBasePath}/GifEllipsis-1440.webp`}
+            Src={GifEllipsis_1440}
             SrcSet={`
-              ${imagesBasePath}/GifEllipsis-900.webp 900w,
-              ${imagesBasePath}/GifEllipsis-1440.webp 1440w,
-              ${imagesBasePath}/GifEllipsis-1920.webp 1920w
+              ${GifEllipsis_900} 900w,
+              ${GifEllipsis_1440} 1440w,
+              ${GifEllipsis_1920} 1920w
             `}
             Sizes="50vw"
             className={styles.descriptionImage}

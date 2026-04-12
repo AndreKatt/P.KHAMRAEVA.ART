@@ -2,6 +2,9 @@ import SPBConcertLogo from "../../assets/Icons/SPBConcertLogo.svg"
 import AttaqueDePaniqueLogo from "../../assets/Icons/AttaqueDePaniqueLogo.svg"
 import ClassicElectricLogo from "../../assets/Icons/ClassicElectricLogo.svg"
 import PlanetariumLogo from "../../assets/Icons/PlanetariumLogo.svg"
+import EdenIllusion_900 from '../../assets/Gif/EdenIllusion-900.webp'
+import EdenIllusion_1440 from '../../assets/Gif/EdenIllusion-1440.webp'
+import EdenIllusion_1920 from '../../assets/Gif/EdenIllusion-1920.webp'
 
 import type {IGalleryProps} from "../../Components/Gallery/types.ts"
 import type {IAuthorsProps} from "../../Components/Authors/types.ts"
@@ -20,11 +23,11 @@ export const imagesBasePath = "/Images/EdenIllusion"
 
 export const previewProps: IProjectPreviewProps = {
   WhithGradient: true,
-  ImageSrc: `${imagesBasePath}/EdenIllusion-1440.webp`,
+  ImageSrc: EdenIllusion_900,
   ImageSrcSet: `
-    ${imagesBasePath}/EdenIllusion-900.webp 900w,
-    ${imagesBasePath}/EdenIllusion-1440.webp 1440w,
-    ${imagesBasePath}/EdenIllusion-1920.webp 1920w
+    ${EdenIllusion_900} 900w,
+    ${EdenIllusion_1440} 1440w,
+    ${EdenIllusion_1920} 1920w
   `,
   Title: 'EDEN ILLUSION',
   Description: 'МУЛЬТИМЕДИЙНЫЙ СПЕКТАКЛЬ 360°',
