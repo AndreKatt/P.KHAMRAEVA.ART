@@ -1,12 +1,10 @@
-import {useState} from 'react'
+import {useCallback, useEffect, useMemo, useState} from 'react'
 import { useLocation } from 'react-router'
-import classNames from 'classnames'
-import {Drawer} from '../../Components/Drawer/Drawer.tsx'
 import {useIsMobile} from '../../utils/useIsMobile.ts'
-import {Contacts} from './Contacts/Contacts.tsx'
 import {useNavigateCustom} from '../../utils/useNavigate.ts'
-import {routes} from '../../assets.ts'
-import OpenIcon from '../../assets/Icons/ArrowOpen.svg'
+import {useDrawerContext} from '../../utils/useDrawerContext.ts'
+import {Contacts} from './Contacts/Contacts.tsx'
+import {HeaderItems} from './HeaderItems/HeaderItems.tsx'
 import BurgerIcon from '../../assets/Icons/Burger.svg'
 import MenuCloseIcon from '../../assets/Icons/Cross.svg'
 import ArrowLeftIcon from '../../assets/Icons/ArrowLeft.svg'
@@ -14,38 +12,29 @@ import ArrowLeftIcon from '../../assets/Icons/ArrowLeft.svg'
 import styles from "./styles.module.scss"
 
 export const Header = () => {
-  const [isOpenDrawer, setIsOpenDrawer] = useState(false);
-  const [drawerContent, setDrawerContent] = useState<'menu' | 'contacts'>('contacts');
-  const navigate = useNavigateCustom();
-  const {pathname} = useLocation();
-  const isMobile = useIsMobile();
-
+  const [drawerContent, setDrawerContent] = useState<'menu' | 'contacts'>('contacts')
+  const {pathname} = useLocation()
   const {
-    MAIN,
-    PROJECTS,
-    CREPE_DE_CHINE,
-    BIO,
-  } = routes
+    IsOpen,
+    ToggleOpenDrawer,
+    SetDrawerContent,
+  } = useDrawerContext()
+  const navigate = useNavigateCustom()
+  const isMobile = useIsMobile()
 
   const isMainPage = pathname === '/'
-  const isGoToPrevEnabled = isOpenDrawer ? drawerContent === 'contacts' : !isMainPage
-  const isOpenContacts = isOpenDrawer && drawerContent === 'contacts'
+  const isGoToPrevEnabled = IsOpen ? drawerContent === 'contacts' : !isMainPage
+  const isOpenContacts = IsOpen && drawerContent === 'contacts'
 
-  const onCloseDrawer = () => {
-    if (isOpenDrawer) {
-      setIsOpenDrawer(false)
-    }
-  }
-
-  const onToggleOpenContacts = () => {
+  const onToggleOpenContacts = useCallback(() => {
     if (drawerContent !== 'contacts') {
       setDrawerContent('contacts')
     }
     if (isMobile) {
       return
     }
-    setIsOpenDrawer(!isOpenDrawer)
-  }
+    ToggleOpenDrawer()
+  }, [ToggleOpenDrawer, drawerContent, isMobile])
 
   const onShowMenu = () => {
     if (drawerContent !== 'menu') {
@@ -55,7 +44,7 @@ export const Header = () => {
 
   const onToggleOpenMenu = () => {
     onShowMenu()
-    setIsOpenDrawer(!isOpenDrawer)
+    ToggleOpenDrawer()
   }
 
   const onGoPrev = () => {
@@ -67,84 +56,12 @@ export const Header = () => {
     navigate(-1)
   }
 
-  const $headerItems = (
-    <>
-      <div className={styles.headerMenuContainer}>
-        <div
-          className={classNames(styles.headerMenuItem, {
-            [styles.active]: isMainPage
-          })}
-          onClick={() => {
-            navigate(MAIN)
-            onCloseDrawer()
-          }}
-        >
-          ГЛАВНАЯ
-        </div>
-
-        <div
-          className={classNames(styles.headerMenuItem, {
-            [styles.active]: pathname === `/${PROJECTS}`
-          })}
-          onClick={() => {
-            navigate(PROJECTS)
-            onCloseDrawer()
-          }}
-        >
-          ПРОЕКТЫ
-        </div>
-
-        <div
-          className={classNames(styles.headerMenuItem, {
-            [styles.active]: pathname.includes(CREPE_DE_CHINE)
-          })}
-          onClick={() => {
-            navigate(CREPE_DE_CHINE)
-            onCloseDrawer()
-          }}
-        >
-          АКТУАЛЬНОЕ
-        </div>
-
-        <div
-          className={classNames(styles.headerMenuItem, {
-            [styles.active]: pathname.includes(BIO)
-          })}
-          onClick={() => {
-            navigate(BIO)
-            onCloseDrawer()
-          }}
-        >
-          БИО
-        </div>
-      </div>
-
-      <div
-        className={classNames(
-          styles.headerMenuItem,
-          styles.contactsButtonContainer,
-          {[styles.active]: isOpenContacts}
-        )}
-        onClick={onToggleOpenContacts}
-      >
-        <div className={styles.contactsButton}>
-          КОНТАКТЫ
-        </div>
-        <OpenIcon
-          className={classNames(styles.contactsIcon, {
-            [styles.open]: isOpenContacts
-          })}
-        />
-      </div>
-    </>
-  );
-
   const $menuButton = isMobile ? (
     <div
       className={styles.menuButton}
       onClick={onToggleOpenMenu}
     >
-      {isOpenDrawer ? (
+      {IsOpen ? (
         <MenuCloseIcon className={styles.menuIcon}/>
       ) : (
         <BurgerIcon className={styles.menuIcon}/>
@@ -152,13 +69,12 @@ export const Header = () => {
     </div>
   ) : null
 
-  const drawerContent$ = drawerContent === 'menu' ? (
-    <div className={styles.drawerMenu}>
-      {$headerItems}
-    </div>
-  ) : (
-    <Contacts />
-  )
+  const $headerItems = useMemo(() => (
+    <HeaderItems
+      IsOpenContacts={isOpenContacts}
+      OnToggleOpenContacts={onToggleOpenContacts}
+    />
+  ), [isOpenContacts, onToggleOpenContacts])
 
   const $goToPrevButton = isMobile && isGoToPrevEnabled ? (
     <div
@@ -168,6 +84,19 @@ export const Header = () => {
       <ArrowLeftIcon className={styles.goToPrevButtonIcon}/>
     </div>
   ) : null
+
+  useEffect(() => {
+    if (drawerContent === 'menu') {
+      SetDrawerContent(
+        <div className={styles.drawerMenu}>
+          {$headerItems}
+        </div>
+      )
+
+      return
+    }
+    SetDrawerContent(<Contacts />)
+  }, [$headerItems, SetDrawerContent, drawerContent])
 
   return (
     <>
@@ -182,12 +111,6 @@ export const Header = () => {
 
         {$menuButton}
       </div>
-
-      {isOpenDrawer ? (
-        <Drawer>
-          {drawerContent$}
-        </Drawer>
-      ) : null}
     </>
   )
 }
