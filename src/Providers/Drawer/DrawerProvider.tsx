@@ -1,4 +1,4 @@
-import {useCallback, useMemo, useRef, useState} from "react"
+import {useCallback, useMemo, useState} from "react"
 import {DrawerContext} from "./DrawerContext"
 
 import type {FC, PropsWithChildren, ReactElement} from 'react'
@@ -6,21 +6,21 @@ import type {IDrawerContext} from "./types"
 
 export const DrawerProvider: FC<PropsWithChildren> = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false)
-  const contentRef = useRef<ReactElement | null>(null)
+  const [content, setContent] = useState<ReactElement | null>(null)
 
   const toggleOpenDrawer = useCallback(() => {
     setIsOpen(prev => !prev)
   }, [])
 
-  const setIsOpenDrawer = (isOpenDrawer: boolean) => {
+  const setIsOpenDrawer = useCallback((isOpenDrawer: boolean) => {
     setIsOpen(isOpenDrawer)
-  }
+  }, [])
 
-  const getDrawerContent = () => contentRef.current
+  const getDrawerContent = useCallback(() => content, [content])
 
-  const setDrawerContent = (drawerContent: ReactElement) => {
-    contentRef.current = drawerContent
-  }
+  const setDrawerContent = useCallback((drawerContent: ReactElement) => {
+    setContent(drawerContent)
+  }, [])
 
   const contextValue = useMemo<IDrawerContext>(() => ({
     IsOpen: isOpen,
@@ -28,7 +28,13 @@ export const DrawerProvider: FC<PropsWithChildren> = ({ children }) => {
     SetIsOpenDrawer: setIsOpenDrawer,
     SetDrawerContent: setDrawerContent,
     GetDrawerContent: getDrawerContent,
-  }), [isOpen, toggleOpenDrawer])
+  }), [
+    getDrawerContent,
+    isOpen,
+    setDrawerContent,
+    setIsOpenDrawer,
+    toggleOpenDrawer,
+  ])
 
   return (
     <DrawerContext.Provider value={contextValue}>

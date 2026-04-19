@@ -1,5 +1,5 @@
 import {useCallback, useEffect, useMemo, useState} from 'react'
-import { useLocation } from 'react-router'
+import {useLocation } from 'react-router'
 import {useIsMobile} from '../../utils/useIsMobile.ts'
 import {useNavigateCustom} from '../../utils/useNavigate.ts'
 import {useDrawerContext} from '../../utils/useDrawerContext.ts'
@@ -12,7 +12,6 @@ import ArrowLeftIcon from '../../assets/Icons/ArrowLeft.svg'
 import styles from "./styles.module.scss"
 
 export const Header = () => {
-  const [drawerContent, setDrawerContent] = useState<'menu' | 'contacts'>('contacts')
   const {pathname} = useLocation()
   const {
     IsOpen,
@@ -21,6 +20,7 @@ export const Header = () => {
   } = useDrawerContext()
   const navigate = useNavigateCustom()
   const isMobile = useIsMobile()
+  const [drawerContent, setDrawerContent] = useState<'menu' | 'contacts'>(isMobile ? 'menu' : 'contacts')
 
   const isMainPage = pathname === '/'
   const isGoToPrevEnabled = IsOpen ? drawerContent === 'contacts' : !isMainPage
