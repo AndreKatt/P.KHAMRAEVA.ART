@@ -60,8 +60,8 @@ export const Drawer: FC = () => {
     }
     drawer.style.display = 'flex'
     requestAnimationFrame(() => {
-      content.style.right = '0'
       drawer.style.opacity = '1'
+      content.style.right = '0'
     })
   }, [IsOpen])
 

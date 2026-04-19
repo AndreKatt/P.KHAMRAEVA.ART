@@ -6,6 +6,7 @@
   width: 100vw;
   margin-top: var(--header-height);
   transition: opacity 0.2s ease-out;
+  opacity: 0;
 
   z-index: 40;
 }

@@ -45,14 +45,18 @@
 }
 
 .descriptionImage {
+  width: 100%;
   height: 100%;
-  width: auto;
   aspect-ratio: 1 / 1;
   object-fit: cover;
+  margin-bottom: 65px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 600px) {
     width: auto;
     height: 490px;
+  }
+  @media (min-width: 1024px) {
+    margin-bottom: unset;
   }
   @media (min-width: 1280px) {
     height: 570px;
@@ -60,10 +64,6 @@
   @media (min-width: 1920px) {
     height: 632px;
   }
-}
-
-.descriptionTextWrapper {
-  width: 100vw;
 }
 
 .textWithFrame {
