@@ -5,7 +5,7 @@ import SkorohodLogo from "../../assets/Icons/SkorohodLogo.svg"
 import type {IGalleryProps} from "../../Components/Gallery/types.ts"
 import type {IAuthorsProps} from "../../Components/Authors/types.ts"
 import type { IImageProps } from "../../Components/Image/types.ts"
-import type { IProjectPreviewProps } from "../../Components/ProjectPreview/types.ts"
+import type { IProjectPreviewProps } from "../../Modules/ProjectPreview/types.ts"
 import type { IVideoPreviewProps } from "../../Modules/VideoPreview/types.ts"
 
 export const footerIcons = [

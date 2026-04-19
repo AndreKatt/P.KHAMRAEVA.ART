@@ -1,4 +1,4 @@
-import {ProjectPreview} from '../../Components/ProjectPreview/ProjectPreview'
+import {ProjectPreview} from '../../Modules/ProjectPreview/ProjectPreview.tsx'
 import {VideoPreview} from '../../Modules/VideoPreview/VideoPreview'
 import {Image} from '../../Components/Image/Image'
 import {ContainerFullWidth} from '../../Components/ContainerFullWidth/ContainerFullWidth'

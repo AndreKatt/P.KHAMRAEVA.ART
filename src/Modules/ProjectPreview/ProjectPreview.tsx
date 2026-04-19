@@ -1,7 +1,7 @@
 import classNames from 'classnames'
-import {ProjectTitle} from '../ProjectTitle/ProjectTitle.tsx'
-import {Image} from '../Image/Image.tsx'
-import {ContainerFullWidth} from '../ContainerFullWidth/ContainerFullWidth.tsx'
+import {ProjectTitle} from '../../Components/ProjectTitle/ProjectTitle.tsx'
+import {Image} from '../../Components/Image/Image.tsx'
+import {ContainerFullWidth} from '../../Components/ContainerFullWidth/ContainerFullWidth.tsx'
 
 import type {FC, PropsWithChildren} from 'react'
 import type {IProjectPreviewProps} from './types.ts'

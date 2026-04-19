@@ -2,7 +2,7 @@ import {Title} from "./Title/Title"
 
 import type {IGalleryProps} from "../../Components/Gallery/types"
 import type {IImageProps} from "../../Components/Image/types"
-import type {IProjectPreviewProps} from "../../Components/ProjectPreview/types"
+import type {IProjectPreviewProps} from "../../Modules/ProjectPreview/types"
 import type {IVideoPreviewProps} from "../../Modules/VideoPreview/types"
 import type {IAuthorItemProps} from "./AuthorItem/types"
 import type {IHelpInfoItemProps} from "./HelpInfoItem/types"

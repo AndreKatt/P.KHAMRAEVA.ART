@@ -1,6 +1,6 @@
 import type { IAuthorsProps } from "../../Components/Authors/types"
 import type {IGalleryProps} from "../../Components/Gallery/types"
-import type {IProjectPreviewProps} from "../../Components/ProjectPreview/types"
+import type {IProjectPreviewProps} from "../../Modules/ProjectPreview/types"
 
 import ArtRussiaLogo from "../../assets/Icons/ArtRussiaLogo.svg"
 import BeInOpenLogo from "../../assets/Icons/BeInOpenLogo.svg"

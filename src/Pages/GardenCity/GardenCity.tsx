@@ -3,7 +3,7 @@ import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
 import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle.tsx"
 import {Image} from '../../Components/Image/Image.tsx'
-import {ProjectPreview} from "../../Components/ProjectPreview/ProjectPreview.tsx"
+import {ProjectPreview} from "../../Modules/ProjectPreview/ProjectPreview.tsx"
 import {useIsMobile} from "../../utils/useIsMobile.ts"
 import {
   imagesBasePath,
