@@ -2,6 +2,8 @@ import { galleryImages as gardenImages} from "../GardenCity/constants";
 import {
   crepeItem,
   edenItem,
+  garderItem,
+  metamorphosisItem,
   zavistItem,
 } from "../Projects/constants";
 import {videoPreviewAuditoriumProps} from "../CrepeDeChine/constants";
@@ -13,7 +15,7 @@ import type { IVideoBackgroundProps } from "../../Modules/VideoBackground/types"
 import styles from './styles.module.scss'
 
 export const videoProps: IVideoBackgroundProps = {
-  VideoId: 'fWjVmSjsmFVrGw7p9UWAxK',
+  VideoId: 'iUN14JzuvpGN8mQVLpauzh',
   BackgroundId: 'iUN14JzuvpGN8mQVLpauzh',
 }
 
@@ -31,6 +33,7 @@ export const projectItemsFirstRow: ReadonlyArray<IProjectItemProps> = [
     ),
   },
   {
+    Link: metamorphosisItem.Link,
     Src: `${imageBasePath}/StranaSvetaPhoto-1440.webp`,
     SrcSet: `
       ${imageBasePath}/StranaSvetaPhoto-900.webp 900w,
@@ -59,6 +62,7 @@ export const projectItemsSecondRow: ReadonlyArray<IProjectItemProps> = [
     ),
   },
   {
+    Link: garderItem.Link,
     Src: gardenImages[4].Src,
     SrcSet: gardenImages[4].SrcSet,
     Description: (
