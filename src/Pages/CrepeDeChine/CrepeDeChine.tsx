@@ -274,6 +274,8 @@ export function Component() {
         Облечь невыносимо ужасное чувство в метафору — значит лишить его части власти над собой.
       </div>
 
+      {$textInfoBlock}
+
       {$oneActressBlock}
       {$scenographyBlock}
       {$guideBlock}
@@ -331,8 +333,6 @@ export function Component() {
         <br />
         «Синий крепдешин» говорит о боли без жалости к себе, о травме — с юмором, о поиске себя — с надеждой.
       </div>
-
-      {$textInfoBlock}
 
       {$authorBlock}
 
