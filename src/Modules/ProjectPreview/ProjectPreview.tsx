@@ -39,7 +39,6 @@ export const ProjectPreview: FC<PropsWithChildren<IProjectPreviewProps>> = ({
       })}>
         {children}
         <Image
-          IsLazy
           Src={ImageSrc}
           SrcSet={ImageSrcSet}
           className={ClassNameImage}
