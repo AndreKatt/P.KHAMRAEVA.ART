@@ -90,10 +90,10 @@
 
 .contactsIcon {
   transform: rotate(-90deg);
-  transition: transform 0.2s ease-out;
+  transition: transform 0.3s ease-out;
   
   &.open {
-    transform: rotate(0deg);
+    transform: rotate(90deg);
   }
 }
 

@@ -40,3 +40,11 @@
   border: 1px solid white;
   padding: var(--text-container-padding);
 }
+
+.videoBackgroundMednyi {
+  height: calc(100vw * 0.2);
+  
+  @media (min-width: 1024px) {
+    height: calc(100vw * 0.19);
+  }
+}

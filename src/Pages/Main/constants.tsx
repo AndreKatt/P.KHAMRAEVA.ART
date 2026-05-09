@@ -15,7 +15,7 @@ import type { IVideoBackgroundProps } from "../../Modules/VideoBackground/types"
 import styles from './styles.module.scss'
 
 export const videoProps: IVideoBackgroundProps = {
-  VideoId: 'iUN14JzuvpGN8mQVLpauzh',
+  VideoId: 'ktmidtSkrYhh6oEf5VYW3U',
   BackgroundId: 'iUN14JzuvpGN8mQVLpauzh',
 }
 

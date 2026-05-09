@@ -4,6 +4,7 @@ import {Gallery} from "../../Components/Gallery/Gallery.tsx"
 import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview.tsx"
 import {useIsMobile} from "../../utils/useIsMobile.ts"
 import {ProjectTitleMobile} from "../../Modules/ProjectTitleMobile/ProjectTitleMobile.tsx"
+import {VideoBackground} from "../../Modules/VideoBackground/VideoBackground.tsx"
 import {
   authors,
   footerIcons,
@@ -55,7 +56,10 @@ export function Component() {
         </div>
       </div>
 
-      <VideoPreview {...videoMednyiPreviewProps}/>
+      <VideoBackground
+        className={styles.videoBackgroundMednyi}
+        {...videoMednyiPreviewProps}
+      />
       
       <div>
         «Задачей было не&nbsp;просто проиллюстрировать известные сюжеты, а&nbsp;изменить само восприятие архитектуры.{' '}

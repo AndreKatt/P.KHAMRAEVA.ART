@@ -10,6 +10,7 @@ import StranaSveta_1920 from '../../assets/Gif/StranaSveta-1920.webp'
 import type {IAuthorsProps} from "../../Components/Authors/types.ts"
 import type {IGalleryProps} from "../../Components/Gallery/types.ts"
 import type { IVideoPreviewProps } from "../../Modules/VideoPreview/types.ts"
+import type { IVideoBackgroundProps } from "../../Modules/VideoBackground/types.ts"
 
 export const footerIcons = [
   FundLogo,
@@ -66,14 +67,9 @@ export const videoPreviewProps: IVideoPreviewProps = {
   VideoId: 'bCkWuGGuKgiqvBY5b4rXat',
 }
 
-export const videoMednyiPreviewProps: IVideoPreviewProps = {
-  ImageSrc: `${imagesBasePath}/MednyiVsadnik-1440.webp`,
-  ImageSrcSet: `
-    ${imagesBasePath}/MednyiVsadnik-900.webp 900w,
-    ${imagesBasePath}/MednyiVsadnik-1440.webp 1440w,
-    ${imagesBasePath}/MednyiVsadnik-1920.webp 1920w
-  `,
-  VideoId: 'sFpsQiB8KF4eBx2hhTvv71',
+export const videoMednyiPreviewProps: IVideoBackgroundProps = {
+  IsClickable: false,
+  VideoId: 'fRc2LbJoDvG35FUqyk8NU1',
 }
 
 const galleryImagesBasePath = `${imagesBasePath}/Gallery`

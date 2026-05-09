@@ -13,26 +13,32 @@
   display: flex;
   flex-direction: column;
   padding: 46px var(--padding-x) 0;
-  gap: 32px;
-  
-  @media (min-width: 1024px) {
-    gap: 46px;
-  }
 }
 
 .textInfoTitle {
   text-align: center;
 }
 
+.textInfoTitle,
+.textInfoDescription {
+  margin-bottom: 32px;
+  
+  @media (min-width: 1024px) {
+    margin-bottom: 46px;
+  }
+}
+
 .helpInfoBlock {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  margin-top: 32px;
   
   @media (min-width: 1024px) {
     flex-direction: row;
     justify-content: space-between;
     gap: 96px;
+    margin-top: 46px;
   }
 }
 
