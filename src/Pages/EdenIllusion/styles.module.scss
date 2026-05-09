@@ -1,12 +1,18 @@
 .projectPreview {
-  @media (max-width: 1024px) {
-    height: 100vw;
-  }
+  position: relative;
 }
 
-.projectPreviewImage {
+.projectPreviewTitle {
+  position: absolute;
+  top: 52px;
+  z-index: 10;
+}
+
+.videoBackground {
+  height: calc(100vw * 0.563);
+  
   @media (max-width: 1024px) {
-    height: 100%;
+    height: calc(100vw * 1.78);
   }
 }
 

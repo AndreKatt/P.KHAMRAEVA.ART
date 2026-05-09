@@ -1,11 +1,13 @@
 import {Authors} from "../../Components/Authors/Authors.tsx"
 import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
-import {ProjectPreview} from "../../Modules/ProjectPreview/ProjectPreview.tsx"
+// import {ProjectPreview} from "../../Modules/ProjectPreview/ProjectPreview.tsx"
 import {Image} from '../../Components/Image/Image.tsx'
 import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview.tsx"
 import {ProjectTitleMobile} from "../../Modules/ProjectTitleMobile/ProjectTitleMobile.tsx"
 import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth.tsx"
+import {VideoBackground} from "../../Modules/VideoBackground/VideoBackground.tsx"
+import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle.tsx"
 import {useIsMobile} from "../../utils/useIsMobile.ts"
 import {
   authors,
@@ -14,6 +16,8 @@ import {
   videoPreviewImages,
   previewProps,
   videoPreviewProps,
+  videoBackgroundPropsDesk,
+  videoBackgroundPropsMobile,
 } from "./constants.ts"
 
 import styles from "./styles.module.scss"
@@ -21,23 +25,27 @@ import styles from "./styles.module.scss"
 export function Component() {
   const isMobile = useIsMobile()
   
-  const $titleMobile = isMobile ? (
+  const $projectTitle = isMobile ? (
     <ProjectTitleMobile
       Title={previewProps.Title}
       Description={previewProps.Description}
     />
-  ) : null
+  ) : (
+    <ProjectTitle
+      Title={previewProps.Title}
+      Description={previewProps.Description}
+      className={styles.projectPreviewTitle}
+    />
+  )
 
   return (
     <>
-      <div>
-        {$titleMobile}
-        <ProjectPreview
-          {...previewProps}
-          Title={isMobile ? undefined : previewProps.Title}
-          Description={isMobile ? undefined : previewProps.Description}
-          className={styles.projectPreview}
-          ClassNameImage={styles.projectPreviewImage}
+      <div className={styles.projectPreview}>
+        {$projectTitle}
+
+        <VideoBackground
+          className={styles.videoBackground}
+          {...isMobile ? videoBackgroundPropsMobile : videoBackgroundPropsDesk}
         />
       </div>
 

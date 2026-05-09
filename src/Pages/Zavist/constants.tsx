@@ -6,7 +6,7 @@ import type {IGalleryProps} from "../../Components/Gallery/types.ts"
 import type {IAuthorsProps} from "../../Components/Authors/types.ts"
 import type { IImageProps } from "../../Components/Image/types.ts"
 import type { IProjectPreviewProps } from "../../Modules/ProjectPreview/types.ts"
-import type { IVideoPreviewProps } from "../../Modules/VideoPreview/types.ts"
+import type { IVideoBackgroundProps } from "../../Modules/VideoBackground/types.ts"
 
 export const footerIcons = [
   FundLogo,
@@ -34,14 +34,9 @@ export const previewProps: IProjectPreviewProps = {
   ),
 }
 
-export const videoPreviewProps: IVideoPreviewProps = {
-  WhithGradient: false,
-  ImageSrc: `${imagesBasePath}/VideoPreview-1440.webp`,
-  ImageSrcSet: `
-    ${imagesBasePath}/VideoPreview-900.webp 900w,
-    ${imagesBasePath}/VideoPreview-1440.webp 1440w,
-    ${imagesBasePath}/VideoPreview-1920.webp 1920w
-  `,
+export const videoPreviewProps: IVideoBackgroundProps = {
+  IsClickable: false,
+  VideoId: 'pnCr6P2RVqC6kr73vsxJ7G',
 }
 
 export const imageProps: IImageProps = {

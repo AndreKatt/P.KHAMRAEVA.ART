@@ -11,12 +11,13 @@ import styles from "./styles.module.scss"
 export const VideoBackground: FC<IVideoBackgroundProps> = ({
   VideoId,
   BackgroundId,
+  IsClickable = true,
   IsLazy,
   className,
 }) => {
   const [isBackGroundVideo, setIsBackGroundVideo] = useState(true);
 
-  const $videoAriaClickable = isBackGroundVideo ? (
+  const $videoAriaClickable = isBackGroundVideo && IsClickable ? (
     <div
       onClick={() => setIsBackGroundVideo(false)}
       className={styles.videoAriaClickable}

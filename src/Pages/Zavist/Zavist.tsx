@@ -1,10 +1,10 @@
 import {ProjectPreview} from '../../Modules/ProjectPreview/ProjectPreview.tsx'
-import {VideoPreview} from '../../Modules/VideoPreview/VideoPreview'
 import {Image} from '../../Components/Image/Image'
 import {ContainerFullWidth} from '../../Components/ContainerFullWidth/ContainerFullWidth'
 import {Authors} from '../../Components/Authors/Authors'
 import {Gallery} from '../../Components/Gallery/Gallery'
 import {Footer} from '../../Components/Footer/Footer'
+import {VideoBackground} from '../../Modules/VideoBackground/VideoBackground.tsx'
 import {
   authors,
   footerIcons,
@@ -13,6 +13,8 @@ import {
   previewProps,
   videoPreviewProps
 } from './constants.tsx'
+
+import styles from './styles.module.scss'
 
 export function Component() {
   return (
@@ -30,7 +32,10 @@ export function Component() {
         Три среды&nbsp;— пустая комната, глянцевый мир фешн-съемки и&nbsp;сумрачные джунгли&nbsp;— отображают деформацию личности отравленой ядовитой&nbsp;«завистью».
       </div>
 
-      <VideoPreview {...videoPreviewProps}/>
+      <VideoBackground
+        className={styles.videoBackground}
+        {...videoPreviewProps}
+      />
 
       <div>
         Видео арт к спектаклю&nbsp;— искушение, картинка с&nbsp;лучших страниц запретного Vogue.{' '}

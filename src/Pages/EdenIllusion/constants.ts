@@ -2,15 +2,13 @@ import SPBConcertLogo from "../../assets/Icons/SPBConcertLogo.svg"
 import AttaqueDePaniqueLogo from "../../assets/Icons/AttaqueDePaniqueLogo.svg"
 import ClassicElectricLogo from "../../assets/Icons/ClassicElectricLogo.svg"
 import PlanetariumLogo from "../../assets/Icons/PlanetariumLogo.svg"
-import EdenIllusion_900 from '../../assets/Gif/EdenIllusion-900.webp'
-import EdenIllusion_1440 from '../../assets/Gif/EdenIllusion-1440.webp'
-import EdenIllusion_1920 from '../../assets/Gif/EdenIllusion-1920.webp'
 
 import type {IGalleryProps} from "../../Components/Gallery/types.ts"
 import type {IAuthorsProps} from "../../Components/Authors/types.ts"
-import type { IImageProps } from "../../Components/Image/types.ts"
-import type { IProjectPreviewProps } from "../../Modules/ProjectPreview/types.ts"
-import type { IVideoPreviewProps } from "../../Modules/VideoPreview/types.ts"
+import type {IImageProps} from "../../Components/Image/types.ts"
+import type {IVideoPreviewProps} from "../../Modules/VideoPreview/types.ts"
+import type {IVideoBackgroundProps} from "../../Modules/VideoBackground/types.ts"
+import type {IProjectTitleProps} from "../../Components/ProjectTitle/types.ts"
 
 export const footerIcons = [
   SPBConcertLogo,
@@ -21,16 +19,17 @@ export const footerIcons = [
 
 export const imagesBasePath = "/Images/EdenIllusion"
 
-export const previewProps: IProjectPreviewProps = {
-  WhithGradient: true,
-  ImageSrc: EdenIllusion_900,
-  ImageSrcSet: `
-    ${EdenIllusion_900} 900w,
-    ${EdenIllusion_1440} 1440w,
-    ${EdenIllusion_1920} 1920w
-  `,
+export const previewProps: IProjectTitleProps = {
   Title: 'EDEN ILLUSION',
   Description: 'МУЛЬТИМЕДИЙНЫЙ СПЕКТАКЛЬ 360°',
+}
+export const videoBackgroundPropsDesk: IVideoBackgroundProps = {
+  VideoId: 'jbqQ26fgTL3pZ9eRn7Xn8e',
+  IsClickable: false,
+}
+export const videoBackgroundPropsMobile: IVideoBackgroundProps = {
+  VideoId: '9iKtcP8GE529Fbez1a9PUM',
+  IsClickable: false,
 }
 
 export const videoPreviewProps: IVideoPreviewProps = {
