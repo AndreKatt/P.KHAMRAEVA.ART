@@ -72,7 +72,7 @@ export const videoMednyiPreviewProps: IVideoBackgroundProps = {
   VideoId: 'fRc2LbJoDvG35FUqyk8NU1',
 }
 
-const galleryImagesBasePath = `${imagesBasePath}/Gallery`
+export const galleryImagesBasePath = `${imagesBasePath}/Gallery`
 const galleryImagesName = [
   "Gallery1",
   "Gallery2",

@@ -42,8 +42,8 @@ export const VideoPreview: FC<IVideoPreviewProps> = ({
         <ProjectPreview
           WhithGradient
           OnClick={onShowVideo}
-          className={styles.videoPreview}
           {...props}
+          className={classNames(styles.videoPreview, props.className)}
         >
           <div className={styles.videoPreviewPlayButton}>
             <PlayIcon className={styles.videoPreviewPlayIcon}/>

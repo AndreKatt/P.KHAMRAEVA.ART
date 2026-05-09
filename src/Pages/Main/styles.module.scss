@@ -1,77 +1,26 @@
-.projectsWrapper {
-  position: relative;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: -1px;
-    right: 0;
-    height: calc(100% + 2px);
-    width: 100vw;
-    background-color: white;
-
-    @media (min-width: 600px) {
-      top: -2px;
-      height: calc(100% + 4px);
-    }
-  }
-}
-
 .projectsContainer {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 1px;
 }
 
 .projectsContainerFirstRow {
   display: grid;
-  grid-template-columns: 5fr 4fr;
-  gap: 1px;
-  
-  @media (min-width: 600px) {
-    grid-template-columns: 3fr 2fr;
-    gap: 2px;
-  }
+  grid-template-columns: 1fr 1fr;
 }
 
 .projectsContainerSecondRow {
   display: grid;
   grid-template-columns: 3fr 4fr;
-  margin-top: -6px;
-  gap: 1px;
 
-  @media (min-width: 600px) {
-    grid-template-columns: 3fr 4fr;
-    margin-top: -5px;
-    gap: 2px;
-  }
-  @media (min-width: 1024px) {
-    margin-top: -2px;
-  }
 }
 
-.projectImage {
-  height: 150px;
+.videoPreviewCrepe {
+  border-top: 1px solid #B3B2B2;
+  border-bottom: 1px solid #B3B2B2;
 
   @media (min-width: 600px) {
-    height: 180px;
-  }
-  @media (min-width: 1024px) {
-    height: calc((100vh - var(--header-height) - 32px) / 2);
-  }
-  &.rightPosition {
-    object-position: right;
-  }
-}
-
-.videoPreviewCrepeWrapper {
-  margin-top: -11px;
-
-  @media (min-width: 600px) {
-    margin-top: -10px;
-  }
-  @media (min-width: 1024px) {
-    margin-top: -4px;
+    border-top: 2px solid #B3B2B2;
+    border-bottom: 2px solid #B3B2B2;
   }
 }
 

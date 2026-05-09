@@ -1,6 +1,5 @@
-import classNames from "classnames";
 import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth";
-import {ProjectItem} from "../../Modules/ProjectItem/ProjectItem";
+import {ProjectItem} from "./ProjectItem/ProjectItem.tsx";
 import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview";
 import {VideoBackground} from "../../Modules/VideoBackground/VideoBackground";
 import {useNavigateCustom} from "../../utils/useNavigate";
@@ -33,43 +32,30 @@ export const MainPage = () => {
         В центре — идея тотального произведения искусства (Gesamtkunstwerk), где свет, звук, пространство и&nbsp;медиа служат единой драматургической цели.
       </div>
 
-      <div className={styles.projectsWrapper}>
+      <div>
         <ContainerFullWidth className={styles.projectsContainer}>
           <div className={styles.projectsContainerFirstRow}>
             {projectItemsFirstRow.map((project, index) => (
               <ProjectItem
                 key={index}
-                WithoutBorder
-                WithoutGradient
-                ClassNameImage={styles.projectImage}
                 {...project}
               />
             ))}
           </div>
           <div className={styles.projectsContainerSecondRow}>
-            {projectItemsSecondRow.map((project, index) => {
-              const isLastItem = index === projectItemsSecondRow.length - 1
-
-              return (
-                <ProjectItem
-                  key={index}
-                  WithoutBorder
-                  WithoutGradient
-                  ClassNameImage={classNames(styles.projectImage, {
-                    [styles.rightPosition]: isLastItem
-                  })}
-                  {...project}
-                />
-              )
-            })}
+            {projectItemsSecondRow.map((project, index) => (
+              <ProjectItem
+                key={index}
+                {...project}
+              />
+            ))}
           </div>
         </ContainerFullWidth>
-        <div className={styles.videoPreviewCrepeWrapper}>
-          <VideoPreview
-            {...videoCrepeProps}
-            ClassNameImage={styles.videoPreviewCrepeImage}
-          />
-        </div>
+        <VideoPreview
+          {...videoCrepeProps}
+          ClassNameImage={styles.videoPreviewCrepeImage}
+          className={styles.videoPreviewCrepe}
+        />
       </div>
 
       <div>
