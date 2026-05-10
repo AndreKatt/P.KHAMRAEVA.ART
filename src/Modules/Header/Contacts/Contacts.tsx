@@ -33,11 +33,11 @@ export const Contacts = () => {
       <div className={styles.contactsAvatarWrapper}>
         <div className={styles.contactsAvatar}>
           <Image
-            Src={`${imageBasePath}/ContactsPhoto-1440.webp`}
+            Src={`${imageBasePath}/Contacts-1440.webp`}
             SrcSet={`
-              ${imageBasePath}/ContactsPhoto-900.webp 900w,
-              ${imageBasePath}/ContactsPhoto-1440.webp 1440w,
-              ${imageBasePath}/ContactsPhoto-1920.webp 1920w
+              ${imageBasePath}/Contacts-900.webp 900w,
+              ${imageBasePath}/Contacts-1440.webp 1440w,
+              ${imageBasePath}/Contacts-1920.webp 1920w
             `}
             Sizes='50wv'
             className={styles.contactsAvatarImage}
