@@ -28,10 +28,12 @@
 .image {
   width: 100%;
   height: auto;
+  margin-bottom: 32px;
 
   @media (min-width: 1024px) {
     width: 371px;
     height: 435px;
+    margin-bottom: unset;
   }
   @media (min-width: 1280px) {
     width: 495px;
@@ -40,16 +42,17 @@
 }
 
 .projectsInfo,
-.mainInfo {
+.educationText {
   opacity: 0.8;
 }
 
-.mainInfo {
-  padding-left: 18px;
-  padding-bottom: 32px;
+.educationText {
+  padding-left: 0;
+  margin-top: 32px;
+  margin-bottom: 32px;
 
   @media (min-width: 1280px) {
     padding-left: 28px;
-    padding-bottom: 0;
+    margin: unset;
   }
 }

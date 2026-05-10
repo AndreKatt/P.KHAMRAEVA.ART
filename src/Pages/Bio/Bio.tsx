@@ -1,8 +1,44 @@
 import {Image} from '../../Components/Image/Image'
+import { useIsMobile } from '../../utils/useIsMobile'
 
 import styles from './styles.module.scss'
 
 export function Component() {
+  const isMobile = useIsMobile()
+
+  const $educationText = (
+    <div className={styles.educationText}>
+      Образование:
+      <br />
+      <br />
+      · РГИСИ (2017-2019) — Факультет сценографии –
+      <br />
+      мастерская Э.С.Кочергина и О.А. Головко.
+      <br />
+      · СПбГАИЖСА им. И. Репина (2015-2016)
+      <br />
+      Живопись, мастерская В. Песикова.
+      <br />
+      · СПГАХЛ им. Б. Иогансона (2012-2015)
+      <br />
+      Факультет архитектуры.
+      <br />
+      <br />
+      Международная практика:
+      <br />
+      <br />
+      · Арт-директор продакшена Dev-VP
+      <br />
+      (Эстония, 2023)
+      <br />
+      · Стажировка на киностудиях:
+      <br />
+      «Silvercup» (Нью-Йорк, США, 2016)
+      <br />
+      «Broadway Stages» (Нью-Йорк, США, 2016)
+    </div>
+  )
+
   return (
     <div className={styles.content}>
       <div className={styles.leftSideContainer}>
@@ -15,36 +51,7 @@ export function Component() {
           `}
           className={styles.image}
         />
-        <div className={styles.mainInfo}>
-          Образование:
-          <br />
-          <br />
-          · РГИСИ (2017-2019) — Факультет сценографии –
-          <br />
-          мастерская Э.С.Кочергина и О.А. Головко.
-          <br />
-          · СПбГАИЖСА им. И. Репина (2015-2016)
-          <br />
-          Живопись, мастерская В. Песикова.
-          <br />
-          · СПГАХЛ им. Б. Иогансона (2012-2015)
-          <br />
-          Факультет архитектуры.
-          <br />
-          <br />
-          Международная практика:
-          <br />
-          <br />
-          · Арт-директор продакшена Dev-VP
-          <br />
-          (Эстония, 2023)
-          <br />
-          · Стажировка на киностудиях:
-          <br />
-          «Silvercup» (Нью-Йорк, США, 2016)
-          <br />
-          «Broadway Stages» (Нью-Йорк, США, 2016)
-        </div>
+        {isMobile ? null : $educationText}
       </div>
       <div className={styles.rightSideContainer}>
         Я создаю проекты на стыке классического искусства и новых медиа.{' '}
@@ -139,6 +146,7 @@ export function Component() {
           2019 – художник-постановщик – короткометражный фильм «Сашка» (социальная драма) – реж. Дина Семыкина
         </div>
       </div>
+      {isMobile ? $educationText : null}
     </div>
   )
 }
