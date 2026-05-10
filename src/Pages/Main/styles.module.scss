@@ -11,23 +11,63 @@
 .projectsContainerSecondRow {
   display: grid;
   grid-template-columns: 3fr 4fr;
+}
 
+.videoPreviewCrepeContainer {
+  position: relative;
+
+  &:hover {
+    .videoPreviewCrepeTitleContainer {
+      opacity: 1;
+    }
+  }
 }
 
 .videoPreviewCrepe {
   border-top: 1px solid #B3B2B2;
-  border-bottom: 1px solid #B3B2B2;
 
   @media (min-width: 600px) {
     border-top: 2px solid #B3B2B2;
-    border-bottom: 2px solid #B3B2B2;
+  }
+}
+
+.videoPreviewCrepeTitleContainer {
+  position: absolute;
+  top: 48px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  transition: opacity 0.3s ease-out;
+
+  @media (min-width: 1024px) {
+    gap: 10px;
+    opacity: 0;
+  }
+}
+
+.videoPreviewCrepeTitle {
+  font-size: 12px;
+  line-height: 13px;
+
+  @media (min-width: 600px) {
+    font-size: 18px;
+    line-height: 19px;
+  }
+  @media (min-width: 1024px) {
+    font-size: 20px;
+    line-height: 21px;
   }
 }
 
 .videoPreviewCrepeDescription {
-  position: absolute;
-  bottom: 24px;
-  left: 24px;
+  font-size: 10px;
+  line-height: 12px;
+
+  @media (min-width: 1024px) {
+    font-size: 12px;
+    line-height: 14px;
+  }
 }
 
 .videoPreviewCrepeImage {

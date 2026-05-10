@@ -12,6 +12,7 @@ import styles from './styles.module.scss'
 export const VideoPreview: FC<IVideoPreviewProps> = ({
   VideoId,
   IsLazy,
+  HoverFilterType = 'default',
   ...props
 }) => {
   const [isShowVideo, setIsShowVideo] = useState(false);
@@ -33,6 +34,8 @@ export const VideoPreview: FC<IVideoPreviewProps> = ({
   return (
     <ContainerFullWidth className={classNames(styles.videoPreviewContainer, {
       [styles.onPlay]: isShowVideo,
+      [styles.gradient]: HoverFilterType === 'gradient',
+      [styles.default]: HoverFilterType === 'default',
     })}>
       <div
         className={classNames(styles.videoPreviewWrapper, {

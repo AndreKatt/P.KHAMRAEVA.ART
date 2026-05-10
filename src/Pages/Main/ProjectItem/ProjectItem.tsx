@@ -1,4 +1,5 @@
 import {useNavigateCustom} from '../../../utils/useNavigate'
+import {useIsMobile} from '../../../utils/useIsMobile'
 import {Image} from '../../../Components/Image/Image'
 
 import type {FC} from 'react'
@@ -13,11 +14,23 @@ export const ProjectItem: FC<IProjectItemProps> = ({
   Title,
   Description,
 }) => {
-  const nav = useNavigateCustom();
+  const navigate = useNavigateCustom();
+  const isMobile = useIsMobile()
+
+  const $title = isMobile ? null : (
+    <div className={styles.projectItemTitle}>
+      <div className={styles.projectItemTitleText}>
+        {Title}
+      </div>
+      <div className={styles.projectItemDescription}>
+        {Description}
+      </div>
+    </div>
+  )
 
   return (
     <div
-      onClick={() => nav(Link)}
+      onClick={() => navigate(Link)}
       className={styles.projectItemWrapper}
     >
       <Image
@@ -25,14 +38,7 @@ export const ProjectItem: FC<IProjectItemProps> = ({
         SrcSet={SrcSet}
         className={styles.projectImage}
       />
-      <div className={styles.projectItemTitle}>
-        <div className={styles.projectItemTitleText}>
-          {Title}
-        </div>
-        <div className={styles.projectItemDescription}>
-          {Description}
-        </div>
-      </div>
+      {$title}
     </div>
   )
 }

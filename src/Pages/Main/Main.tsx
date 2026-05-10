@@ -3,6 +3,7 @@ import {ProjectItem} from "./ProjectItem/ProjectItem.tsx";
 import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview";
 import {VideoBackground} from "../../Modules/VideoBackground/VideoBackground";
 import {useNavigateCustom} from "../../utils/useNavigate";
+import {useIsMobile} from "../../utils/useIsMobile.ts";
 import {routes} from "../../assets";
 import {
   projectItemsFirstRow,
@@ -15,6 +16,20 @@ import styles from "./styles.module.scss"
 
 export const MainPage = () => {
   const navigate = useNavigateCustom()
+  const isMobile = useIsMobile()
+
+  const $crepeTitle = isMobile ? null : (
+    <ContainerFullWidth className={styles.videoPreviewCrepeTitleContainer}>
+      <div className={styles.videoPreviewCrepeTitle}>
+        СИНИЙ КРЕПДЕШИН
+      </div>
+      <div className={styles.videoPreviewCrepeDescription}>
+        ЭКСПЕРИМЕНТАЛЬНЫЙ
+        <br />
+        СПЕКТАКЛЬ-ТРАГИФАРС
+      </div>
+    </ContainerFullWidth>
+  ) 
 
   return (
     <>
@@ -51,11 +66,15 @@ export const MainPage = () => {
             ))}
           </div>
         </ContainerFullWidth>
-        <VideoPreview
-          {...videoCrepeProps}
-          ClassNameImage={styles.videoPreviewCrepeImage}
-          className={styles.videoPreviewCrepe}
-        />
+
+        <div className={styles.videoPreviewCrepeContainer}>
+          <VideoPreview
+            {...videoCrepeProps}
+            ClassNameImage={styles.videoPreviewCrepeImage}
+            className={styles.videoPreviewCrepe}
+          />
+          {$crepeTitle}
+        </div>
       </div>
 
       <div>

@@ -1,7 +1,4 @@
-import {
-  crepeItem,
-  edenItem,
-} from "../Projects/constants";
+import {edenItem} from "../Projects/constants";
 import {videoPreviewAuditoriumProps} from "../CrepeDeChine/constants";
 import {galleryImagesBasePath as  methamorphosisGalleryImagesBasePath} from "../Metamorphosis/constants";
 import {routes} from "../../assets";
@@ -9,8 +6,6 @@ import {routes} from "../../assets";
 import type { IProjectItemProps } from "./ProjectItem/types";
 import type { IVideoPreviewProps } from "../../Modules/VideoPreview/types";
 import type { IVideoBackgroundProps } from "../../Modules/VideoBackground/types";
-
-import styles from './styles.module.scss'
 
 export const videoProps: IVideoBackgroundProps = {
   VideoId: 'ktmidtSkrYhh6oEf5VYW3U',
@@ -86,12 +81,8 @@ export const projectItemsSecondRow: ReadonlyArray<IProjectItemProps> = [
 
 export const videoCrepeProps: IVideoPreviewProps = {
   WhithGradient: false,
+  HoverFilterType: 'gradient',
   VideoId: videoPreviewAuditoriumProps.VideoId,
   ImageSrc: videoPreviewAuditoriumProps.ImageSrc,
   ImageSrcSet: videoPreviewAuditoriumProps.ImageSrcSet,
-  Description: (
-    <div className={styles.videoPreviewCrepeDescription}>
-      {crepeItem.Description}
-    </div>
-  ),
 }

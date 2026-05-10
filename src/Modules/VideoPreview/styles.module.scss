@@ -11,18 +11,32 @@
       position: absolute;
       top: 0;
       left: 0;
-      background-color: black;
       opacity: 0;
-  
+      
       transition: opacity 0.3s ease-out;
+      
     }
-    &:hover {
+    &.default {
       &::after {
-        opacity: 0.3;
+        background-color: black;
+      }
+      &:hover {
+        &::after {
+          opacity: 0.3;
+        }
+      }
+    }
+    &.gradient {
+      &::after {
+        background: linear-gradient(black, transparent, transparent, black);
+      }
+      &:hover {
+        &::after {
+          opacity: 0.6;
+        }
       }
     }
   }
-
 }
 
 .videoPreviewWrapper {
