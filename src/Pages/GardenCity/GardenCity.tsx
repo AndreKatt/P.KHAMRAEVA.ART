@@ -1,9 +1,11 @@
 import {Authors} from "../../Components/Authors/Authors.tsx"
+import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth.tsx"
 import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
+import {Image} from "../../Components/Image/Image.tsx"
 import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle.tsx"
 import {ProjectPreview} from "../../Modules/ProjectPreview/ProjectPreview.tsx"
-import { VideoBackground } from "../../Modules/VideoBackground/VideoBackground.tsx"
+import {VideoBackground} from "../../Modules/VideoBackground/VideoBackground.tsx"
 import {useIsMobile} from "../../utils/useIsMobile.ts"
 import {
   imagesBasePath,
@@ -70,14 +72,16 @@ export function Component() {
         Ключевое свойство «Полихромика» — масштабируемость. Объект может расти от камерного до гигантского, становясь прототипом тотальной свето-цветовой инсталляции. В логике «Города Сада» он работает как линза, фокусирующая тему телесного и цифрового восприятия: если «Живот Сада» предлагает тактильный вход в виртуальность, то «Полихромик» исследует чистую оптику, превращая физику света в инструмент изменения реальности.
       </div>
 
-      <ProjectPreview
-        ImageSrc={`${imagesBasePath}/Installation-1440.webp`}
-        ImageSrcSet={`
-          ${imagesBasePath}/Installation-900.webp 900w,
-          ${imagesBasePath}/Installation-1440.webp 1440w,
-          ${imagesBasePath}/Installation-1920.webp 1920w
-        `}
-      />
+      <ContainerFullWidth className={styles.imageWrapper}>
+        <Image
+          Src={`${imagesBasePath}/Installation-1440.webp`}
+          SrcSet={`
+            ${imagesBasePath}/Installation-900.webp 900w,
+            ${imagesBasePath}/Installation-1440.webp 1440w,
+            ${imagesBasePath}/Installation-1920.webp 1920w
+          `}
+        />
+      </ContainerFullWidth>
       <div>
         ТОТАЛЬНАЯ ИНСТАЛЛЯЦИЯ «ЖИВОТ САДА»
         <br />
