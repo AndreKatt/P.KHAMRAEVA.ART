@@ -2,8 +2,8 @@ import {Authors} from "../../Components/Authors/Authors.tsx"
 import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
 import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle.tsx"
-import {Image} from '../../Components/Image/Image.tsx'
 import {ProjectPreview} from "../../Modules/ProjectPreview/ProjectPreview.tsx"
+import { VideoBackground } from "../../Modules/VideoBackground/VideoBackground.tsx"
 import {useIsMobile} from "../../utils/useIsMobile.ts"
 import {
   imagesBasePath,
@@ -12,10 +12,8 @@ import {
   footerIcons,
   previewProps,
   titleDescription,
+  videoBackgroundProps,
 } from "./constants.ts"
-import GifEllipsis_900 from '../../assets/Gif/GardenCityEllipsis-900.webp'
-import GifEllipsis_1440 from '../../assets/Gif/GardenCityEllipsis-1440.webp'
-import GifEllipsis_1920 from '../../assets/Gif/GardenCityEllipsis-1920.webp'
 
 import styles from './styles.module.scss'
 
@@ -58,29 +56,20 @@ export function Component() {
         банная уточка стала элементом декора , а лейки из сада бабушки - превратились в капитель напоминающую цветок, водоналивные барьеры стоявшие на дороге - потеряли свою прежнюю форму и стали архитектурным паттерном.
       </div>
 
-      <div className={styles.content}>
-        <div className={styles.descriptionBlock}>
-          <div className={styles.descriptionText}>
-            ИНСТАЛЛЯЦИЯ «ПОЛИХРОМИК»
-            <br />
-            <br />
-            Световая инсталляция-конструктор, основанная на эффекте полихромии. Многолистники преломляют свет и пространство вокруг, создавая эффект цветного пространственного калейдоскопа, который искажает реальность на глазах у зрителя.
-            <br />
-            <br />
-            Ключевое свойство «Полихромика» — масштабируемость. Объект может расти от камерного до гигантского, становясь прототипом тотальной свето-цветовой инсталляции. В логике «Города Сада» он работает как линза, фокусирующая тему телесного и цифрового восприятия: если «Живот Сада» предлагает тактильный вход в виртуальность, то «Полихромик» исследует чистую оптику, превращая физику света в инструмент изменения реальности.
-          </div>
-          <Image
-            Src={GifEllipsis_1440}
-            SrcSet={`
-              ${GifEllipsis_900} 900w,
-              ${GifEllipsis_1440} 1440w,
-              ${GifEllipsis_1920} 1920w
-            `}
-            Sizes="50vw"
-            className={styles.descriptionImage}
-          />
-        </div>
+      <VideoBackground
+        {...videoBackgroundProps}
+        className={styles.videoBackground}
+      />
+      <div>
+        ИНСТАЛЛЯЦИЯ «ПОЛИХРОМИК»
+        <br />
+        <br />
+        Световая инсталляция-конструктор, основанная на эффекте полихромии. Многолистники преломляют свет и пространство вокруг, создавая эффект цветного пространственного калейдоскопа, который искажает реальность на глазах у зрителя.
+        <br />
+        <br />
+        Ключевое свойство «Полихромика» — масштабируемость. Объект может расти от камерного до гигантского, становясь прототипом тотальной свето-цветовой инсталляции. В логике «Города Сада» он работает как линза, фокусирующая тему телесного и цифрового восприятия: если «Живот Сада» предлагает тактильный вход в виртуальность, то «Полихромик» исследует чистую оптику, превращая физику света в инструмент изменения реальности.
       </div>
+
       <ProjectPreview
         ImageSrc={`${imagesBasePath}/Installation-1440.webp`}
         ImageSrcSet={`

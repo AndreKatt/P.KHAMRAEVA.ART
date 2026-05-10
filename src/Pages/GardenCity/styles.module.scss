@@ -16,32 +16,8 @@
   display: flex;
 }
 
-.content {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 38px;
-}
-
-.descriptionBlock {
-  width: 100%;
-  display: flex;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (min-width: 1024px) {
-    flex-direction: row;
-    gap: 32px;
-  }
-}
-
-.descriptionText {
-  width: 100%;
-  
-  @media (min-width: 1024px) {
-    max-width: 450px;
-  }
+.videoBackground {
+  height: calc(100vw * 0.563)
 }
 
 .descriptionImage {

@@ -8,6 +8,7 @@ import VKLogo from "../../assets/Icons/VKLogo.svg"
 import HSELogo from "../../assets/Icons/HSELogo.svg"
 import MarsLogo from "../../assets/Icons/MarsLogo.svg"
 import DesignFabricLogo from "../../assets/Icons/DesignFabricLogo.svg"
+import type { IVideoBackgroundProps } from "../../Modules/VideoBackground/types"
 
 export const imagesBasePath = "/Images/GardenCity"
 
@@ -18,6 +19,11 @@ export const previewProps: IProjectPreviewProps = {
     ${imagesBasePath}/GardenCity-1440.webp 1440w,
     ${imagesBasePath}/GardenCity-1920.webp 1920w
   `,
+}
+
+export const videoBackgroundProps: IVideoBackgroundProps = {
+  VideoId: 'pohvgxJ3YDqczzBS5wcMMY',
+  IsClickable: false,
 }
 
 const galleryImagesBasePath = `${imagesBasePath}/Gallery`
