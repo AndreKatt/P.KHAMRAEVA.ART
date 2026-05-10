@@ -1,21 +1,38 @@
 import {createPortal} from 'react-dom'
 import {useDrawerContext} from '../../utils/useDrawerContext'
-
-import {useEffect, useRef, type FC} from 'react'
+import {HeaderItems} from '../../Components/HeaderItems/HeaderItems'
+import {Contacts} from '../../Components/Contacts/Contacts'
+import {useIsMobile} from '../../utils/useIsMobile'
+import {useCallback, useEffect, useRef, type FC} from 'react'
 
 import styles from './styles.module.scss'
 
 const ANIMATION_DELAY = 300
 
 export const Drawer: FC = () => {
-  const refDrawer = useRef<HTMLDivElement | null>(null);
-  const refContent = useRef<HTMLDivElement | null>(null);
+  const refDrawer = useRef<HTMLDivElement | null>(null)
+  const refContent = useRef<HTMLDivElement | null>(null)
   const refAnimationTimerId = useRef<number | null>(null)
+
+  const isMobile = useIsMobile()
   const {
     IsOpen,
-    GetDrawerContent,
+    DrawerContentType,
     ToggleOpenDrawer,
+    SetDrawerContentType,
   } = useDrawerContext()
+
+  const isOpenContacts = IsOpen && DrawerContentType === 'contacts'
+
+  const onToggleOpenContacts = useCallback(() => {
+    if (DrawerContentType !== 'contacts') {
+      SetDrawerContentType('contacts')
+    }
+    if (isMobile) {
+      return
+    }
+    ToggleOpenDrawer()
+  }, [DrawerContentType, SetDrawerContentType, ToggleOpenDrawer, isMobile])
 
   const $content = (
     <div
@@ -30,7 +47,14 @@ export const Drawer: FC = () => {
         ref={refContent}
         className={styles.drawerContent}
       >
-        {GetDrawerContent()}
+        {DrawerContentType === 'menu' ? (
+          <div className={styles.drawerMenu}>
+            <HeaderItems
+              IsOpenContacts={isOpenContacts}
+              OnToggleOpenContacts={onToggleOpenContacts}
+            />
+          </div>
+        ) : <Contacts />}
       </div>
     </div>
   )

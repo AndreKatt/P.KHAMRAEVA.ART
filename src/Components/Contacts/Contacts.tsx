@@ -1,10 +1,10 @@
 import {useRef, useState} from 'react'
 import classNames from 'classnames'
-import {Image} from '../../../Components/Image/Image.tsx'
-import {useIsMobile} from '../../../utils/useIsMobile.ts'
-import CopyIcon from '../../../assets/Icons/Copy.svg'
-import TelegramIcon from '../../../assets/Icons/TelegramLogo.svg'
-import PhoneIcon from '../../../assets/Icons/Phone.svg'
+import {Image} from '../Image/Image.tsx'
+import {useIsMobile} from '../../utils/useIsMobile.ts'
+import CopyIcon from '../../assets/Icons/Copy.svg'
+import TelegramIcon from '../../assets/Icons/TelegramLogo.svg'
+import PhoneIcon from '../../assets/Icons/Phone.svg'
 
 import styles from './styles.module.scss'
 

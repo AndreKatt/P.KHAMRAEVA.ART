@@ -1,10 +1,9 @@
-import {useCallback, useEffect, useMemo, useState} from 'react'
+import {useCallback, useMemo} from 'react'
 import {useLocation } from 'react-router'
 import {useIsMobile} from '../../utils/useIsMobile.ts'
 import {useNavigateCustom} from '../../utils/useNavigate.ts'
 import {useDrawerContext} from '../../utils/useDrawerContext.ts'
-import {Contacts} from './Contacts/Contacts.tsx'
-import {HeaderItems} from './HeaderItems/HeaderItems.tsx'
+import {HeaderItems} from '../../Components/HeaderItems/HeaderItems.tsx'
 import BurgerIcon from '../../assets/Icons/Burger.svg'
 import MenuCloseIcon from '../../assets/Icons/Cross.svg'
 import ArrowLeftIcon from '../../assets/Icons/ArrowLeft.svg'
@@ -15,30 +14,30 @@ export const Header = () => {
   const {pathname} = useLocation()
   const {
     IsOpen,
+    DrawerContentType,
     ToggleOpenDrawer,
-    SetDrawerContent,
+    SetDrawerContentType,
   } = useDrawerContext()
   const navigate = useNavigateCustom()
   const isMobile = useIsMobile()
-  const [drawerContent, setDrawerContent] = useState<'menu' | 'contacts'>(isMobile ? 'menu' : 'contacts')
 
   const isMainPage = pathname === '/'
-  const isGoToPrevEnabled = IsOpen ? drawerContent === 'contacts' : !isMainPage
-  const isOpenContacts = IsOpen && drawerContent === 'contacts'
+  const isGoToPrevEnabled = IsOpen ? DrawerContentType === 'contacts' : !isMainPage
+  const isOpenContacts = IsOpen && DrawerContentType === 'contacts'
 
   const onToggleOpenContacts = useCallback(() => {
-    if (drawerContent !== 'contacts') {
-      setDrawerContent('contacts')
+    if (DrawerContentType !== 'contacts') {
+      SetDrawerContentType('contacts')
     }
     if (isMobile) {
       return
     }
     ToggleOpenDrawer()
-  }, [ToggleOpenDrawer, drawerContent, isMobile])
+  }, [DrawerContentType, SetDrawerContentType, ToggleOpenDrawer, isMobile])
 
   const onShowMenu = () => {
-    if (drawerContent !== 'menu') {
-      setDrawerContent('menu')
+    if (DrawerContentType !== 'menu') {
+      SetDrawerContentType('menu')
     }
   }
 
@@ -48,7 +47,7 @@ export const Header = () => {
   }
 
   const onGoPrev = () => {
-    if (drawerContent === 'contacts') {
+    if (DrawerContentType === 'contacts') {
       onShowMenu()
 
       return
@@ -84,19 +83,6 @@ export const Header = () => {
       <ArrowLeftIcon className={styles.goToPrevButtonIcon}/>
     </div>
   ) : null
-
-  useEffect(() => {
-    if (drawerContent === 'menu') {
-      SetDrawerContent(
-        <div className={styles.drawerMenu}>
-          {$headerItems}
-        </div>
-      )
-
-      return
-    }
-    SetDrawerContent(<Contacts />)
-  }, [$headerItems, SetDrawerContent, drawerContent])
 
   return (
     <>

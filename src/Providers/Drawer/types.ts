@@ -1,9 +1,9 @@
-import type { ReactElement } from "react";
-
 export type IDrawerContext = {
   IsOpen: boolean;
+  DrawerContentType: IDrawerContentType;
   ToggleOpenDrawer: VoidFunction;
   SetIsOpenDrawer: (isOpen: boolean) => void;
-  SetDrawerContent: (content: ReactElement) => void;
-  GetDrawerContent: () => ReactElement | null;
+  SetDrawerContentType: (content: IDrawerContentType) => void;
 }
+
+export type IDrawerContentType = 'menu' | 'contacts'

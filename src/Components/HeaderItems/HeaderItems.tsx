@@ -1,14 +1,14 @@
 import classNames from "classnames"
 import {useLocation} from "react-router-dom"
-import {useNavigateCustom} from "../../../utils/useNavigate"
-import {useDrawerContext} from "../../../utils/useDrawerContext"
-import {routes} from "../../../assets"
-import OpenIcon from '../../../assets/Icons/ArrowOpen.svg'
+import {useNavigateCustom} from "../../utils/useNavigate"
+import {useDrawerContext} from "../../utils/useDrawerContext"
+import {routes} from "../../assets"
+import OpenIcon from '../../assets/Icons/ArrowOpen.svg'
 
 import type {FC} from "react"
 import type {IHeaderItems} from "./types"
 
-import styles from '../styles.module.scss'
+import styles from './styles.module.scss'
 
 export const HeaderItems: FC<IHeaderItems> = ({
   IsOpenContacts,

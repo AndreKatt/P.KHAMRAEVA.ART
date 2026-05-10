@@ -36,6 +36,13 @@
   }
 }
 
+.drawerMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 42px 58px;
+}
+
 .closeButton {
   position: absolute;
   top: 28px;

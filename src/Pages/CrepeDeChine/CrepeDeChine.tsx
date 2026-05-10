@@ -11,6 +11,7 @@ import {AuthorItem} from "./AuthorItem/AuthorItem"
 import {ButtonLink} from "../Main/ButtonLink/ButtonLink"
 import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle"
 import {useIsMobile} from "../../utils/useIsMobile"
+import {useDrawerContext} from "../../utils/useDrawerContext"
 import {
   authorBlockProps,
   authorItems,
@@ -39,8 +40,38 @@ import {
 import styles from './styles.module.scss'
 
 export function Component() {
-  const isMobile = useIsMobile();
   const [isOpenHelpBlock, setIsOpenHelpBlock] = useState(false)
+  const isMobile = useIsMobile();
+  const {SetDrawerContentType, ToggleOpenDrawer} = useDrawerContext()
+
+  const onOpenContacts = () => {
+    SetDrawerContentType('contacts')
+    ToggleOpenDrawer()
+  }
+  
+  const $textInfoContacts = isMobile ? (
+    <div
+      className={styles.helpInfoBlockFooterButton}
+      onClick={onOpenContacts}
+    >
+      <div className={styles.helpInfoBlockFooterButtonText}>
+        КОНТАКТЫ
+      </div>
+    </div>
+  ) : (
+    <div className={styles.helpInfoBlockFooterContacts}>
+      Задать вопрос и&nbsp;обсудить условия:
+      <div className={styles.helpInfoBlockFooterContactsItems}>
+        <div className={styles.helpInfoBlockFooterContactsItem}>
+          +79500148784
+        </div>
+        /
+        <div className={styles.helpInfoBlockFooterContactsItem}>
+          hamhamkham@icloud.com
+        </div>
+      </div>
+    </div>
+  )
 
   const $textInfoBlock = (
     <ContainerFullWidth className={styles.textInfoBlock}>
@@ -79,23 +110,7 @@ export function Component() {
           ))}
         </div>
         <div className={styles.helpInfoFooter}>
-          {/* <div className={styles.helpInfoBlockFooterButton}>
-            <div className={styles.helpInfoBlockFooterButtonText}>
-              ПОДДЕРЖАТЬ ПРОЕКТ
-            </div>
-          </div> */}
-          <div className={styles.helpInfoBlockFooterContacts}>
-            Задать вопрос и&nbsp;обсудить условия:
-            <div className={styles.helpInfoBlockFooterContactsItems}>
-              <div className={styles.helpInfoBlockFooterContactsItem}>
-                +79500148784
-              </div>
-              /
-              <div className={styles.helpInfoBlockFooterContactsItem}>
-                hamhamkham@icloud.com
-              </div>
-            </div>
-          </div>
+          {$textInfoContacts}
         </div>
       </ContainerFullWidth>
     </ContainerFullWidth>
