@@ -54,6 +54,7 @@ export const MainPage = () => {
               <ProjectItem
                 key={index}
                 {...project}
+                BorderRight={index < projectItemsFirstRow.length - 1}
               />
             ))}
           </div>
@@ -62,6 +63,7 @@ export const MainPage = () => {
               <ProjectItem
                 key={index}
                 {...project}
+                BorderRight={index < projectItemsSecondRow.length - 1}
               />
             ))}
           </div>

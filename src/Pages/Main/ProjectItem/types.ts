@@ -6,4 +6,5 @@ export type IProjectItemProps = {
   SrcSet: string;
   Title: ReactNode | string;
   Description: ReactNode | string;
+  BorderRight?: boolean;
 }

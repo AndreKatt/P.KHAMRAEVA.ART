@@ -1,3 +1,4 @@
+import classNames from 'classnames'
 import {useNavigateCustom} from '../../../utils/useNavigate'
 import {useIsMobile} from '../../../utils/useIsMobile'
 import {Image} from '../../../Components/Image/Image'
@@ -13,6 +14,7 @@ export const ProjectItem: FC<IProjectItemProps> = ({
   SrcSet,
   Title,
   Description,
+  BorderRight,
 }) => {
   const navigate = useNavigateCustom();
   const isMobile = useIsMobile()
@@ -31,7 +33,9 @@ export const ProjectItem: FC<IProjectItemProps> = ({
   return (
     <div
       onClick={() => navigate(Link)}
-      className={styles.projectItemWrapper}
+      className={classNames(styles.projectItemWrapper, {
+        [styles.borderRight]: BorderRight,
+      })}
     >
       <Image
         Src={Src}
