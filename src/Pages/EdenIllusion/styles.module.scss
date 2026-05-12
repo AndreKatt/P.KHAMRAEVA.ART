@@ -8,12 +8,16 @@
   z-index: 10;
 }
 
+.videoBackgroundCover {
+  height: calc(100vw * 1.78);
+  
+  @media (min-width: 1024px) {
+    height: calc(100vw * 0.563);
+  }
+}
+
 .videoBackground {
   height: calc(100vw * 0.563);
-  
-  @media (max-width: 1024px) {
-    height: calc(100vw * 1.78);
-  }
 }
 
 .videoPreviewContainer {

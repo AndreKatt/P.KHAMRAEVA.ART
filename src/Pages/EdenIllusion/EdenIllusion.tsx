@@ -1,9 +1,7 @@
 import {Authors} from "../../Components/Authors/Authors.tsx"
 import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
-// import {ProjectPreview} from "../../Modules/ProjectPreview/ProjectPreview.tsx"
 import {Image} from '../../Components/Image/Image.tsx'
-import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview.tsx"
 import {ProjectTitleMobile} from "../../Modules/ProjectTitleMobile/ProjectTitleMobile.tsx"
 import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth.tsx"
 import {VideoBackground} from "../../Modules/VideoBackground/VideoBackground.tsx"
@@ -15,9 +13,9 @@ import {
   galleryImages,
   videoPreviewImages,
   previewProps,
-  videoPreviewProps,
   videoBackgroundPropsDesk,
   videoBackgroundPropsMobile,
+  videoBackgroundProps,
 } from "./constants.ts"
 
 import styles from "./styles.module.scss"
@@ -44,7 +42,7 @@ export function Component() {
         {$projectTitle}
 
         <VideoBackground
-          className={styles.videoBackground}
+          className={styles.videoBackgroundCover}
           {...isMobile ? videoBackgroundPropsMobile : videoBackgroundPropsDesk}
         />
       </div>
@@ -72,7 +70,10 @@ export function Component() {
       <br />
       Доживем ли мы до будущего, в котором человечество предпочтет укрыться от реальных проблем в цифровом мире, как в убежище? Может ли цифровая иллюзия стать для человека новой средой обитания — в той же степени, что некогда были природа и материальная цивилизация?
 
-      <VideoPreview {...videoPreviewProps}/>
+      <VideoBackground
+        {...videoBackgroundProps}
+        className={styles.videoBackground}
+      />
 
       <div className={styles.textContainer}>
         «Eden Illusion» — это художественное высказывание о выборе, стоящем перед человеком сегодня. Спектакль не предлагает готовых ответов, но создает целостный опыт, позволяющий прочувствовать парадокс цифрового рая: его совершенную красоту и глубокую оторванность от действительности. Проект представляет собой новый формат синтеза технологий, классической музыкальной традиции и актуального философского поиска.

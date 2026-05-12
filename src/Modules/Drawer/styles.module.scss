@@ -7,6 +7,7 @@
   margin-top: var(--header-height);
   transition: opacity 0.2s ease-out;
   opacity: 0;
+  backdrop-filter: blur(4px);
 
   z-index: 40;
 }

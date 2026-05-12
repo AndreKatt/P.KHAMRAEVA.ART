@@ -6,7 +6,6 @@ import PlanetariumLogo from "../../assets/Icons/PlanetariumLogo.svg"
 import type {IGalleryProps} from "../../Components/Gallery/types.ts"
 import type {IAuthorsProps} from "../../Components/Authors/types.ts"
 import type {IImageProps} from "../../Components/Image/types.ts"
-import type {IVideoPreviewProps} from "../../Modules/VideoPreview/types.ts"
 import type {IVideoBackgroundProps} from "../../Modules/VideoBackground/types.ts"
 import type {IProjectTitleProps} from "../../Components/ProjectTitle/types.ts"
 
@@ -32,14 +31,7 @@ export const videoBackgroundPropsMobile: IVideoBackgroundProps = {
   IsClickable: false,
 }
 
-export const videoPreviewProps: IVideoPreviewProps = {
-  WhithGradient: true,
-  ImageSrc: `${imagesBasePath}/Photo-1440.webp`,
-  ImageSrcSet: `
-    ${imagesBasePath}/Photo-900.webp 900w,
-    ${imagesBasePath}/Photo-1440.webp 1440w,
-    ${imagesBasePath}/Photo-1920.webp 1920w
-  `,
+export const videoBackgroundProps: IVideoBackgroundProps = {
   VideoId:'toErC6LtF9QyEutk19gu7Q',
 }
 
