@@ -1,6 +1,6 @@
 import {edenItem} from "../Projects/constants";
+import { galleryImagesBasePath as gardenGalleryImagesBasePath } from "../GardenCity/constants";
 import {videoPreviewAuditoriumProps} from "../CrepeDeChine/constants";
-import {galleryImagesBasePath as  methamorphosisGalleryImagesBasePath} from "../Metamorphosis/constants";
 import {routes} from "../../assets";
 
 import type { IProjectItemProps } from "./ProjectItem/types";
@@ -31,11 +31,11 @@ export const projectItemsFirstRow: ReadonlyArray<IProjectItemProps> = [
   },
   {
     Link: METAMORPHOSIS,
-    Src: `${methamorphosisGalleryImagesBasePath}/Gallery2-1440.webp`,
+    Src: `${imageBasePath}/Metamorphosis-1440.webp`,
     SrcSet: `
-      ${methamorphosisGalleryImagesBasePath}/Gallery2-900.webp 900w,
-      ${methamorphosisGalleryImagesBasePath}/Gallery2-1440.webp 1440w,
-      ${methamorphosisGalleryImagesBasePath}/Gallery2-1920.webp 1920w
+      ${imageBasePath}/Metamorphosis-900.webp 900w,
+      ${imageBasePath}/Metamorphosis-1440.webp 1440w,
+      ${imageBasePath}/Metamorphosis-1920.webp 1920w
     `,
     Title: (
       <>
@@ -62,11 +62,11 @@ export const projectItemsSecondRow: ReadonlyArray<IProjectItemProps> = [
   },
   {
     Link: GARDEN,
-    Src: `${imageBasePath}/GardenCity-1440.webp`,
+    Src: `${gardenGalleryImagesBasePath}/Gallery2-1440.webp`,
     SrcSet: `
-      ${imageBasePath}/GardenCity-900.webp 900w,
-      ${imageBasePath}/GardenCity-1440.webp 1440w,
-      ${imageBasePath}/GardenCity-1920.webp 1920w
+      ${gardenGalleryImagesBasePath}/Gallery2-900.webp 900w,
+      ${gardenGalleryImagesBasePath}/Gallery2-1440.webp 1440w,
+      ${gardenGalleryImagesBasePath}/Gallery2-1920.webp 1920w
     `,
     Title: (
       <>

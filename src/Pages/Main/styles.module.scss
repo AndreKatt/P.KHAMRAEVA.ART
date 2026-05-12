@@ -5,7 +5,11 @@
 
 .projectsContainerFirstRow {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 5fr 4fr;
+  
+  @media (min-width: 600px) {
+    grid-template-columns: 3fr 2fr;
+  }
 }
 
 .projectsContainerSecondRow {
@@ -15,19 +19,15 @@
 
 .videoPreviewCrepeContainer {
   position: relative;
-
-  &:hover {
-    .videoPreviewCrepeTitleContainer {
-      opacity: 1;
-    }
-  }
 }
 
 .videoPreviewCrepe {
-  border-top: 1px solid #B3B2B2;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
 
   @media (min-width: 600px) {
-    border-top: 2px solid #B3B2B2;
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
   }
 }
 
@@ -38,11 +38,9 @@
   display: flex;
   flex-direction: column;
   gap: 4px;
-  transition: opacity 0.3s ease-out;
 
   @media (min-width: 1024px) {
     gap: 10px;
-    opacity: 0;
   }
 }
 

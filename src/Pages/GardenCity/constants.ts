@@ -26,7 +26,7 @@ export const videoBackgroundProps: IVideoBackgroundProps = {
   IsClickable: false,
 }
 
-const galleryImagesBasePath = `${imagesBasePath}/Gallery`
+export const galleryImagesBasePath = `${imagesBasePath}/Gallery`
 const galleryImagesName = [
   "Gallery1",
   "Gallery2",
