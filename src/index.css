@@ -64,7 +64,7 @@ body {
     --padding-x: 72px;
   }
   @media (min-width: 1024px) {
-    --padding-x: 150px;
+    --padding-x: 107px;
     --header-height: 82px;
     --header-font-size: 36px;
     --header-line-height: 48px;
@@ -73,10 +73,13 @@ body {
     line-height: 18px;
   }
   @media (min-width: 1280px) {
-    --padding-x: 180px;
+    --padding-x: 129px;
+  }
+  @media (min-width: 1440px) {
+    --padding-x: 207px;
   }
   @media (min-width: 1920px) {
-    --padding-x: 324px;
+    --padding-x: 358px;
   }
 }
 

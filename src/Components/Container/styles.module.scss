@@ -14,9 +14,12 @@
   }
   @media (min-width: 1024px) {
     margin-bottom: 80px;
-    gap: 100px;
+    gap: 162px;
   }
-  @media (min-width: 1920px) {
-    gap: 130px;
+  @media (min-width: 1280px) {
+    gap: 101px;
+  }
+  @media (min-width: 1440px) {
+    gap: 110px;
   }
 }
