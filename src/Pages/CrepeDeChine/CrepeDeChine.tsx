@@ -10,6 +10,7 @@ import {ProjectPreview} from "../../Modules/ProjectPreview/ProjectPreview"
 import {AuthorItem} from "./AuthorItem/AuthorItem"
 import {ButtonLink} from "../Main/ButtonLink/ButtonLink"
 import {ProjectTitle} from "../../Components/ProjectTitle/ProjectTitle"
+import {Copy} from "../../Components/Copy/Copy"
 import {useIsMobile} from "../../utils/useIsMobile"
 import {useDrawerContext} from "../../utils/useDrawerContext"
 import {
@@ -62,13 +63,17 @@ export function Component() {
     <div className={styles.helpInfoBlockFooterContacts}>
       Задать вопрос и&nbsp;обсудить условия:
       <div className={styles.helpInfoBlockFooterContactsItems}>
-        <div className={styles.helpInfoBlockFooterContactsItem}>
-          +79500148784
-        </div>
+        <Copy>
+          <div className={styles.helpInfoBlockFooterContactsItem}>
+            +79500148784
+          </div>
+        </Copy>
         /
-        <div className={styles.helpInfoBlockFooterContactsItem}>
-          hamhamkham@icloud.com
-        </div>
+        <Copy>
+          <div className={styles.helpInfoBlockFooterContactsItem}>
+            hamhamkham@icloud.com
+          </div>
+        </Copy>
       </div>
     </div>
   )
