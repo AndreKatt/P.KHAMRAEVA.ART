@@ -4,7 +4,7 @@ import {Image} from '../Image/Image.tsx'
 import {useIsMobile} from '../../utils/useIsMobile.ts'
 import CopyIcon from '../../assets/Icons/Copy.svg'
 import TelegramIcon from '../../assets/Icons/TelegramLogo.svg'
-import PhoneIcon from '../../assets/Icons/Phone.svg'
+import MailIcon from '../../assets/Icons/Mail.svg'
 
 import styles from './styles.module.scss'
 
@@ -39,7 +39,6 @@ export const Contacts = () => {
               ${imageBasePath}/Contacts-1440.webp 1440w,
               ${imageBasePath}/Contacts-1920.webp 1920w
             `}
-            Sizes='50wv'
             className={styles.contactsAvatarImage}
           />
         </div>
@@ -49,7 +48,7 @@ export const Contacts = () => {
         className={classNames(styles.contactItem, styles.first)}
         onClick={onClickEmail}
       >
-        <CopyIcon />
+        <MailIcon />
         <div className={styles.contactText}>
           hamhamkham@gmail.com
         </div>
@@ -81,7 +80,7 @@ export const Contacts = () => {
           styles.phone,
         )}
       >
-        <PhoneIcon />
+        <CopyIcon />
         <div className={styles.contactText}>
           +79500148784
         </div>
