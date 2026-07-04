@@ -45,7 +45,7 @@ export const Contacts = () => {
       </div>
       <div
         ref={emailRef}
-        className={classNames(styles.contactItem, styles.first)}
+        className={styles.contactItem}
         onClick={onClickEmail}
       >
         <MailIcon />
@@ -76,7 +76,6 @@ export const Contacts = () => {
         href={isMobile ? 'tel:+79500148784' : undefined}
         className={classNames(
           styles.contactItem,
-          styles.last,
           styles.phone,
         )}
       >
