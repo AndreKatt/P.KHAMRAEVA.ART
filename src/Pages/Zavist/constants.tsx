@@ -53,6 +53,12 @@ const galleryImagesName = [
   "Gallery1",
   "Gallery2",
   "Gallery3",
+  "Gallery4",
+  "Gallery5",
+  "Gallery6",
+  "Gallery7",
+  "Gallery8",
+  "Gallery9",
 ]
 export const galleryImages: IGalleryProps["Images"] = galleryImagesName.map(name => (
   {
