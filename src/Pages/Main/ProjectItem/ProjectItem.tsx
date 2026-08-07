@@ -1,6 +1,5 @@
 import classNames from 'classnames'
 import {useNavigateCustom} from '../../../utils/useNavigate'
-import {useIsMobile} from '../../../utils/useIsMobile'
 import {Image} from '../../../Components/Image/Image'
 
 import type {FC} from 'react'
@@ -17,9 +16,8 @@ export const ProjectItem: FC<IProjectItemProps> = ({
   BorderRight,
 }) => {
   const navigate = useNavigateCustom();
-  const isMobile = useIsMobile()
 
-  const $title = isMobile ? null : (
+  const $title = (
     <div className={styles.projectItemTitle}>
       <div className={styles.projectItemTitleText}>
         {Title}

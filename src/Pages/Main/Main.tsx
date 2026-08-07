@@ -3,7 +3,6 @@ import {ProjectItem} from "./ProjectItem/ProjectItem.tsx";
 import {VideoPreview} from "../../Modules/VideoPreview/VideoPreview";
 import {VideoBackground} from "../../Modules/VideoBackground/VideoBackground";
 import {useNavigateCustom} from "../../utils/useNavigate";
-import {useIsMobile} from "../../utils/useIsMobile.ts";
 import {routes} from "../../assets";
 import {
   projectItemsFirstRow,
@@ -16,9 +15,8 @@ import styles from "./styles.module.scss"
 
 export const MainPage = () => {
   const navigate = useNavigateCustom()
-  const isMobile = useIsMobile()
 
-  const $crepeTitle = isMobile ? null : (
+  const $crepeTitle = (
     <ContainerFullWidth className={styles.videoPreviewCrepeTitleContainer}>
       <div className={styles.videoPreviewCrepeTitle}>
         СИНИЙ КРЕПДЕШИН

@@ -33,12 +33,16 @@
 
 .videoPreviewCrepeTitleContainer {
   position: absolute;
-  top: 48px;
-  left: 24px;
+  top: 28px;
+  left: 18px;
   display: flex;
   flex-direction: column;
   gap: 4px;
 
+  @media (min-width: 600px) {
+    top: 48px;
+    left: 24px;
+  }
   @media (min-width: 1024px) {
     gap: 10px;
   }
