@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
           },
           {
             path: FILMS,
-            element: <>СТРАНИЦА В РАЗРАБОТКЕ</>,
+            lazy: () => import('./Pages/Films/Films'),
           },
         ]
       },
