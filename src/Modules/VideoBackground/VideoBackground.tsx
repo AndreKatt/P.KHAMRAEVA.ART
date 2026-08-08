@@ -2,7 +2,6 @@ import classNames from "classnames";
 import {useState, type FC} from "react";
 import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth";
 import {Video} from "../../Components/Video/Video";
-import {useIsMobile} from "../../utils/useIsMobile";
 import OpenIcon from '../../assets/Icons/ArrowOpen.svg'
 
 import type {IVideoBackgroundProps} from "./types";
@@ -17,10 +16,8 @@ export const VideoBackground: FC<IVideoBackgroundProps> = ({
   className,
 }) => {
   const [isBackGroundVideo, setIsBackGroundVideo] = useState(true);
-  const isMobile = useIsMobile();
-  const isClickable = isMobile ? true : IsClickable;
 
-  const $videoAriaClickable = isBackGroundVideo && isClickable ? (
+  const $videoAriaClickable = isBackGroundVideo && IsClickable ? (
     <div
       onClick={() => setIsBackGroundVideo(false)}
       className={styles.videoAriaClickable}

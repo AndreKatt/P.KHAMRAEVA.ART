@@ -1,7 +1,6 @@
 import {Authors} from "../../Components/Authors/Authors.tsx"
 import {Footer} from "../../Components/Footer/Footer.tsx"
 import {Gallery} from "../../Components/Gallery/Gallery.tsx"
-import {Image} from '../../Components/Image/Image.tsx'
 import {ProjectTitleMobile} from "../../Modules/ProjectTitleMobile/ProjectTitleMobile.tsx"
 import {ContainerFullWidth} from "../../Components/ContainerFullWidth/ContainerFullWidth.tsx"
 import {VideoBackground} from "../../Modules/VideoBackground/VideoBackground.tsx"
@@ -11,11 +10,11 @@ import {
   authors,
   footerIcons,
   galleryImages,
-  videoPreviewImages,
   previewProps,
   videoBackgroundPropsDesk,
   videoBackgroundPropsMobile,
   videoBackgroundProps,
+  videoPreviewIds,
 } from "./constants.ts"
 
 import styles from "./styles.module.scss"
@@ -55,12 +54,12 @@ export function Component() {
       </div>
 
       <ContainerFullWidth className={styles.videoPreviewContainer}>
-        {videoPreviewImages.map((image, idx) => (
-          <Image
-            IsLazy
-            key={idx}
-            className={styles.videoPreviewImage}
-            {...image}
+        {videoPreviewIds.map((videoId) => (
+          <VideoBackground
+            key={videoId}
+            className={styles.videoPreviewItem}
+            VideoId={videoId}
+            IsClickable={false}
           />
         ))}
       </ContainerFullWidth>

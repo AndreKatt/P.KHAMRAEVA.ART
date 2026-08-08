@@ -5,7 +5,6 @@ import PlanetariumLogo from "../../assets/Icons/PlanetariumLogo.svg"
 
 import type {IGalleryProps} from "../../Components/Gallery/types.ts"
 import type {IAuthorsProps} from "../../Components/Authors/types.ts"
-import type {IImageProps} from "../../Components/Image/types.ts"
 import type {IVideoBackgroundProps} from "../../Modules/VideoBackground/types.ts"
 import type {IProjectTitleProps} from "../../Components/ProjectTitle/types.ts"
 
@@ -28,7 +27,7 @@ export const videoBackgroundPropsDesk: IVideoBackgroundProps = {
 }
 export const videoBackgroundPropsMobile: IVideoBackgroundProps = {
   VideoId: '9iKtcP8GE529Fbez1a9PUM',
-  IsClickable: false,
+  IsClickable: true,
 }
 
 export const videoBackgroundProps: IVideoBackgroundProps = {
@@ -57,22 +56,11 @@ export const galleryImages: IGalleryProps["Images"] = galleryImagesName.map(name
   }
 ))
 
-const videoPreviewBasePath = `${imagesBasePath}/Video`
-const videoPreviewName = [
-  "Video1",
-  "Video2",
-  "Video3",
+export const videoPreviewIds: ReadonlyArray<string> = [
+  "vTjxZs6aBpc2DHPBkgeutb",
+  "adwXSXaFF64C7RLHc9quGA",
+  "bRgxw83jm8ihtYRrW1jGEm",
 ]
-export const videoPreviewImages: ReadonlyArray<IImageProps> = videoPreviewName.map(name => (
-  {
-    Src: `${videoPreviewBasePath}/${name}-1440.webp`,
-    SrcSet: `
-      ${videoPreviewBasePath}/${name}-900.webp 900w,
-      ${videoPreviewBasePath}/${name}-1440.webp 1440w,
-      ${videoPreviewBasePath}/${name}-1920.webp 1920w
-    `,
-  }
-))
 
 export const authors: IAuthorsProps["Items"] = [
   {
