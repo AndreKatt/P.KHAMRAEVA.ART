@@ -5,6 +5,7 @@ import {Authors} from '../../Components/Authors/Authors'
 import {Gallery} from '../../Components/Gallery/Gallery'
 import {Footer} from '../../Components/Footer/Footer'
 import {VideoBackground} from '../../Modules/VideoBackground/VideoBackground.tsx'
+import {useIsMobile} from '../../utils/useIsMobile.ts'
 import {
   authors,
   footerIcons,
@@ -17,6 +18,8 @@ import {
 import styles from './styles.module.scss'
 
 export function Component() {
+  const isMobile = useIsMobile();
+
   return (
     <>
       <ProjectPreview {...previewProps}/>
@@ -35,6 +38,7 @@ export function Component() {
       <VideoBackground
         className={styles.videoBackground}
         {...videoPreviewProps}
+        IsClickable={isMobile ? true : videoPreviewProps.IsClickable}
       />
 
       <div>
