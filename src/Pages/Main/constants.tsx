@@ -26,8 +26,7 @@ export const projectItemsFirstRow: ReadonlyArray<IProjectItemProps> = [
     Src: edenItem.Src,
     SrcSet: edenItem.SrcSet!,
     Link: EDEN,
-    Title: 'EDEN ILLUSION',
-    Description: 'ДИДЖИТАЛ МИСТЕРИЯ',
+    Title: 'ДИДЖИТАЛ МИСТЕРИЯ',
   },
   {
     Link: METAMORPHOSIS,
@@ -37,14 +36,7 @@ export const projectItemsFirstRow: ReadonlyArray<IProjectItemProps> = [
       ${imageBasePath}/Metamorphosis-1440.webp 1440w,
       ${imageBasePath}/Metamorphosis-1920.webp 1920w
     `,
-    Title: (
-      <>
-        МЕТАМОРФОЗЫ
-        <br />
-        ПЕТЕРБУРГСКОГО ДОМА
-      </>
-    ),
-    Description: 'МАППИНГ ШОУ',
+    Title: 'МАППИНГ ШОУ',
   },
 ]
 
@@ -57,8 +49,7 @@ export const projectItemsSecondRow: ReadonlyArray<IProjectItemProps> = [
       ${imageBasePath}/Zavist-1440.webp 1440w,
       ${imageBasePath}/Zavist-1920.webp 1920w
     `,
-    Title: 'ZAVIST',
-    Description: 'ТЕАТРАЛЬНЫЕ ПОСТАНОВКИ',
+    Title: 'ТЕАТРАЛЬНЫЕ ПОСТАНОВКИ',
   },
   {
     Link: GARDEN,
@@ -68,14 +59,7 @@ export const projectItemsSecondRow: ReadonlyArray<IProjectItemProps> = [
       ${gardenGalleryImagesBasePath}/Gallery2-1440.webp 1440w,
       ${gardenGalleryImagesBasePath}/Gallery2-1920.webp 1920w
     `,
-    Title: (
-      <>
-        ГОРОД САД.
-        <br />
-        МУЛЬТИВСЕЛЕННЫЕ
-      </>
-    ),
-    Description: 'ФИДЖИТАЛ ВЫСТАВКА',
+    Title: 'ФИДЖИТАЛ ВЫСТАВКА',
   },
 ]
 

@@ -44,47 +44,22 @@
   position: absolute;
   top: 0;
   height: 100%;
+  font-size: 12px;
+  line-height: 14px;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  align-items: flex-end;
   padding: 16px 18px;
-  gap: 4px;
   
   z-index: 10;
 
   @media (min-width: 600px) {
-    padding: 24px;
-  }
-  @media (min-width: 1024px) {
-    gap: 10px;
-  }
-}
-
-.projectItemTitleText {
-  font-size: 12px;
-  line-height: 14px;
-
-  @media (min-width: 600px) {
     font-size: 18px;
     line-height: 19px;
+    padding: 24px;
   }
   @media (min-width: 1024px) {
     font-size: 20px;
     line-height: 21px;
-  }
-}
-
-.projectItemDescription {
-  font-size: 10px;
-  line-height: 12px;
-
-  @media (min-width: 600px) {
-    font-size: 10px;
-    line-height: 12px;
-  }
-  @media (min-width: 1024px) {
-    font-size: 12px;
-    line-height: 14px;
   }
 }
 

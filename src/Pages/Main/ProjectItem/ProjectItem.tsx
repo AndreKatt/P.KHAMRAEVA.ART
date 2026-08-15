@@ -12,19 +12,13 @@ export const ProjectItem: FC<IProjectItemProps> = ({
   Src,
   SrcSet,
   Title,
-  Description,
   BorderRight,
 }) => {
   const navigate = useNavigateCustom();
 
   const $title = (
     <div className={styles.projectItemTitle}>
-      <div className={styles.projectItemTitleText}>
-        {Title}
-      </div>
-      <div className={styles.projectItemDescription}>
-        {Description}
-      </div>
+      {Title}
     </div>
   )
 
